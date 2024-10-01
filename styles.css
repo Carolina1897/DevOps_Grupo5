@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f1f1f1;  /* Fondo claro */
+    padding: 10px 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  /* Sombra para resaltar la barra */
+    max-height: 80px;  /* Limita la altura máxima de la barra */
+    overflow: hidden;  /* Asegura que el logo no expanda la barra */
+}
+
+.logo img {
+    height: 170px;  /* Tamaño aumentado del logo */
+    object-fit: contain;  /* Mantiene el logo dentro de la barra sin deformarse */
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu li a {
+    color: #333;  /* Color de texto oscuro para mayor contraste */
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.menu li:hover {
+    background-color: #ddd;  /* Color claro para hover */
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color: #f1f1f1;  /* Fondo claro para el menú desplegable */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  /* Sombra para el dropdown */
+    z-index: 10;  /* Asegura que el menú desplegable esté por encima de otros elementos */
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    padding: 10px 20px;
+    white-space: nowrap;
+    color: #333;  /* Color de texto oscuro para el menú desplegable */
+}
+
+.auth-buttons {
+    display: flex;
+}
+
+.auth-buttons button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #333;  /* Botones oscuros para contraste */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.auth-buttons button:hover {
+    background-color: #555;  /* Un poco más oscuro en hover */
+}
+
+.news-panel {
+    padding: 20px;
+    background-color: #f9f9f9;  /* Fondo claro para el panel */
+    position: relative;  /* Asegúrate de que tenga un contexto de posicionamiento */
+    z-index: 1;  /* Z-index menor para que esté detrás */
+}
+
+.news-panel h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;  /* Color de texto */
+}
+
+.news-buttons {
+    text-align: right;  /* Alinea los botones a la derecha */
+    margin-bottom: 20px;  /* Espacio debajo de los botones */
+}
+
+.modern-button {
+    background-color: #007bff;  /* Color del botón moderno */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;  /* Bordes redondeados */
+    margin-left: 10px;  /* Espacio entre botones */
+}
+
+.modern-button:hover {
+    background-color: #0056b3;  /* Color más oscuro en hover */
+}
+
+.news-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;  /* Permite que las tarjetas se ajusten en múltiples filas */
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra para las tarjetas */
+    width: 30%;  /* Ancho de las tarjetas */
+    margin-bottom: 20px;
+    padding: 15px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;  /* La imagen ocupa todo el ancho de la tarjeta */
+    border-radius: 10px;  /* Bordes redondeados para las imágenes */
+}
+
+.card h3 {
+    margin: 15px 0;
+    color: #333;  /* Color de texto para el título */
+}
+
+.card p {
+    color: #555;  /* Color de texto para la descripción */
+}
+
+.card button {
+    background-color: #333;  /* Botones oscuros para las tarjetas */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.card button:hover {
+    background-color: #555;  /* Un poco más oscuro en hover */
+}
+
+/* Estilos para el pie de página */
+.footer {
+    background-color: #f1f1f1;  /* Fondo claro para el pie de página */
+    padding: 20px;
+    text-align: center;  /* Centra el contenido del pie de página */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;  /* Espacia el contenido del pie de página */
+    align-items: center;
+}
+
+.footer-logo img {
+    height: 170px;  /* Ajusta el tamaño del logo en el pie de página */
+}
+
+.social-media a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;  /* Color de texto para redes sociales */
+    font-size: 24px;  /* Tamaño del icono */
+}
+
+.business-hours {
+    color: #555;  /* Color de texto para horarios */
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .card {
+        width: 45%;  /* Dos tarjetas por fila en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%;  /* Una tarjeta por fila en pantallas muy pequeñas */
+    }
+
+    .footer-content {
+        flex-direction: column;  /* Cambia a columna en pantallas pequeñas */
+    }
+}
