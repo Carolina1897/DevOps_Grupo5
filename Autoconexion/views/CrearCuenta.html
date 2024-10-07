@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- Define el idioma del contenido a español -->
+<head>
+  <meta charset="UTF-8"> <!-- Define la codificación de caracteres a UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ajusta la página al tamaño de la pantalla del dispositivo -->
+  <title>Crear Cuenta</title> <!-- Título de la página que se muestra en la pestaña del navegador -->
+  <link rel="stylesheet" href="/css/styles.css"> <!-- Enlace al archivo CSS externo para estilos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Enlace a Font Awesome para usar iconos -->
+
+  <style>
+    /* Estilo general para el cuerpo de la página */
+    body {
+      background: linear-gradient(to right, #4A90E2, #9013FE); /* Fondo degradado */
+      display: flex; /* Usa flexbox para centrar el contenido */
+      justify-content: center; /* Centra horizontalmente */
+      align-items: center; /* Centra verticalmente */
+      height: 100vh; /* Altura completa de la ventana */
+      font-family: Arial, sans-serif; /* Fuente del texto */
+      color: white; /* Color del texto */
+      margin: 0; /* Sin margen */
+    }
+
+    /* Estilo para el contenedor de creación de cuenta */
+    .register-container {
+      background: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+      padding: 30px; /* Espaciado interno */
+      border-radius: 10px; /* Bordes redondeados */
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+      text-align: center; /* Centra el texto */
+      backdrop-filter: blur(5px); /* Efecto de desenfoque de fondo */
+      width: 400px; /* Ancho fijo del contenedor */
+      max-width: 90%; /* Ancho máximo en dispositivos pequeños */
+      margin: 20px; /* Espaciado alrededor del contenedor */
+    }
+
+    /* Estilo para el título */
+    h2 {
+      margin-bottom: 20px; /* Espaciado inferior */
+      font-size: 2em; /* Tamaño de la fuente */
+    }
+
+    /* Estilo para los campos de entrada */
+    input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
+      width: 100%; /* Ancho completo */
+      padding: 10px; /* Espaciado interno */
+      margin: 10px 0; /* Espaciado vertical */
+      border: none; /* Sin borde */
+      border-radius: 5px; /* Bordes redondeados */
+      transition: all 0.3s; /* Transición suave para efectos */
+    }
+
+    /* Estilo al enfocar los campos de entrada */
+    input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="tel"]:focus {
+      border: 2px solid #4A90E2; /* Borde azul al enfocar */
+      outline: none; /* Sin contorno al enfocar */
+    }
+
+    /* Estilo para los botones */
+    button {
+      background-color: #4A90E2; /* Color de fondo azul */
+      color: white; /* Color del texto */
+      border: none; /* Sin borde */
+      padding: 10px 15px; /* Espaciado interno */
+      border-radius: 5px; /* Bordes redondeados */
+      cursor: pointer; /* Cambia el cursor al pasar el mouse */
+      transition: background 0.3s; /* Transición para el color de fondo */
+      margin-top: 10px; /* Espaciado superior */
+      width: 100%; /* Ancho completo del botón */
+    }
+
+    /* Estilo al pasar el mouse sobre el botón */
+    button:hover {
+      background-color: #357ABD; /* Cambia el color de fondo al pasar el mouse */
+    }
+
+    /* Estilo para el enlace de regreso */
+    .back-link {
+      margin-top: 20px; /* Espaciado superior */
+      color: white; /* Color del texto */
+      text-decoration: none; /* Sin subrayado */
+    }
+
+    /* Estilo al pasar el mouse sobre el enlace de regreso */
+    .back-link:hover {
+      text-decoration: underline; /* Subraya el texto al pasar el mouse */
+    }
+
+    /* Estilo para el mensaje de inicio de sesión */
+    .login-message {
+      margin-top: 15px; /* Espaciado superior */
+      color: white; /* Color del texto */
+    }
+
+    /* Estilo para el enlace de iniciar sesión */
+    .login-message a {
+      color: #4A90E2; /* Color azul */
+      text-decoration: none; /* Sin subrayado */
+      font-weight: bold; /* Negrita */
+    }
+
+    /* Estilo al pasar el mouse sobre el enlace de iniciar sesión */
+    .login-message a:hover {
+      text-decoration: underline; /* Subraya el texto al pasar el mouse */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="register-container"> <!-- Contenedor principal de creación de cuenta -->
+    <h2>Crear Cuenta</h2> <!-- Título de la sección de creación de cuenta -->
+    <form id="formCrearUsuario">
+      <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+      <input type="text" id="apellido" name="apellido" placeholder="Apellido">
+      <input type="text" id="identificacion" name="identificacion" placeholder="Identificación">
+      <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña">
+      <input type="email" id="email" name="email" placeholder="Email">
+      <input type="text" id="direccion" name="direccion" placeholder="Dirección">
+      <input type="text" id="telefono" name="telefono" placeholder="Teléfono">
+      <input type="number" id="idCiudad" name="idCiudad" placeholder="IDCiudad">
+      <button type="button" onclick="registrarUsuario()">Registrar</button>
+    </form>
+    <a class="back-link" href="index.html">Volver a la página principal</a> <!-- Enlace para regresar a la página principal -->
+    <div class="login-message"> <!-- Mensaje de inicio de sesión -->
+      <p>¿Ya tienes cuenta? <a href="InicioSesion.html">Inicia sesión</a></p> <!-- Enlace a la página de inicio de sesión -->
+    </div>
+</div>
+
+<script>
+  function registrarUsuario() {
+    const usuario = {
+      nombre: document.getElementById('nombre').value,
+      apellido: document.getElementById('apellido').value,
+      identificacion: document.getElementById('identificacion').value,
+      contrasena: document.getElementById('contrasena').value,
+      email: document.getElementById('email').value,
+      direccion: document.getElementById('direccion').value,
+      telefono: document.getElementById('telefono').value,
+      idCiudad: document.getElementById('idCiudad').value
+    };
+
+    // Realizar la solicitud POST al servidor para registrar el usuario
+    fetch('http://localhost:3000/usuarios', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(usuario)
+    })
+    .then(response => {
+      if (response.ok) {
+        return response.text(); // Puedes cambiar a response.json() si el servidor devuelve JSON
+      } else {
+        throw new Error('Error en la solicitud');
+      }
+    })
+    .then(data => {
+      alert('Usuario registrado con éxito: ' + data); // Mensaje de éxito
+    })
+    .catch(error => {
+      console.error('Error al registrar usuario:', error);
+      alert('Hubo un error al registrar el usuario');
+    });
+  }
+</script>
+
+</body>
+</html>
+
