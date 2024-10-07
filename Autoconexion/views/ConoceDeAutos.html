@@ -1,101 +1,94 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Metadatos de la página -->
-  <meta charset="UTF-8"> <!-- Define la codificación de caracteres a UTF-8 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura el viewport para la compatibilidad con dispositivos móviles -->
-  <title>Conoce de Autos - AutoConexion</title> <!-- Título de la página que aparecerá en la pestaña del navegador -->
-  
-  <!-- Enlaces a hojas de estilo -->
-  <link rel="stylesheet" href="/css/styles.css"> <!-- Enlace a la hoja de estilos CSS personalizada -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Enlace a Font Awesome para iconos -->
+    <!-- Metadatos de la página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conoce de Autos - AutoConexion</title>
+    <!-- Enlace a la hoja de estilos CSS personalizada -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- Enlace a Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <!-- Barra de navegación -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/imagenes/LOGO.png" alt="Logo">
+                </a>
+            </div>
+            <ul class="menu">
+                <li><a href="AcercaDeNosotros.html">Acerca de Nosotros</a></li>
+                <li><a href="ConoceDeAutos.html">Conoce de Autos</a></li>
+                <li><a href="AutosUsados.html">Autos Usados</a></li> <!-- Enlace a la página 'Autos Usados' -->
+                <li><a href="AutosNuevos.html">Autos Nuevos</a></li> <!-- Enlace a la página 'Autos Nuevos' -->
+                    </ul>
+                </li>
+            </ul>
+            <div class="auth-buttons">
+              <a href="InicioSesion.html" class="auth-icon"><i class="fas fa-user"></i> <!-- Ícono de usuario sin cuadro -->
+            </div>
+        </nav>
+    </header>
 
-  <!-- Barra de navegación -->
-  <header>
-    <nav class="navbar"> <!-- Contenedor de la barra de navegación -->
-      <div class="logo">
-        <a href="index.html"> <!-- Enlace al inicio -->
-          <img src="/imagenes/LOGO.png" alt="Logo" /> <!-- Logo de la página -->
-        </a>
-      </div>
-      <ul class="menu"> <!-- Lista de elementos del menú de navegación -->
-        <li><a href="AcercaDeNosotros.html">Acerca de Nosotros</a></li> <!-- Enlace a la página Acerca de Nosotros -->
-        <li><a href="ConoceDeAutos.html">Conoce de Autos</a></li> <!-- Enlace a la página Conoce de Autos -->
-        <li class="dropdown"> <!-- Elemento de menú desplegable -->
-          <a href="#">Autos</a> <!-- Enlace principal del desplegable -->
-          <ul class="dropdown-menu"> <!-- Contenedor de los elementos del menú desplegable -->
-            <li><a href="#">Usados</a></li> <!-- Enlace a autos usados -->
-            <li><a href="#">Nuevos</a></li> <!-- Enlace a autos nuevos -->
-          </ul>
-        </li>
-      </ul>
-      <div class="auth-buttons"> <!-- Contenedor de botones de autenticación -->
-        <a href="InicioSesion.html" class="auth-button">Iniciar Sesión</a> <!-- Enlace que redirige a la página de inicio de sesión -->
-        <a href="CrearCuenta.html" class="auth-button">Crear Cuenta</a> <!-- Enlace que redirige a la página de creación de cuenta -->
-      </div>
-    </nav>
-  </header>
+    <!-- Contenido Conoce de Autos -->
+    <section class="car-info">
+        <h1>Conoce de Autos</h1>
+        <div class="car-cards">
+            <!-- Primer auto -->
+            <div class="card">
+                <img src="/imagenes/SedanRojo.png" alt="Sedán">
+                <h3>Sedán</h3>
+                <p>Color: Rojo, Modelo: 2021, Marca: Toyota, Kilometraje: 20,000 km</p>
+                <p>Tip: Mantén tu auto alineado para prolongar la vida útil de las llantas.</p>
+            </div>
+            <!-- Segundo auto -->
+            <div class="card">
+                <img src="/imagenes/Suv Azul.png" alt="SUV">
+                <h3>SUV</h3>
+                <p>Color: Azul, Modelo: 2023, Marca: Honda, Kilometraje: 5,000 km</p>
+                <p>Tip: Cambia el filtro de aire cada 15,000 km para mejorar el rendimiento del motor.</p>
+            </div>
+            <!-- Tercer auto -->
+            <div class="card">
+                <img src="/imagenes/FerrariNegro.png" alt="Deportivo">
+                <h3>Deportivo</h3>
+                <p>Color: Negro, Modelo: 2020, Marca: Ferrari, Kilometraje: 10,000 km</p>
+                <p>Tip: Utiliza combustible premium para maximizar el rendimiento de tu auto deportivo.</p>
+            </div>
+            <!-- Cuarto auto -->
+            <div class="card">
+                <img src="/imagenes/FordGris.png" alt="Auto Familiar">
+                <h3>Auto Familiar</h3>
+                <p>Color: Gris, Modelo: 2022, Marca: Ford, Kilometraje: 15,000 km</p>
+                <p>Tip: Verifica los frenos regularmente, especialmente antes de viajes largos.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- Contenido Conoce de Autos -->
-  <section class="car-info"> <!-- Sección de información sobre autos -->
-    <h1>Conoce de Autos</h1> <!-- Título de la sección -->
-    <div class="car-cards"> <!-- Contenedor de las tarjetas de autos -->
-
-      <!-- Primer auto -->
-      <div class="card"> <!-- Tarjeta para el primer auto -->
-        <img src="/imagenes/carrofamiliar.png" alt="Auto 3"> <!-- Imagen del auto -->
-        <h3>Sedán</h3> <!-- Nombre del auto -->
-        <p>Color: Rojo, Modelo: 2021, Marca: Toyota, Kilometraje: 20,000 km</p> <!-- Descripción del auto -->
-        <p>Tip: Mantén tu auto alineado para prolongar la vida útil de las llantas.</p> <!-- Consejo para el auto -->
-      </div>
-
-      <!-- Segundo auto -->
-      <div class="card"> <!-- Tarjeta para el segundo auto -->
-        <img src="/imagenes/Electrico.png" alt="Auto 1"> <!-- Imagen del auto -->
-        <h3>SUV</h3> <!-- Nombre del auto -->
-        <p>Color: Azul, Modelo: 2023, Marca: Honda, Kilometraje: 5,000 km</p> <!-- Descripción del auto -->
-        <p>Tip: Cambia el filtro de aire cada 15,000 kilómetros para mejorar el rendimiento del motor.</p> <!-- Consejo para el auto -->
-      </div>
-
-      <!-- Tercer auto -->
-      <div class="card"> <!-- Tarjeta para el tercer auto -->
-        <img src="/imagenes/Deportivodelujo.png" alt="Auto 2">  <!-- Imagen del auto -->
-        <h3>Deportivo</h3> <!-- Nombre del auto -->
-        <p>Color: Negro, Modelo: 2020, Marca: Ferrari, Kilometraje: 10,000 km</p> <!-- Descripción del auto -->
-        <p>Tip: Utiliza combustible premium para maximizar el rendimiento de tu auto deportivo.</p> <!-- Consejo para el auto -->
-      </div>
-
-      <!-- Cuarto auto -->
-      <div class="card"> <!-- Tarjeta para el cuarto auto -->
-        <img src="/imagenes/carrofamiliar.png" alt="Auto 3"> <!-- Imagen del auto -->
-        <h3>Auto Familiar</h3> <!-- Nombre del auto -->
-        <p>Color: Gris, Modelo: 2022, Marca: Ford, Kilometraje: 15,000 km</p> <!-- Descripción del auto -->
-        <p>Tip: Verifica los frenos regularmente, especialmente antes de viajes largos.</p> <!-- Consejo para el auto -->
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Pie de página -->
-  <footer class="footer"> <!-- Contenedor del pie de página -->
-    <div class="footer-content"> <!-- Contenedor de contenido del pie de página -->
-      <div class="footer-logo">
-        <a href="index.html"> <!-- Enlace al inicio -->
-          <img src="/imagenes/LOGO.png" alt="Logo" /> <!-- Logo en el pie de página -->
-        </a>
-      </div>
-      <div class="social-media"> <!-- Contenedor de iconos de redes sociales -->
-        <a href="#"><i class="fab fa-facebook"></i></a> <!-- Icono de Facebook -->
-        <a href="#"><i class="fab fa-instagram"></i></a> <!-- Icono de Instagram -->
-      </div>
-      <div class="business-hours"> <!-- Sección para horarios de atención -->
-        <p>Horarios de atención: Lunes a Viernes 9am - 6pm</p> <!-- Texto de horarios de atención -->
-      </div>
-    </div>
-  </footer>
-
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="index.html">
+                  <br>
+                    <img src="/imagenes/LOGO.png" alt="Logo">
+                </a>
+            </div>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="business-hours">
+                <p>Horarios de atención: Lunes a Viernes 9am - 6pm</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
+
+
+
 
