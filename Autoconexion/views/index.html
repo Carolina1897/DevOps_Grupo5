@@ -1,0 +1,91 @@
+<!DOCTYPE html> <!-- Define el tipo de documento como HTML5 -->
+<html lang="es"> <!-- Establece el idioma del contenido a español -->
+<head>
+  <meta charset="UTF-8"> <!-- Define la codificación de caracteres a UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Permite que la página se ajuste al tamaño de la pantalla del dispositivo -->
+  <title>AutoConexion</title> <!-- Título de la página que se muestra en la pestaña del navegador -->
+  <link rel="stylesheet" href="/css/styles.css">  <!-- Enlace al archivo CSS externo para estilos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Enlace a Font Awesome para usar iconos -->
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <header>
+    <nav class="navbar"> <!-- Contenedor de la barra de navegación -->
+      <div class="logo">
+        <a href="index.html"> <!-- Enlace que redirige al índice de la página -->
+          <img src="/imagenes/LOGO.png" alt="Logo" /> <!-- Imagen del logo -->
+        </a>
+      </div>
+      <ul class="menu"> <!-- Lista de elementos del menú de navegación -->
+        <li><a href="AcercaDeNosotros.html">Acerca de Nosotros</a></li> <!-- Enlace a la página 'Acerca de Nosotros' -->
+        <li><a href="ConoceDeAutos.html">Conoce de Autos</a></li> <!-- Enlace a la página 'Conoce de Autos' -->
+        <li class="dropdown"> <!-- Elemento de menú desplegable -->
+          <a href="#">Autos</a> <!-- Enlace principal del menú desplegable -->
+          <ul class="dropdown-menu"> <!-- Contenedor de opciones del menú desplegable -->
+            <li><a href="#">Usados</a></li> <!-- Enlace a la sección de autos usados -->
+            <li><a href="#">Nuevos</a></li> <!-- Enlace a la sección de autos nuevos -->
+          </ul>
+        </li>
+      </ul>
+      <div class="auth-buttons"> <!-- Contenedor de botones de autenticación -->
+        <a href="InicioSesion.html" class="auth-button">Iniciar Sesión</a> <!-- Enlace que redirige a la página de inicio de sesión -->
+        <a href="CrearCuenta.html" class="auth-button">Crear Cuenta</a> <!-- Enlace que redirige a la página de creación de cuenta -->
+      </div>
+    </nav>
+  </header>
+
+  <!-- Panel de noticias sobre autos -->
+  <section class="news-panel"> <!-- Sección que muestra las últimas noticias sobre autos -->
+    <h2>Últimas Noticias de Autos</h2> <!-- Título de la sección -->
+    <div class="news-buttons"> <!-- Contenedor de botones de noticias -->
+      <div class="button-container"> <!-- Contenedor de botones -->
+        <button class="modern-button">Comprar</button> <!-- Botón para comprar autos -->
+        <button class="modern-button">Vender</button> <!-- Botón para vender autos -->
+      </div>
+    </div>
+    <div class="news-cards"> <!-- Contenedor para las tarjetas de noticias -->
+      <div class="card"> <!-- Tarjeta de noticia 1 -->
+        <img src="/imagenes/Electrico.png" alt="Auto 1"> <!-- Imagen de la noticia -->
+        <h3>Nuevo Modelo Eléctrico 2024</h3> <!-- Título de la noticia -->
+        <p>El último modelo eléctrico promete una autonomía de 500km con una sola carga.</p> <!-- Descripción de la noticia -->
+        <button>Leer más</button> <!-- Botón para leer más sobre la noticia -->
+      </div>
+
+      <div class="card"> <!-- Tarjeta de noticia 2 -->
+        <img src="/imagenes/Deportivodelujo.png" alt="Auto 2"> <!-- Imagen de la noticia -->
+        <h3>Superdeportivo de Lujo</h3> <!-- Título de la noticia -->
+        <p>Con un diseño impresionante y un motor de 600 caballos, este auto redefine el lujo.</p> <!-- Descripción de la noticia -->
+        <button>Leer más</button> <!-- Botón para leer más sobre la noticia -->
+      </div>
+
+      <div class="card"> <!-- Tarjeta de noticia 3 -->
+        <img src="/imagenes/carrofamiliar.png" alt="Auto 3"> <!-- Imagen de la noticia -->
+        <h3>SUV Familiar 2024</h3> <!-- Título de la noticia -->
+        <p>La SUV más espaciosa y segura del mercado, diseñada para la familia moderna.</p> <!-- Descripción de la noticia -->
+        <button>Leer más</button> <!-- Botón para leer más sobre la noticia -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Pie de página -->
+  <footer class="footer"> <!-- Contenedor del pie de página -->
+    <div class="footer-content"> <!-- Contenedor del contenido del pie de página -->
+      <div class="footer-logo"> <!-- Contenedor del logo en el pie de página -->
+        <a href="index.html"> <!-- Enlace que redirige al índice de la página -->
+          <img src="/imagenes/LOGO.png" alt="Logo" /> <!-- Imagen del logo -->
+        </a>
+      </div>
+      <div class="social-media"> <!-- Contenedor de enlaces a redes sociales -->
+        <a href="#"><i class="fab fa-facebook"></i></a> <!-- Enlace a Facebook con icono -->
+        <a href="#"><i class="fab fa-instagram"></i></a> <!-- Enlace a Instagram con icono -->
+      </div>
+      <div class="business-hours"> <!-- Contenedor de horarios de atención -->
+        <p>Horarios de atención: Lunes a Viernes 9am - 6pm</p> <!-- Texto de horarios -->
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/script.js"></script> <!-- Enlace al archivo JavaScript externo -->
+</body>
+</html>
