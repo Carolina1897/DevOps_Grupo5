@@ -15,10 +15,10 @@ const port = process.env.PORT || 3000;
 
 // Configuración de la conexión a la base de datos
 const dbConfig = {
-    host: 'bkpnggnd0ehhmipfczuh-mysql.services.clever-cloud.com',
-    user: 'u5e29vsn1maqolo5',
-    password: '1C5HI3nzbgvp2INwfBRf',
-    database: 'bkpnggnd0ehhmipfczuh',
+    host: process.host,
+    user: process.user,
+    password: process.password,
+    database: process.database,
 };
 
 // Crear una instancia de la clase de conexión
