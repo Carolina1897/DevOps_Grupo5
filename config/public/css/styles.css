@@ -228,7 +228,6 @@ body {
 .card img {
     max-width: 100%; /* Asegura que la imagen no exceda el ancho de la tarjeta */
     height: auto; /* Mantiene la proporciÃ³n de la imagen */
-    max-width: 100%; /* La imagen no excederÃ¡ el ancho de la tarjeta */
     border-radius: 10px;
 }
 
