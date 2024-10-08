@@ -3,23 +3,23 @@
 * {
     margin: 0; /* Elimina el margen por defecto de todos los elementos */
     padding: 0; /* Elimina el padding por defecto de todos los elementos */
-    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el tamaño total */
+    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el tamaÃ±o total */
 }
 
 body {
     font-family: Arial, sans-serif; /* Establece la fuente para el cuerpo del documento */
 }
 
-/* Navbar (barra de navegación) */
-/* Estilos específicos para la barra de navegación */
+/* Navbar (barra de navegaciÃ³n) */
+/* Estilos especÃ­ficos para la barra de navegaciÃ³n */
 .navbar {
-    display: flex; /* Usar flexbox para distribuir los elementos en la barra de navegación */
+    display: flex; /* Usar flexbox para distribuir los elementos en la barra de navegaciÃ³n */
     justify-content: space-between; /* Espacio entre elementos de la barra */
     align-items: center; /* Alinear elementos verticalmente al centro */
-    background-color: #f1f1f1; /* Color de fondo de la barra de navegación */
+    background-color: #f1f1f1; /* Color de fondo de la barra de navegaciÃ³n */
     padding: 10px 20px; /* Espaciado interno de la barra */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra en la barra */
-    max-height: 80px; /* Altura máxima de la barra de navegación */
+    max-height: 80px; /* Altura mÃ¡xima de la barra de navegaciÃ³n */
     overflow: hidden; /* Evita que el contenido sobresalga */
 }
 
@@ -32,23 +32,23 @@ body {
 
 .logo img {
     height: 150px; /* Altura del logo */
-    object-fit: contain; /* Mantiene la proporción del logo */
+    object-fit: contain; /* Mantiene la proporciÃ³n del logo */
     
 }
 
-/* Estilos para el pie de página */
-/* Estilos específicos para el pie de página */
+/* Estilos para el pie de pÃ¡gina */
+/* Estilos especÃ­ficos para el pie de pÃ¡gina */
 .footer {
     
     text-align: center; /* Alinear texto al centro */
     display: flex; /* Usar flexbox para distribuir contenido */
     flex-direction: column; /* Colocar elementos en columna */
     align-items: center; /* Alinear elementos al centro */
-    height: 50px; /* ajusta el tamaño */
+    height: 50px; /* ajusta el tamaÃ±o */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra en la barra */
     padding: 10px 20px; /* Espaciado interno de la barra */
     justify-content: space-between; /* Espacio entre elementos de la barra */
-    max-height: 80px; /* Altura máxima de la barra de navegación */
+    max-height: 80px; /* Altura mÃ¡xima de la barra de navegaciÃ³n */
     
     
 }
@@ -59,41 +59,41 @@ body {
 }
 
 .footer-content {
-    display: flex; /* Usar flexbox para distribuir contenido del pie de página */
+    display: flex; /* Usar flexbox para distribuir contenido del pie de pÃ¡gina */
     justify-content: space-around; /* Espacio entre elementos */
     align-items: center; /* Alinear elementos verticalmente */
-    width: 100%; /* Ancho completo del pie de página */
+    width: 100%; /* Ancho completo del pie de pÃ¡gina */
     align-items: center; /* Centra los elementos horizontalmente */
     text-align: center; /* Centra el texto dentro de cada div */
     
 }
 
-/* Estilo para el logo en el pie de página */
+/* Estilo para el logo en el pie de pÃ¡gina */
 .footer-logo img {
     height: 150px; /* Altura del logo */
-    max-width: 100%; /* Ancho máximo del logo */
-    object-fit: contain; /* Mantiene la proporción del logo */
+    max-width: 100%; /* Ancho mÃ¡ximo del logo */
+    object-fit: contain; /* Mantiene la proporciÃ³n del logo */
 }
 
 /* Redes sociales */
-/* Estilos específicos para enlaces de redes sociales */
+/* Estilos especÃ­ficos para enlaces de redes sociales */
 .social-media a {
     margin: 0 10px; /* Margen lateral entre enlaces sociales */
     text-decoration: none; /* Sin subrayado en los enlaces sociales */
     color: #333; /* Color del texto de los enlaces sociales */
-    font-size: 24px; /* Tamaño del texto de los enlaces sociales */
+    font-size: 24px; /* TamaÃ±o del texto de los enlaces sociales */
 }
 
 .business-hours {
-    color: #555; /* Color del texto para los horarios de atención */
+    color: #555; /* Color del texto para los horarios de atenciÃ³n */
 }
 
 /* Menu */
-/* Estilos específicos para el menú principal */
+/* Estilos especÃ­ficos para el menÃº principal */
 .menu {
-    flex: 2; /* Permite que el menú ocupe más espacio */
-    display: flex; /* Usar flexbox para el menú */
-    justify-content: center; /* Centra los elementos del menú */
+    flex: 2; /* Permite que el menÃº ocupe mÃ¡s espacio */
+    display: flex; /* Usar flexbox para el menÃº */
+    justify-content: center; /* Centra los elementos del menÃº */
 }
 
 
@@ -105,10 +105,10 @@ body {
 }
 
 .menu li:hover {
-    background-color: #ddd; /* Cambia el color de fondo al pasar el ratón */
+    background-color: #ddd; /* Cambia el color de fondo al pasar el ratÃ³n */
 }
 
-/* Estilos de los íconos de autenticación */
+/* Estilos de los Ã­conos de autenticaciÃ³n */
 .auth-buttons {
     display: flex;
     gap: 20px;
@@ -116,23 +116,23 @@ body {
   
   .auth-icon {
     color: #333; /* Color oscuro */
-    font-size: 18px; /* Tamaño del ícono */
+    font-size: 18px; /* TamaÃ±o del Ã­cono */
     text-decoration: none;
   }
   
   .auth-icon:hover {
-    color: #555; /* Cambia a un tono ligeramente más claro al pasar el mouse */
+    color: #555; /* Cambia a un tono ligeramente mÃ¡s claro al pasar el mouse */
   }
 
 
 
-/* Estilos específicos para la vista "Acerca de Nosotros" */
+/* Estilos especÃ­ficos para la vista "Acerca de Nosotros" */
 .about-us {
     background-color: rgba(173, 216, 230, 0.7); /* Color de fondo con transparencia */
     padding: 40px; /* Espaciado interno */
     border-radius: 10px; /* Bordes redondeados */
-    max-width: 1000px; /* Ancho máximo del contenedor */
-    margin: 80px auto; /* Margen superior para mover el contenedor más abajo */
+    max-width: 1000px; /* Ancho mÃ¡ximo del contenedor */
+    margin: 80px auto; /* Margen superior para mover el contenedor mÃ¡s abajo */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra en el contenedor */
     display: flex; /* Usar flexbox para distribuir elementos */
     flex-direction: column; /* Colocar elementos en columna */
@@ -142,7 +142,7 @@ body {
 .about-us-grid {
     display: flex; /* Usar flexbox para distribuir tarjetas */
     justify-content: space-around; /* Espacio entre tarjetas */
-    flex-wrap: wrap; /* Permite que las tarjetas se distribuyan en múltiples filas */
+    flex-wrap: wrap; /* Permite que las tarjetas se distribuyan en mÃºltiples filas */
 }
 
 .about-us-card {
@@ -156,20 +156,20 @@ body {
 }
 
 .about-us-card i {
-    font-size: 40px; /* Tamaño del icono */
+    font-size: 40px; /* TamaÃ±o del icono */
     color: #007bff; /* Color del icono */
 }
 
 .about-us-card h3 {
-    margin: 15px 0; /* Margen superior e inferior del título */
+    margin: 15px 0; /* Margen superior e inferior del tÃ­tulo */
     color: #333; /* Color del texto */
 }
 
 .about-us-card p {
-    color: #555; /* Color del texto de los párrafos */
+    color: #555; /* Color del texto de los pÃ¡rrafos */
 }
 
-/* Estilos específicos para la vista "index" */
+/* Estilos especÃ­ficos para la vista "index" */
 /* Estilos para la vista principal "index" */
 .news-panel {
     text-align: center; /* Centra el texto en el panel de noticias */
@@ -184,7 +184,7 @@ body {
     border-radius: 5px; /* Bordes redondeados */
     cursor: pointer; /* Cambia el cursor al pasar el mouse */
     text-decoration: none; /* Sin subrayado */
-    transition: background 0.3s; /* Transición para el color de fondo */
+    transition: background 0.3s; /* TransiciÃ³n para el color de fondo */
     margin-top: 10px; /* Espaciado superior */
   }
   
@@ -206,7 +206,7 @@ body {
 .news-cards {
     display: flex; /* Usar flexbox para las tarjetas de noticias */
     justify-content: center; /* Centra las tarjetas */
-    flex-wrap: wrap; /* Permite que las tarjetas se distribuyan en múltiples filas */
+    flex-wrap: wrap; /* Permite que las tarjetas se distribuyan en mÃºltiples filas */
     gap: 20px; /* Espacio entre tarjetas */
     max-width: 1200px; /* Limitar el ancho del contenedor */
     margin: 0 auto; /* Centra el contenedor */
@@ -215,31 +215,34 @@ body {
 .card {
     background-color: #f9f9f9; /* Color de fondo de la tarjeta */
     border: 1px solid #ccc; /* Borde de la tarjeta */
-    border-radius: 8px; /* Bordes redondeados */
     padding: 15px; /* Espaciado interno de la tarjeta */
-    width: 300px; /* Ajusta el tamaño de las tarjetas */
     text-align: center; /* Alinear texto al centro */
+    background-color: white; /* Color de fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor de la tarjeta */
+    width: 23%; /* Ancho de la tarjeta (23% del contenedor) */
+    margin-bottom: 20px; /* Margen inferior para separaciÃ³n */
 }
 
 .card img {
     max-width: 100%; /* Asegura que la imagen no exceda el ancho de la tarjeta */
-    height: auto; /* Mantiene la proporción de la imagen */
+    height: auto; /* Mantiene la proporciÃ³n de la imagen */
 }
 
 .card h4 {
-    margin: 10px 0; /* Margen superior e inferior del título */
+    margin: 10px 0; /* Margen superior e inferior del tÃ­tulo */
     color: #333; /* Color del texto */
 }
 
 .card p {
-    color: #666; /* Color del texto de los párrafos */
+    color: #666; /* Color del texto de los pÃ¡rrafos */
 }
 
-/* Estilos específicos para la vista "Conoce de Autos" */
+/* Estilos especÃ­ficos para la vista "Conoce de Autos" */
 /* Estilos para la vista "Conoce de Autos" */
 .cars-container {
     display: flex; /* Usar flexbox para distribuir autos */
-    flex-wrap: wrap; /* Permite que los autos se distribuyan en múltiples filas */
+    flex-wrap: wrap; /* Permite que los autos se distribuyan en mÃºltiples filas */
     justify-content: space-around; /* Espacio entre autos */
     padding: 20px; /* Espaciado interno */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra en la parte inferior */
@@ -258,80 +261,72 @@ body {
 
 .car-card img {
     max-width: 100%; /* Asegura que la imagen no exceda el ancho de la tarjeta */
-    height: auto; /* Mantiene la proporción de la imagen */
+    height: auto; /* Mantiene la proporciÃ³n de la imagen */
 }
 
 .car-card h4 {
-    margin: 10px 0; /* Margen superior e inferior del título */
+    margin: 10px 0; /* Margen superior e inferior del tÃ­tulo */
     color: #333; /* Color del texto */
 }
 
 .car-card p {
-    color: #666; /* Color del texto de los párrafos */
+    color: #666; /* Color del texto de los pÃ¡rrafos */
 }
 
-/* Estilo general para la información del auto */
+/* Estilo general para la informaciÃ³n del auto */
 .car-info {
     padding: 40px; /* Espacio interno alrededor del contenido */
     text-align: center; /* Centra el texto dentro del contenedor */
     background-color: #fff; /* Color de fondo blanco */
 }
 
-/* Estilo para el título principal de la sección de autos */
+/* Estilo para el tÃ­tulo principal de la secciÃ³n de autos */
 .car-info h1 {
     margin-bottom: 20px; /* Margen inferior para separar del siguiente elemento */
-    font-size: 2em; /* Tamaño de la fuente para el título */
-    color: #333; /* Color del texto del título */
+    font-size: 2em; /* TamaÃ±o de la fuente para el tÃ­tulo */
+    color: #333; /* Color del texto del tÃ­tulo */
 }
 
 /* Contenedor para las tarjetas de autos */
 .car-cards {
-    display: flex; /* Utiliza flexbox para el diseño */
+    display: flex; /* Utiliza flexbox para el diseÃ±o */
     flex-wrap: wrap; /* Permite que las tarjetas se distribuyan en varias filas */
     justify-content: space-around; /* Espacio entre las tarjetas */
 }
 
 /* Estilo general para cada tarjeta de auto */
-.card {
-    background-color: white; /* Color de fondo blanco */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor de la tarjeta */
-    width: 23%; /* Ancho de la tarjeta (23% del contenedor) */
-    margin-bottom: 20px; /* Margen inferior para separación */
-    padding: 15px; /* Espacio interno dentro de la tarjeta */
-    text-align: center; /* Centra el texto dentro de la tarjeta */
-}
 
-/* Estilo para las imágenes dentro de las tarjetas de autos */
+
+/* Estilo para las imÃ¡genes dentro de las tarjetas de autos */
 .card img {
-    max-width: 100%; /* La imagen no excederá el ancho de la tarjeta */
+    max-width: 100%; /* La imagen no excederÃ¡ el ancho de la tarjeta */
     border-radius: 10px; /* Bordes redondeados para la imagen */
 }
 
-/* Estilo para el título dentro de las tarjetas de autos */
+/* Estilo para el tÃ­tulo dentro de las tarjetas de autos */
 .card h3 {
     margin: 15px 0; /* Margen superior e inferior */
-    color: #333; /* Color del texto del título */
+    color: #333; /* Color del texto del tÃ­tulo */
 }
 
-/* Estilo para los párrafos dentro de las tarjetas de autos */
+/* Estilo para los pÃ¡rrafos dentro de las tarjetas de autos */
 .card p {
-    color: #555; /* Color del texto de los párrafos */
+    color: #555; /* Color del texto de los pÃ¡rrafos */
 }
 
 
 
 
-/* Estilos para la sección de Autos Usados */
+/* Estilos para la secciÃ³n de Autos Usados */
 .autos-usados {
     padding: 40px; /* Espacio interno alrededor del contenido */
-    max-width: 1200px; /* Ancho máximo del contenedor */
+    max-width: 1200px; /* Ancho mÃ¡ximo del contenedor */
     margin: 0 auto; /* Centra el contenedor horizontalmente */
 }
 
 /* Contenedor para las tarjetas de autos usados */
 .autos-grid {
-    display: flex; /* Utiliza flexbox para el diseño */
+    display: flex; /* Utiliza flexbox para el diseÃ±o */
     justify-content: space-around; /* Espacio entre las tarjetas */
     flex-wrap: wrap; /* Permite que las tarjetas se distribuyan en varias filas */
 }
@@ -342,27 +337,27 @@ body {
     border-radius: 10px; /* Bordes redondeados */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor de la tarjeta */
     width: 30%; /* Ancho de la tarjeta (30% del contenedor) */
-    margin-bottom: 20px; /* Margen inferior para separación */
+    margin-bottom: 20px; /* Margen inferior para separaciÃ³n */
     padding: 15px; /* Espacio interno dentro de la tarjeta */
     text-align: center; /* Centra el texto dentro de la tarjeta */
 }
 
-/* Estilo para las imágenes dentro de las tarjetas de autos usados */
+/* Estilo para las imÃ¡genes dentro de las tarjetas de autos usados */
 .auto-card img {
     width: 100%; /* La imagen ocupa el 100% del ancho de la tarjeta */
-    height: auto; /* Mantiene la proporción de la imagen */
+    height: auto; /* Mantiene la proporciÃ³n de la imagen */
     border-radius: 5px; /* Bordes redondeados para la imagen */
 }
 
-/* Estilo para el título dentro de las tarjetas de autos usados */
+/* Estilo para el tÃ­tulo dentro de las tarjetas de autos usados */
 .auto-card h3 {
     margin: 10px 0; /* Margen superior e inferior */
-    color: #333; /* Color del texto del título */
+    color: #333; /* Color del texto del tÃ­tulo */
 }
 
 /* Estilos para los detalles de un auto */
 .detalles-auto {
-    max-width: 900px; /* Ancho máximo del contenedor de detalles */
+    max-width: 900px; /* Ancho mÃ¡ximo del contenedor de detalles */
     margin: 40px auto; /* Margen superior e inferior; centra horizontalmente */
     padding: 20px; /* Espacio interno alrededor del contenido */
     background-color: white; /* Color de fondo blanco */
@@ -370,31 +365,31 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del contenedor */
 }
 
-/* Estilo para las imágenes de los detalles del auto */
+/* Estilo para las imÃ¡genes de los detalles del auto */
 .auto-details img {
     width: 100%; /* La imagen ocupa el 100% del ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    margin-bottom: 20px; /* Margen inferior para separación */
+    height: auto; /* Mantiene la proporciÃ³n de la imagen */
+    margin-bottom: 20px; /* Margen inferior para separaciÃ³n */
 }
 
-/* Estilo para los párrafos en los detalles del auto */
+/* Estilo para los pÃ¡rrafos en los detalles del auto */
 .auto-details p {
-    font-size: 18px; /* Tamaño de la fuente para los párrafos */
-    margin-bottom: 10px; /* Margen inferior para separación */
+    font-size: 18px; /* TamaÃ±o de la fuente para los pÃ¡rrafos */
+    margin-bottom: 10px; /* Margen inferior para separaciÃ³n */
 }
 
-/* Estilo para el botón de contacto */
+/* Estilo para el botÃ³n de contacto */
 .contact-button a {
-    display: inline-block; /* Hace que el enlace sea un bloque en línea */
-    padding: 10px 20px; /* Espacio interno del botón */
+    display: inline-block; /* Hace que el enlace sea un bloque en lÃ­nea */
+    padding: 10px 20px; /* Espacio interno del botÃ³n */
     background-color: #007bff; /* Color de fondo azul */
     color: white; /* Color del texto blanco */
     border-radius: 5px; /* Bordes redondeados */
     text-decoration: none; /* Sin subrayado en el texto */
-    font-size: 18px; /* Tamaño de la fuente del texto */
+    font-size: 18px; /* TamaÃ±o de la fuente del texto */
 }
 
-/* Estilo para el estado hover del botón de contacto */
+/* Estilo para el estado hover del botÃ³n de contacto */
 .contact-button a:hover {
     background-color: #0056b3; /* Cambia el color de fondo al pasar el mouse */
 }
@@ -410,7 +405,7 @@ body {
     background-color: #fff; /* Color de fondo blanco */
     border-radius: 15px; /* Bordes redondeados */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor de la tarjeta */
-    display: inline-block; /* Hace que la tarjeta se comporte como un bloque en línea */
+    display: inline-block; /* Hace que la tarjeta se comporte como un bloque en lÃ­nea */
     padding: 20px; /* Espacio interno dentro de la tarjeta */
     width: 300px; /* Ancho fijo de la tarjeta */
     text-align: left; /* Alinea el texto a la izquierda */
@@ -418,21 +413,21 @@ body {
 
 /* Estilos para los elementos de contacto dentro de la tarjeta */
 .contact-item {
-    display: flex; /* Utiliza flexbox para el diseño */
+    display: flex; /* Utiliza flexbox para el diseÃ±o */
     align-items: center; /* Alinea elementos verticalmente al centro */
     margin: 15px 0; /* Margen superior e inferior */
 }
 
-/* Estilo para los íconos dentro de los elementos de contacto */
+/* Estilo para los Ã­conos dentro de los elementos de contacto */
 .contact-item i {
-    font-size: 24px; /* Tamaño del ícono */
-    color: #007bff; /* Color azul para el ícono */
-    margin-right: 10px; /* Margen a la derecha del ícono */
+    font-size: 24px; /* TamaÃ±o del Ã­cono */
+    color: #007bff; /* Color azul para el Ã­cono */
+    margin-right: 10px; /* Margen a la derecha del Ã­cono */
 }
 
-/* Estilo para los párrafos dentro de los elementos de contacto */
+/* Estilo para los pÃ¡rrafos dentro de los elementos de contacto */
 .contact-item p {
-    font-size: 16px; /* Tamaño de la fuente para los párrafos */
+    font-size: 16px; /* TamaÃ±o de la fuente para los pÃ¡rrafos */
 }
 
 /* Estilo para el texto en negrita dentro de los elementos de contacto */
@@ -442,16 +437,16 @@ body {
 
 /* Estilos para el enlace de retroceso */
 .back-link a {
-    margin-top: 20px; /* Margen superior para separación */
-    display: inline-block; /* Hace que el enlace sea un bloque en línea */
+    margin-top: 20px; /* Margen superior para separaciÃ³n */
+    display: inline-block; /* Hace que el enlace sea un bloque en lÃ­nea */
     text-decoration: none; /* Sin subrayado en el texto */
     color: #007bff; /* Color azul del texto */
-    font-size: 18px; /* Tamaño de la fuente del texto */
+    font-size: 18px; /* TamaÃ±o de la fuente del texto */
 }
 
-/* Estilo para el ícono dentro del enlace de retroceso */
+/* Estilo para el Ã­cono dentro del enlace de retroceso */
 .back-link a i {
-    margin-right: 5px; /* Margen a la derecha del ícono */
+    margin-right: 5px; /* Margen a la derecha del Ã­cono */
 }
 
 /* Estilo para el estado hover del enlace de retroceso */
@@ -469,10 +464,10 @@ body {
     padding: 20px;
     max-width: 400px;
     margin: 50px auto;
-    background: #f4f4f4; /* Fondo claro para la sección de inicio de sesión */
+    background: #f4f4f4; /* Fondo claro para la secciÃ³n de inicio de sesiÃ³n */
     border-radius: 10px; /* Bordes redondeados */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    margin-bottom: 0; /* Asegúrate de que no haya margen inferior */
+    margin-bottom: 0; /* AsegÃºrate de que no haya margen inferior */
   }
   
   .form-group {
@@ -480,7 +475,7 @@ body {
   }
   
   .submit-button {
-    background-color: #007bff; /* Color del botón */
+    background-color: #007bff; /* Color del botÃ³n */
     color: white; /* Color del texto */
     border: none; /* Sin borde */
     padding: 10px 15px; /* Espaciado interno */
@@ -489,63 +484,63 @@ body {
   }
   
   .submit-button:hover {
-    background-color: #0056b3; /* Color del botón al pasar el mouse */
+    background-color: #0056b3; /* Color del botÃ³n al pasar el mouse */
   }
 
-  /* Estilo de la barra de navegación */
+  /* Estilo de la barra de navegaciÃ³n */
  .navbar {
-    display: flex; /* Usar flexbox para distribuir los elementos en la barra de navegación */
+    display: flex; /* Usar flexbox para distribuir los elementos en la barra de navegaciÃ³n */
     justify-content: space-between; /* Espacio entre elementos de la barra */
     align-items: center; /* Alinear elementos verticalmente al centro */
-    background-color: #f1f1f1; /* Color de fondo de la barra de navegación */
+    background-color: #f1f1f1; /* Color de fondo de la barra de navegaciÃ³n */
     padding: 20px 20px; /* Espaciado interno de la barra */
 }
   
   .logo {
-    position: absolute; /* Asegura que el logo no afecte el centrado del menú */
-    left: 20px; /* Posición del logo a la izquierda */
+    position: absolute; /* Asegura que el logo no afecte el centrado del menÃº */
+    left: 20px; /* PosiciÃ³n del logo a la izquierda */
     margin-right: 20px; /* Espacio a la derecha del logo */
   }
   
   .menu {
-    display: flex; /* Usar flexbox para el menú */
+    display: flex; /* Usar flexbox para el menÃº */
     list-style: none; /* Quitar los puntos de la lista */
     
   }
   
   .menu li {
-    margin: 0 15px; /* Espaciado entre elementos del menú */
+    margin: 0 15px; /* Espaciado entre elementos del menÃº */
   }
   
   .menu a {
     text-decoration: none; /* Elimina el subrayado de los enlaces */
     color: #333; /* Color del texto de los enlaces */
-    padding: 10px 15px; /* Espaciado interno para que los enlaces sean más clicables */
-    transition: background-color 0.3s; /* Efecto de transición para el fondo */
+    padding: 10px 15px; /* Espaciado interno para que los enlaces sean mÃ¡s clicables */
+    transition: background-color 0.3s; /* Efecto de transiciÃ³n para el fondo */
   }
 
   .menu a:hover {
     background-color: #ddd; /* Cambia el fondo del enlace al pasar el mouse */
   }
   
-  /* Estilo del pie de página (por si lo necesitas) */
+  /* Estilo del pie de pÃ¡gina (por si lo necesitas) */
   .footer {
     text-align: center; /* Alinear texto al centro */
     display: flex; /* Usar flexbox para distribuir contenido */
     flex-direction: column; /* Colocar elementos en columna */
     align-items: center; /* Alinear elementos al centro */
-    height: 50px; /* ajusta el tamaño */
+    height: 50px; /* ajusta el tamaÃ±o */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra en la barra */
     padding: 40px 10px; /* Espaciado interno de la barra */
     justify-content: space-between; /* Espacio entre elementos de la barra */
-    max-height: 80px; /* Altura máxima de la barra de navegación */
+    max-height: 80px; /* Altura mÃ¡xima de la barra de navegaciÃ³n */
   }
   
   .footer-content {
-    display: flex; /* Usar flexbox para distribuir contenido del pie de página */
+    display: flex; /* Usar flexbox para distribuir contenido del pie de pÃ¡gina */
     justify-content: space-around; /* Espacio entre elementos */
     align-items: center; /* Alinear elementos verticalmente */
-    width: 100%; /* Ancho completo del pie de página */
+    width: 100%; /* Ancho completo del pie de pÃ¡gina */
     align-items: center; /* Centra los elementos horizontalmente */
     text-align: center; /* Centra el texto dentro de cada div */
   }
@@ -553,8 +548,8 @@ body {
   .footer-logo {
     margin-right: 20px; /* Espaciado a la derecha */
     height: 150px; /* Altura del logo */
-    max-width: 100%; /* Ancho máximo del logo */
-    object-fit: contain; /* Mantiene la proporción del logo */
+    max-width: 100%; /* Ancho mÃ¡ximo del logo */
+    object-fit: contain; /* Mantiene la proporciÃ³n del logo */
 }
 
   
@@ -563,10 +558,10 @@ body {
   }
   
 
-  /* Estilos para la sección de inicio de sesión */
+  /* Estilos para la secciÃ³n de inicio de sesiÃ³n */
 .login-section {
-    max-width: 400px; /* Ancho máximo del formulario */
-    margin: 40px auto; /* Centrar la sección verticalmente */
+    max-width: 400px; /* Ancho mÃ¡ximo del formulario */
+    margin: 40px auto; /* Centrar la secciÃ³n verticalmente */
     padding: 20px; /* Espaciado interno */
     background-color: #ffffff; /* Color de fondo blanco */
     border-radius: 10px; /* Bordes redondeados */
@@ -576,7 +571,7 @@ body {
   
   .login-section h2 {
     margin-bottom: 15px; /* Espaciado inferior */
-    font-size: 24px; /* Tamaño de fuente para el título */
+    font-size: 24px; /* TamaÃ±o de fuente para el tÃ­tulo */
   }
   
   .form-group {
@@ -595,8 +590,8 @@ body {
     padding: 10px; /* Espaciado interno */
     border: 1px solid #ccc; /* Borde gris claro */
     border-radius: 5px; /* Bordes redondeados */
-    font-size: 16px; /* Tamaño de fuente */
-    transition: border-color 0.3s; /* Transición para el borde */
+    font-size: 16px; /* TamaÃ±o de fuente */
+    transition: border-color 0.3s; /* TransiciÃ³n para el borde */
   }
   
   input[type="email"]:focus,
@@ -606,19 +601,19 @@ body {
   }
   
   .submit-button {
-    width: 100%; /* Ancho completo del botón */
-    padding: 12px; /* Espaciado interno del botón */
-    background-color: #007bff; /* Color de fondo del botón */
-    color: white; /* Color del texto del botón */
+    width: 100%; /* Ancho completo del botÃ³n */
+    padding: 12px; /* Espaciado interno del botÃ³n */
+    background-color: #007bff; /* Color de fondo del botÃ³n */
+    color: white; /* Color del texto del botÃ³n */
     border: none; /* Sin borde */
     border-radius: 5px; /* Bordes redondeados */
-    font-size: 18px; /* Tamaño de fuente del botón */
-    cursor: pointer; /* Cursor de mano al pasar sobre el botón */
-    transition: background-color 0.3s; /* Transición para el fondo */
+    font-size: 18px; /* TamaÃ±o de fuente del botÃ³n */
+    cursor: pointer; /* Cursor de mano al pasar sobre el botÃ³n */
+    transition: background-color 0.3s; /* TransiciÃ³n para el fondo */
   }
   
   .submit-button:hover {
-    background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+    background-color: #0056b3; /* Color mÃ¡s oscuro al pasar el mouse */
   }
   
   .back-link,
@@ -627,10 +622,11 @@ body {
     margin-top: 10px; /* Espaciado superior */
     color: #007bff; /* Color de texto */
     text-decoration: none; /* Sin subrayado */
-    transition: color 0.3s; /* Transición para el color */
+    transition: color 0.3s; /* TransiciÃ³n para el color */
   }
   
   .back-link:hover,
   .register-link:hover {
     text-decoration: underline; /* Subrayado al pasar el mouse */
   }
+  
