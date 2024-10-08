@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear Cuenta - AutoConexion</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Estilos para la barra de navegación */
+    .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color: #f8f8f8;
+    }
+
+    /* Estilos para el logo */
+    .logo {
+        margin-right: 20px;
+    }
+
+    /* Estilos para el menú de navegación */
+    .menu {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu li {
+        margin: 0 15px;
+    }
+
+    .menu a {
+        text-decoration: none;
+        color: #333;
+        padding: 10px 15px;
+        transition: background-color 0.3s;
+    }
+
+    .menu a:hover {
+        background-color: #ddd;
+    }
+
+    /* Estilos para el formulario */
+    .signup-section {
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .signup-form {
+        display: inline-block;
+        text-align: left;
+        max-width: 400px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .submit-button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .submit-button:hover {
+        background-color: #45a049;
+    }
+
+    .back-link, .login-link {
+        color: #333;
+        text-decoration: none;
+        margin-top: 10px;
+        display: block;
+    }
+
+    .back-link:hover, .login-link:hover {
+        text-decoration: underline;
+    }
+
+    /* Estilos para el pie de página */
+    .footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #f8f8f8;
+    }
+
+    /* Estilos responsivos */
+    @media (max-width: 600px) {
+        .navbar {
+            flex-direction: column;
+        }
+
+        .menu {
+            flex-direction: column;
+        }
+
+        .menu li {
+            margin-bottom: 10px;
+        }
+
+        .signup-form {
+            max-width: 90%;
+        }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="/imagenes/LOGO.png" alt="Logo">
+        </a>
+      </div>
+      <ul class="menu">
+        <li><a href="AcercaDeNosotros.html">Acerca de Nosotros</a></li>
+        <li><a href="ConoceDeAutos.html">Conoce de Autos</a></li>
+        <li><a href="AutosUsados.html">Autos Usados</a></li>
+        <li><a href="AutosNuevos.html">Autos Nuevos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+<body>
+
+ <!-- Sección de crear cuenta -->
+ <br>
+ <section class="signup-section">
+   <h2>Crear Cuenta</h2>
+   <form action="#" method="post" class="signup-form">
+     <div class="form-group">
+       <label for="nombre">Nombre:</label>
+       <input type="text" id="nombre" name="nombre" required placeholder="Introduce tu nombre">
+     </div>
+     <div class="form-group">
+       <label for="apellido">Apellido:</label>
+       <input type="text" id="apellido" name="apellido" required placeholder="Introduce tu apellido">
+     </div>
+     <div class="form-group">
+       <label for="identificacion">Identificación:</label>
+       <input type="text" id="identificacion" name="identificacion" required placeholder="Introduce tu identificación">
+     </div>
+     <div class="form-group">
+       <label for="email">Correo Electrónico:</label>
+       <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+     </div>
+     <div class="form-group">
+       <label for="password">Contraseña:</label>
+       <input type="password" id="contrasena" name="contrasena" required placeholder="Introduce una contraseña">
+     </div>
+     <div class="form-group">
+       <label for="telefono">Teléfono:</label>
+       <input type="tel" id="telefono" name="telefono" required placeholder="Introduce tu teléfono">
+     </div>
+     <div class="form-group">
+       <label for="direccion">Dirección:</label>
+       <input type="text" id="direccion" name="direccion" required placeholder="Introduce tu dirección">
+     </div>
+     <div class="form-group">
+      <label for="ciudad">Ciudad:</label>
+      <select id="idCiudad" name="idCiudad" required>
+        <option value="" disabled selected>Selecciona tu ciudad</option>
+        <!-- Las opciones se agregarán aquí dinámicamente -->
+      </select>
+    </div>
+     <button type="submit" class="submit-button" onclick="registrarUsuario()">Crear Cuenta</button>
+   </form>
+   <p><a href="index.html" class="back-link">Volver a la página principal</a></p>
+   <p>¿Ya tienes una cuenta? <a href="InicioSesion.html" class="login-link">Inicia sesión</a></p>
+ </section>
+
+
+ <!-- Pie de página -->
+ <footer class="footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <a href="index.html">
+        <img src="/imagenes/LOGO.png" alt="Logo">
+      </a>
+    </div>
+    <div class="social-media">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="business-hours">
+      <p>Horarios de atención: Lunes a Viernes 9am - 6pm</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function registrarUsuario() {
+    const usuario = {
+      nombre: document.getElementById('nombre').value,
+      apellido: document.getElementById('apellido').value,
+      identificacion: document.getElementById('identificacion').value,
+      contrasena: document.getElementById('contrasena').value,
+      email: document.getElementById('email').value,
+      direccion: document.getElementById('direccion').value,
+      telefono: document.getElementById('telefono').value,
+      idCiudad: document.getElementById('idCiudad').value
+    };
+
+    // Realizar la solicitud POST al servidor para registrar el usuario
+    fetch('http://localhost:3000/usuarios', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(usuario)
+    })
+    .then(response => {
+      if (response.ok) {
+        return response.text(); // Puedes cambiar a response.json() si el servidor devuelve JSON
+      } else {
+        throw new Error('Error en la solicitud');
+      }
+    })
+    .then(data => {
+      alert('Usuario registrado con éxito: ' + data); // Mensaje de éxito
+    })
+    .catch(error => {
+      console.error('Error al registrar usuario:', error);
+      alert('Hubo un error al registrar el usuario');
+    });
+  }
+</script>
+
+</body>
+</html>

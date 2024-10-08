@@ -63,6 +63,7 @@ body {
     justify-content: space-around; /* Espacio entre elementos */
     align-items: center; /* Alinear elementos verticalmente */
     width: 100%; /* Ancho completo del pie de página */
+    align-items: center; /* Centra los elementos horizontalmente */
     text-align: center; /* Centra el texto dentro de cada div */
     
 }
@@ -302,23 +303,19 @@ body {
 }
 
 /* Estilo para las imágenes dentro de las tarjetas de autos */
-.card img 
-{
-
+.card img {
     max-width: 100%; /* La imagen no excederá el ancho de la tarjeta */
     border-radius: 10px; /* Bordes redondeados para la imagen */
 }
 
 /* Estilo para el título dentro de las tarjetas de autos */
-.card h3
-{
+.card h3 {
     margin: 15px 0; /* Margen superior e inferior */
     color: #333; /* Color del texto del título */
 }
 
 /* Estilo para los párrafos dentro de las tarjetas de autos */
-.card p
-{
+.card p {
     color: #555; /* Color del texto de los párrafos */
 }
 
@@ -491,9 +488,9 @@ body {
     cursor: pointer; /* Cambia el cursor al pasar el mouse */
   }
   
-  /*.submit-button:hover {
-    background-color: #0056b3;   Color del botón al pasar el mouse 
-  }*/
+  .submit-button:hover {
+    background-color: #0056b3; /* Color del botón al pasar el mouse */
+  }
 
   /* Estilo de la barra de navegación */
  .navbar {
