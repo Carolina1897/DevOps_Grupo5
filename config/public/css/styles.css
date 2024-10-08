@@ -533,7 +533,6 @@ body {
     justify-content: space-around; /* Espacio entre elementos */
     align-items: center; /* Alinear elementos verticalmente */
     width: 100%; /* Ancho completo del pie de pÃ¡gina */
-    align-items: center; /* Centra los elementos horizontalmente */
     text-align: center; /* Centra el texto dentro de cada div */
   }
   
