@@ -8,6 +8,8 @@ const cors = require('cors');
 // Crear una instancia de Express
 const app = express();
 
+app.disable("x-powered-by");
+
 app.use(cors())
 
 // Configurar el puerto
@@ -15,10 +17,10 @@ const port = process.env.PORT || 3000;
 
 // Configuración de la conexión a la base de datos
 const dbConfig = {
-    host: process.host,
-    user: process.user,
-    password: process.password,
-    database: process.database,
+    host: process.env.host,
+    user: process.env.user,
+    password: process.env.password,
+    database: process.env.database,
 };
 
 // Crear una instancia de la clase de conexión
