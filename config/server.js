@@ -10,7 +10,11 @@ const app = express();
 
 app.disable("x-powered-by");
 
-app.use(cors())
+let corsOptions = {
+    origin: 'http://localhost:3001' // Compliant
+  };
+
+app.use(cors(corsOptions))
 
 // Configurar el puerto
 const port = process.env.PORT || 3000;
