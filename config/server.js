@@ -66,7 +66,7 @@ app.post('/usuarios', async (req, res) => {
 //ENDPOINT PARA INGRESO DE USUARIOS 
 app.post("/ingresar",async (req, res) =>{
 const resultado = usuarios.ingresarUsuario(req.body)
-if (resultado){
+if (await resultado){
     res.status(200).send('Ingreso exitoso');
     
 }
