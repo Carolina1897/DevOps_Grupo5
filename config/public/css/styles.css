@@ -27,6 +27,9 @@ body {
     flex: 1; /* Permite que el logo ocupe el espacio necesario */
     display: flex; /* Usar flexbox para alinear el logo */
     justify-content: center; /* Centra el logo horizontalmente */
+    position: absolute; /* Asegura que el logo no afecte el centrado del menÃº */
+    left: 20px; /* PosiciÃ³n del logo a la izquierda */
+    margin-right: 20px; 
 
 }
 
@@ -63,7 +66,6 @@ body {
     justify-content: space-around; /* Espacio entre elementos */
     align-items: center; /* Alinear elementos verticalmente */
     width: 100%; /* Ancho completo del pie de pÃ¡gina */
-    align-items: center; /* Centra los elementos horizontalmente */
     text-align: center; /* Centra el texto dentro de cada div */
     
 }
@@ -226,6 +228,8 @@ body {
 .card img {
     max-width: 100%; /* Asegura que la imagen no exceda el ancho de la tarjeta */
     height: auto; /* Mantiene la proporciÃ³n de la imagen */
+    max-width: 100%; /* La imagen no excederÃ¡ el ancho de la tarjeta */
+    border-radius: 10px;
 }
 
 .card h4 {
@@ -296,11 +300,6 @@ body {
 /* Estilo general para cada tarjeta de auto */
 
 
-/* Estilo para las imÃ¡genes dentro de las tarjetas de autos */
-.card img {
-    max-width: 100%; /* La imagen no excederÃ¡ el ancho de la tarjeta */
-    border-radius: 10px; /* Bordes redondeados para la imagen */
-}
 
 /* Estilo para el tÃ­tulo dentro de las tarjetas de autos */
 .card h3 {
@@ -495,11 +494,6 @@ body {
     padding: 20px 20px; /* Espaciado interno de la barra */
 }
   
-  .logo {
-    position: absolute; /* Asegura que el logo no afecte el centrado del menÃº */
-    left: 20px; /* PosiciÃ³n del logo a la izquierda */
-    margin-right: 20px; /* Espacio a la derecha del logo */
-  }
   
   .menu {
     display: flex; /* Usar flexbox para el menÃº */
