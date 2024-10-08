@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión - AutoConexion</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Estilos para la barra de navegación */
+    .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color: #f8f8f8;
+    }
+
+    /* Estilos para el logo */
+    .logo {
+        margin-right: 20px;
+    }
+
+    /* Estilos para el menú de navegación */
+    .menu {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Estilos para los elementos del menú */
+    .menu li {
+        margin: 0 15px;
+    }
+
+    .menu a {
+        text-decoration: none;
+        color: #333;
+        padding: 10px 15px;
+        transition: background-color 0.3s;
+    }
+
+    .menu a:hover {
+        background-color: #ddd;
+    }
+
+    /* Estilos para el resto de la página */
+    .login-section {
+        text-align: center; /* Centrar texto en la sección de inicio de sesión */
+    }
+
+    .footer {
+        text-align: center; /* Centrar texto en el pie de página */
+        padding: 20px; /* Espaciado interno del pie de página */
+        background-color: #f8f8f8; /* Color de fondo del pie de página */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <header>
+    <nav class="navbar"> <!-- Contenedor de la barra de navegación -->
+      <div class="logo">
+        <a href="index.html"> <!-- Enlace que redirige al índice de la página -->
+          <img src="/imagenes/LOGO.png" alt="Logo" /> <!-- Imagen del logo -->
+        </a>
+      </div>
+      <ul class="menu"> <!-- Lista de elementos del menú de navegación -->
+        <li><a href="AcercaDeNosotros.html">Acerca de Nosotros</a></li> <!-- Enlace a la página 'Acerca de Nosotros' -->
+        <li><a href="ConoceDeAutos.html">Conoce de Autos</a></li> <!-- Enlace a la página 'Conoce de Autos' -->
+        <li><a href="AutosUsados.html">Autos Usados</a></li> <!-- Enlace a la página 'Autos Usados' -->
+        <li><a href="AutosNuevos.html">Autos Nuevos</a></li> <!-- Enlace a la página 'Autos Nuevos' -->
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- Sección de inicio de sesión -->
+  <br>
+  <section class="login-section"> <!-- Sección que contiene el formulario de inicio de sesión -->
+    <h2>Iniciar Sesión</h2> <!-- Título de la sección -->
+    <form action="#" method="post" class="login-form"> <!-- Formulario de inicio de sesión -->
+      <div class="form-group"> <!-- Contenedor de grupo de formulario -->
+        <label for="username">Correo Electrónico:</label> <!-- Etiqueta para el campo de correo electrónico -->
+        <input type="Email" id="Email" name="Email" required placeholder="ejemplo@correo.com"> <!-- Campo de entrada para el correo -->
+      </div>
+      <div class="form-group"> <!-- Contenedor de grupo de formulario -->
+        <label for="Password">Contraseña:</label> <!-- Etiqueta para el campo de contraseña -->
+        <input type="Password" id="Password" name="Password" required placeholder="Introduce tu contraseña"> <!-- Campo de entrada para la contraseña -->
+      </div>
+      <button type="submit" class="submit-button" onclick ="ingresarUsuario()">Iniciar Sesión</button> <!-- Botón para enviar el formulario -->
+    </form>
+    <p><a href="index.html" class="back-link">Volver a la página principal</a></p> <!-- Enlace para volver a la página principal -->
+    <p>¿No tienes cuenta? <a href="CrearCuenta.html" class="register-link">Regístrate</a></p> <!-- Enlace para crear una cuenta -->
+  </section>
+
+<!-- Pie de página -->
+<footer class="footer"> <!-- Contenedor del pie de página -->
+  <div class="footer-content"> <!-- Contenedor del contenido del pie de página -->
+    <div class="footer-logo"> <!-- Contenedor del logo en el pie de página -->
+      <a href="index.html"> <!-- Enlace que redirige al índice de la página -->
+        <img src="/imagenes/LOGO.png" alt="Logo" /> <!-- Imagen del logo -->
+      </a>
+    </div>
+    <div class="social-media"> <!-- Contenedor de enlaces a redes sociales -->
+      <a href="#"><i class="fab fa-facebook"></i></a> <!-- Enlace a Facebook con icono -->
+      <a href="#"><i class="fab fa-instagram"></i></a> <!-- Enlace a Instagram con icono -->
+    </div>
+    <div class="business-hours"> <!-- Contenedor de horarios de atención -->
+      <p>Horarios de atención: Lunes a Viernes 9am - 6pm</p> <!-- Texto de horarios -->
+    </div>
+  </div>
+</footer>
+
+
+  <script>
+    function ingresarUsuario() {
+      const credenciales  = {
+        contrasena: document.getElementById('Password').value,
+        email: document.getElementById('Email').value,
+      };
+  
+      // Realizar la solicitud POST al servidor para registrar el usuario
+      fetch('http://localhost:3000/ingresar', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(credenciales)
+      })
+      .then(response => {
+        if (response.ok) {
+          return response.text(); // Puedes cambiar a response.json() si el servidor devuelve JSON
+        } else {
+          throw new Error('Error en la solicitud');
+        }
+      })
+      .then(data => {
+        alert('Usuario ingresado: ' + data);// Mensaje de éxito
+        window.location.href =  'Ingresoexitoso.html';
+      })
+      .catch(error => {
+        console.error('Error al ingresar:', error);
+        alert('Hubo un error al ingresar');
+      });
+    }
+  </script> <!-- Enlace al archivo JavaScript externo -->
+</body>
+</html>
