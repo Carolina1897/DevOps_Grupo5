@@ -10,7 +10,10 @@ const app = express();
 
 app.disable("x-powered-by");
 
-app.use(cors())
+let corsOptions = {
+    origin: '*' // Sensitive
+  };
+app.use(cors(corsOptions))
 
 // Configurar el puerto
 const port = process.env.PORT || 3000;
