@@ -213,7 +213,6 @@ body {
 }
 
 .card {
-    background-color: #f9f9f9; /* Color de fondo de la tarjeta */
     border: 1px solid #ccc; /* Borde de la tarjeta */
     padding: 15px; /* Espaciado interno de la tarjeta */
     text-align: center; /* Alinear texto al centro */
