@@ -23,6 +23,9 @@ body {
     overflow: hidden; /* Evita que el contenido sobresalga */
 }
 
+ /* Estilo de la barra de navegaciÃ³n */
+
+
 .logo {
     flex: 1; /* Permite que el logo ocupe el espacio necesario */
     display: flex; /* Usar flexbox para alinear el logo */
@@ -94,8 +97,9 @@ body {
 /* Estilos especÃ­ficos para el menÃº principal */
 .menu {
     flex: 2; /* Permite que el menÃº ocupe mÃ¡s espacio */
-    display: flex; /* Usar flexbox para el menÃº */
     justify-content: center; /* Centra los elementos del menÃº */
+    display: flex; /* Usar flexbox para el menÃº */
+    list-style: none; /* Quitar los puntos de la lista */
 }
 
 
@@ -236,10 +240,6 @@ body {
     color: #333; /* Color del texto */
 }
 
-.card p {
-    color: #666; /* Color del texto de los pÃ¡rrafos */
-}
-
 /* Estilos especÃ­ficos para la vista "Conoce de Autos" */
 /* Estilos para la vista "Conoce de Autos" */
 .cars-container {
@@ -310,9 +310,6 @@ body {
 .card p {
     color: #555; /* Color del texto de los pÃ¡rrafos */
 }
-
-
-
 
 /* Estilos para la secciÃ³n de Autos Usados */
 .autos-usados {
@@ -484,21 +481,8 @@ body {
     background-color: #0056b3; /* Color del botÃ³n al pasar el mouse */
   }
 
-  /* Estilo de la barra de navegaciÃ³n */
- .navbar {
-    display: flex; /* Usar flexbox para distribuir los elementos en la barra de navegaciÃ³n */
-    justify-content: space-between; /* Espacio entre elementos de la barra */
-    align-items: center; /* Alinear elementos verticalmente al centro */
-    background-color: #f1f1f1; /* Color de fondo de la barra de navegaciÃ³n */
-    padding: 20px 20px; /* Espaciado interno de la barra */
-}
   
-  
-  .menu {
-    display: flex; /* Usar flexbox para el menÃº */
-    list-style: none; /* Quitar los puntos de la lista */
-    
-  }
+
   
   .menu li {
     margin: 0 15px; /* Espaciado entre elementos del menÃº */
