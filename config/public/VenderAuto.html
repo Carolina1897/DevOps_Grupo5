@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vender Auto - AutoConexion</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="./views/index.html">
+          <img src="./imagenes/LOGO.png" alt="Logo" />
+        </a>
+      </div>
+      <ul class="menu">
+        <li><a href="AcercaDeNosotros.html">Acerca de Nosotros</a></li>
+        <li><a href="ConoceDeAutos.html">Conoce de Autos</a></li>
+        <li><a href="AutosUsados.html">Autos Usados</a></li>
+        <li><a href="AutosNuevos.html">Autos Nuevos</a></li>
+      </ul>
+      <div class="auth-buttons">
+        <a href="InicioSesion.html" class="auth-icon" id="loginIcon"><i class="fas fa-user"></i></a>
+        <span id="welcomeMessage" style="display:none;"></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contenido de la página -->
+  <section class="sell-car-section">
+    <h2>Publicar Auto en Venta</h2>
+    <form class="sell-car-form" id="sellCarForm" enctype="multipart/form-data">
+
+      <!-- Información básica del auto -->
+      <div class="form-group">
+        <label for="descripcion">Descripción del auto:</label>
+        <textarea id="descripcion" name="descripcion" rows="4" placeholder="Escribe una breve descripción del auto" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="idMarca">Marca:</label>
+        <select id="idMarca" name="idMarca" required>
+            <option value="">Selecciona una Marca</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="modelo">Modelo:</label>
+        <input type="text" id="modelo" name="modelo" placeholder="Ej: Corolla, Focus..." required>
+      </div>
+
+      <div class="form-group">
+        <label for="anio">Año:</label>
+        <input type="number" id="anio" name="anio" placeholder="Ej: 2020" required>
+      </div>
+
+      <div class="form-group">
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" name="precio" placeholder="Ej: 15000" required>
+      </div>
+
+      <div class="form-group">
+        <label for="placa">Placa:</label>
+        <input type="text" id="placa" name="placa" placeholder="Placa del auto" required>
+      </div>
+
+      <div class="form-group">
+        <label for="kilometrajeInput">Kilometraje:</label>
+        <input type="number" id="kilometrajeInput" name="kilometraje" placeholder="Ej: 30000 km" required>
+      </div>
+
+      <div class="form-group">
+        <label for="idCiudad">Ciudad:</label>
+        <select id="idCiudad" name="idCiudad" required>
+            <option value="">Selecciona una ciudad</option>
+        </select>
+      </div>
+      <!-- Selector para el tipo de vehículo -->
+      <div class="form-group">
+        <label for="tipoVehiculo">Tipo de vehículo:</label>
+        <select id="tipoVehiculo" name="tipoVehiculo" required>
+          <option value="">Selecciona un tipo</option>
+          <option value="nuevo">Nuevo</option>
+          <option value="usado">Usado</option>
+        </select>
+      </div>
+
+      <!-- Selector para la categoría de auto -->
+      <div class="form-group">
+        <label for="categoriaAuto">Categoría de auto:</label>
+        <select id="categoriaAuto" name="categoriaAuto" required>
+          <option value="">Selecciona una categoría</option>
+          <option value="automatico">Automático</option>
+          <option value="mecanico">Mecánico</option>
+        </select>
+      </div>
+
+      <div class="form-group" id="dealershipGroup">
+        <label for="isDealership">¿Es de concesionario?</label>
+        <input type="checkbox" id="isDealership">
+      </div>
+
+      <div class="form-group" id="dealershipSelectGroup" style="display: none;">
+        <label for="dealershipSelect">Selecciona un concesionario:</label>
+        <select id="dealershipSelect" name="idConcesionario">
+          <option value="">Selecciona un concesionario</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="carImages">Subir imagen del auto:</label>
+        <input type="file" id="carImages" name="carImages" multiple required><br>
+      </div>
+      <input type="hidden" id="idUsuario" name="idUsuario">
+      <button type="submit" class="modern-button submit-button">Publicar Auto</button>
+    </form>
+  </section>
+  <!-- Pie de página -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <a href="index.html">
+          <img src="./imagenes/LOGO.png" alt="Logo" />
+        </a>
+      </div>
+      <div class="social-media">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="business-hours">
+        <p>Horarios de atención: Lunes a Viernes 9am - 6pm</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+     // Almacenar el ID del usuario en el campo oculto al cargar la página
+    document.addEventListener('DOMContentLoaded', () => {
+            const userId = sessionStorage.getItem('userId'); // Obtener ID del usuario de sessionStorage
+            document.getElementById('idUsuario').value = userId; // Asignar al campo oculto
+        });
+
+    // Escuchar cambios en el checkbox para mostrar/ocultar información del concesionario
+    document.getElementById('isDealership').addEventListener('change', function () {
+        const dealershipSelectGroup = document.getElementById('dealershipSelectGroup');
+        const kilometrajeValue = parseInt(document.getElementById('kilometrajeInput').value);
+
+        // Mostrar/ocultar los grupos de concesionario
+        dealershipSelectGroup.style.display = (this.checked && kilometrajeValue === 0) ? 'block' : 'none';
+
+        if (this.checked && kilometrajeValue === 0) {
+            loadDealerships(); // Cargar concesionarios si es de concesionario y el kilometraje es 0
+        }
+    });
+
+    // Cargar los concesionarios
+    function loadDealerships() {
+        fetch('http://localhost:3000/concesionarios')
+            .then(response => response.json())
+            .then(concesionarios => {
+                const dealershipSelect = document.getElementById('dealershipSelect');
+                dealershipSelect.innerHTML = ''; // Limpiar las opciones antes de cargar
+                concesionarios.forEach(concesionario => {
+                    const option = document.createElement('option');
+                    option.value = concesionario.intIdConcesionario; // ID del concesionario
+                    option.textContent = concesionario.strNombreConcesionario; // Nombre del concesionario
+                    dealershipSelect.appendChild(option);
+                });
+            })
+            .catch(error => console.error('Error al cargar los concesionarios:', error));
+    }
+
+    // Escuchar cambios en el kilometraje
+    document.getElementById('kilometrajeInput').addEventListener('input', function () {
+        const dealershipSelectGroup = document.getElementById('dealershipSelectGroup');
+        const isDealershipChecked = document.getElementById('isDealership').checked;
+
+        if (isDealershipChecked && parseInt(this.value) === 0) {
+            dealershipSelectGroup.style.display = 'block';
+            loadDealerships(); // Cargar concesionarios si el kilometraje es 0
+        } else {
+            dealershipSelectGroup.style.display = 'none';
+        }
+    });
+
+    // Cargar las ciudades cuando se cargue la página
+    document.addEventListener('DOMContentLoaded', () => {
+        fetch('http://localhost:3000/ciudades')
+            .then(response => response.json())
+            .then(ciudades => {
+                const selectCiudad = document.getElementById('idCiudad');
+                ciudades.forEach(ciudad => {
+                    const option = document.createElement('option');
+                    option.value = ciudad.intIdCiudad; // El valor es el ID de la ciudad
+                    option.textContent = ciudad.strCiudad; // El texto visible es el nombre de la ciudad
+                    selectCiudad.appendChild(option);
+                });
+            })
+            .catch(error => console.error('Error al cargar ciudades:', error));
+    });
+
+    // Cargar las marcas cuando se cargue la página
+    document.addEventListener('DOMContentLoaded', () => {
+        fetch('http://localhost:3000/marcas')
+            .then(response => response.json())
+            .then(marcas => {
+                const selectMarca = document.getElementById('idMarca');
+                marcas.forEach(marca => {
+                    const option = document.createElement('option');
+                    option.value = marca.intIdMarca; // El valor es el ID de la marca
+                    option.textContent = marca.strMarca; // El texto visible es el nombre de la marca
+                    selectMarca.appendChild(option);
+                });
+            })
+            .catch(error => console.error('Error al cargar marcas:', error));
+    });
+    document.getElementById('sellCarForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitar el envío por defecto del formulario
+
+        const formData = new FormData(this); // Crear un objeto FormData
+
+        fetch('http://localhost:3000/vehiculos', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Vehículo publicado exitosamente.');
+                this.reset(); // Reiniciar el formulario
+            } else {
+                alert('Error al publicar el vehículo.');
+            }
+        })
+        .catch(error => console.error('Error al enviar el formulario:', error));
+    });
+
+  </script>
+</body>
+</html>

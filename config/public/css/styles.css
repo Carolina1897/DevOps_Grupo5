@@ -10,8 +10,7 @@ body {
     font-family: Arial, sans-serif; /* Establece la fuente para el cuerpo del documento */
 }
 
-/* Navbar (barra de navegaciÃ³n) */
-/* Estilos especÃ­ficos para la barra de navegaciÃ³n */
+/* Estilos especificos para la barra de navegacion */
 .navbar {
     display: flex; /* Usar flexbox para distribuir los elementos en la barra de navegaciÃ³n */
     justify-content: space-between; /* Espacio entre elementos de la barra */
@@ -19,11 +18,10 @@ body {
     background-color: #f1f1f1; /* Color de fondo de la barra de navegaciÃ³n */
     padding: 10px 20px; /* Espaciado interno de la barra */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra en la barra */
-    max-height: 80px; /* Altura mÃ¡xima de la barra de navegaciÃ³n */
-    overflow: hidden; /* Evita que el contenido sobresalga */
+    overflow: visible; /* Evita que el contenido sobresalga */
 }
 
- /* Estilo de la barra de navegaciÃ³n */
+ /* Estilo de la barra de navegacion */
 
 
 .logo {
@@ -32,8 +30,7 @@ body {
     justify-content: center; /* Centra el logo horizontalmente */
     position: absolute; /* Asegura que el logo no afecte el centrado del menÃº */
     left: 20px; /* PosiciÃ³n del logo a la izquierda */
-    margin-right: 20px; 
-
+    margin-right: 20px;
 }
 
 .logo img {
@@ -42,8 +39,7 @@ body {
     
 }
 
-/* Estilos para el pie de pÃ¡gina */
-/* Estilos especÃ­ficos para el pie de pÃ¡gina */
+/* Estilos para el pie de pagina */
 .footer {
     
     text-align: center; /* Alinear texto al centro */
@@ -94,7 +90,7 @@ body {
 }
 
 /* Menu */
-/* Estilos especÃ­ficos para el menÃº principal */
+/* Estilos especificos para el menu principal */
 .menu {
     flex: 2; /* Permite que el menÃº ocupe mÃ¡s espacio */
     justify-content: center; /* Centra los elementos del menÃº */
@@ -175,7 +171,6 @@ body {
     color: #555; /* Color del texto de los pÃ¡rrafos */
 }
 
-/* Estilos especÃ­ficos para la vista "index" */
 /* Estilos para la vista principal "index" */
 .news-panel {
     text-align: center; /* Centra el texto en el panel de noticias */
@@ -199,7 +194,41 @@ body {
   }
 
 
-
+/* Botones Modernos */
+.modern-button {
+    background-color: #007bff; /* Color azul para el botón */
+    color: white; /* Texto en blanco */
+    border: none; /* Sin bordes */
+    border-radius: 30px; /* Bordes redondeados */
+    padding: 15px 30px; /* Tamaño del botón */
+    font-size: 18px; /* Tamaño de la letra */
+    cursor: pointer; /* Manito al pasar por encima */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animaciones suaves */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  .modern-button:hover {
+    background-color: #0056b3; /* Color más oscuro cuando se pasa el cursor */
+    transform: translateY(-3px); /* Efecto de subir ligeramente el botón al pasar el cursor */
+  }
+  
+  /* Estilos específicos para los botones de Comprar y Vender */
+  .buy-button {
+    background-color: #28a745; /* Verde para el botón Comprar */
+  }
+  
+  .buy-button:hover {
+    background-color: #218838; /* Verde más oscuro al pasar el cursor */
+  }
+  
+  .sell-button {
+    background-color: #ffc107; /* Amarillo para el botón Vender */
+  }
+  
+  .sell-button:hover {
+    background-color: #e0a800; /* Amarillo más oscuro al pasar el cursor */
+  }
+  
 
 
 .news-buttons {
@@ -240,7 +269,6 @@ body {
     color: #333; /* Color del texto */
 }
 
-/* Estilos especÃ­ficos para la vista "Conoce de Autos" */
 /* Estilos para la vista "Conoce de Autos" */
 .cars-container {
     display: flex; /* Usar flexbox para distribuir autos */
@@ -275,14 +303,14 @@ body {
     color: #666; /* Color del texto de los pÃ¡rrafos */
 }
 
-/* Estilo general para la informaciÃ³n del auto */
+/* Estilo general para la informacion del auto */
 .car-info {
     padding: 40px; /* Espacio interno alrededor del contenido */
     text-align: center; /* Centra el texto dentro del contenedor */
     background-color: #fff; /* Color de fondo blanco */
 }
 
-/* Estilo para el tÃ­tulo principal de la secciÃ³n de autos */
+/* Estilo para el titulo principal de la seccion de autos */
 .car-info h1 {
     margin-bottom: 20px; /* Margen inferior para separar del siguiente elemento */
     font-size: 2em; /* TamaÃ±o de la fuente para el tÃ­tulo */
@@ -296,11 +324,9 @@ body {
     justify-content: space-around; /* Espacio entre las tarjetas */
 }
 
-/* Estilo general para cada tarjeta de auto */
 
 
-
-/* Estilo para el tÃ­tulo dentro de las tarjetas de autos */
+/* Estilo para el titulo dentro de las tarjetas de autos */
 .card h3 {
     margin: 15px 0; /* Margen superior e inferior */
     color: #333; /* Color del texto del tÃ­tulo */
@@ -449,10 +475,6 @@ body {
 }
 
 
-
-  
-
-
 /* Estilos para la vista de inicio de sesion */
   .login-section {
     padding: 20px;
@@ -499,7 +521,7 @@ body {
     background-color: #ddd; /* Cambia el fondo del enlace al pasar el mouse */
   }
   
-  /* Estilo del pie de pÃ¡gina (por si lo necesitas) */
+  /* Estilo del pie de pÃ¡gina */
   .footer {
     text-align: center; /* Alinear texto al centro */
     display: flex; /* Usar flexbox para distribuir contenido */
@@ -604,4 +626,192 @@ body {
   .register-link:hover {
     text-decoration: underline; /* Subrayado al pasar el mouse */
   }
+
+  /* Estilos para la sección de vender auto */
+.sell-car-section {
+    padding: 40px;
+    background-color: #f9f9f9;
+  }
+  
+  .sell-car-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .sell-car-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    font-size: 1rem;
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input, 
+  .form-group select, 
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+  }
+  
+  .submit-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Estilos para la sección de confirmación de publicacion */
+.confirmation-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+  }
+  
+  .confirmation-section h2 {
+    color: #4CAF50; /* Color verde para el título */
+  }
+  
+  .confirmation-section p {
+    font-size: 18px;
+    margin: 20px 0;
+  }
+  
+  .modern-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .modern-button:hover {
+    background-color: #45a049;
+
+  }
+  
+  /* Estilo para los mensajes de error en crear cuenta*/
+  .error-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid red;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Asegúrate de que esté en la parte superior */
+  }
+  
+  .error-modal p {
+    margin: 0 0 10px 0;
+    color: red;
+  }
+  
+  .error-modal button {
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+
+/* Estilo para los campos inválidos */
+input:invalid {
+    border: 2px solid red; /* Cambia el borde a rojo */
+  }
+  
+  /* Estilo para los campos válidos */
+  input:valid {
+    border: 2px solid green; /* Cambia el borde a verde cuando el campo es válido */
+  }
+  
+  /* Estilo para el mensaje de error */
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none; /* Oculto por defecto */
+  }
+  
+  /* Mostrar el mensaje de error si el campo es inválido */
+  input:invalid + .error-message {
+    display: block; /* Muestra el mensaje cuando el campo es inválido */
+  }
+  #idCiudad {
+    color: black; /* Color del texto */
+    background-color: rgb(253, 244, 244); /* Color del fondo */
+    border: 1px solid #ccc; /* Borde opcional */
+    padding: 5px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+.dropdown-menu {
+  display: none; /* Ocultamos el menú por defecto */
+  position: absolute;
+  top: 100%; /* Posicionamos el menú debajo del ícono */
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 2000;
+  width: auto; /* Asegura que el menú no se corte */
+  max-height: 500px; /* Puedes ajustar el alto máximo si deseas que se vea solo una parte */
+  overflow-y: auto; /* Permite scroll si el menú es más alto que el máximo */
+}
+
+.auth-buttons {
+  position: relative; /* Necesario para posicionar correctamente el dropdown */
+  z-index: 1000; /* Asegura que el menú aparezca por encima de otros elementos */
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-menu a:hover {
+  background-color: #ddd; /* Efecto hover */
+}
+
+  
   
