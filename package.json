@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "node config/server.js",
+    "start": "nodemon config/server.js",
     "test": "jest"
   },
   "keywords": [],
@@ -13,8 +13,13 @@
   "dependencies": {
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.21.0",
-    "mysql2": "^3.11.3"
+    "express-session": "^1.18.1",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.11.3",
+    "nodemon": "^3.1.7",
+    "sessionstorage-for-nodejs": "^1.0.2"
   },
   "devDependencies": {
     "jest": "^29.7.0"

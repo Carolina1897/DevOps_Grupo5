@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmación de Publicación - AutoConexion</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="./views/index.html">
+          <img src="./imagenes/LOGO.png" alt="Logo" />
+        </a>
+      </div>
+      <ul class="menu">
+        <li><a href="AcercaDeNosotros.html">Acerca de Nosotros</a></li>
+        <li><a href="ConoceDeAutos.html">Conoce de Autos</a></li>
+        <li><a href="AutosUsados.html">Autos Usados</a></li>
+        <li><a href="AutosNuevos.html">Autos Nuevos</a></li>
+      </ul>
+      <div class="auth-buttons">
+        <span id="welcomeMessage">¡Bienvenido!</span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contenido de la página -->
+ <!-- Contenido de la página -->
+<section class="confirmation-section">
+    <h2>¡Auto Publicado Exitosamente!</h2>
+    <p>Tu auto ha sido publicado con éxito. Puedes ver la publicación a continuación:</p>
+    <p id="carDetails">Detalles del auto: <strong id="carTypeDisplay"></strong></p>
+  
+    <a id="viewCarsButton" class="modern-button" href="#">Ver Autos Usados</a> <!-- Este enlace se actualizará -->
+  
+    <button onclick="location.href='./views/index.html'" class="modern-button">Regresar a la Página Principal</button>
+  </section>
+  
+
+  <!-- Pie de página -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <a href="index.html">
+          <img src="./imagenes/LOGO.png" alt="Logo" />
+        </a>
+      </div>
+      <div class="social-media">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="business-hours">
+        <p>Horarios de atención: Lunes a Viernes 9am - 6pm</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
