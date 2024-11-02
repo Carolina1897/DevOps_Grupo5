@@ -50,6 +50,7 @@ const dbConfig = {
     user: process.env.user,
     password: process.env.password,
     database: process.env.database,
+    port:process.env.port,
 };
 
 // Crear una instancia de la clase de conexión
