@@ -813,5 +813,143 @@ input:invalid {
   background-color: #ddd; /* Efecto hover */
 }
 
-  
-  
+ /* Estilo para el panel de autos nuevos */
+
+ .centered-title {
+  text-align: center; /* Centrar el texto */
+  margin: 20px 0; /* Espaciado vertical */
+}
+
+.new-cars-cards {
+  display: flex; /* Hacer el contenedor flexible */
+  flex-wrap: wrap; /* Permitir que las tarjetas se ajusten a varias líneas */
+  gap: 20px; /* Espacio entre tarjetas */
+  justify-content: center; /* Centrar las tarjetas en el contenedor */
+}
+
+.card {
+  flex: 1 1 30%; /* Hacer que cada tarjeta ocupe un 30% del ancho */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
+  border-radius: 8px; /* Bordes redondeados */
+  overflow: hidden; /* Cortar el desbordamiento */
+  transition: transform 0.2s; /* Transición suave para el efecto hover */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Efecto de hover */
+}
+
+
+.card img {
+  width: 100%; /* Imagen ocupa el ancho completo */
+  height: auto; /* Mantener la proporción de la imagen */
+}
+
+.card h3, .card p {
+  padding: 10px; /* Espaciado interno */
+  margin: 0; /* Sin margen */
+}
+
+.view-more {
+  background-color: #007bff; /* Color del botón */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  padding: 10px; /* Espaciado interno */
+  width: 100%; /* Botón ocupa el ancho completo */
+  cursor: pointer; /* Cambiar cursor al pasar */
+  transition: background-color 0.2s; /* Transición para el efecto hover */
+}
+
+.view-more:hover {
+  background-color: #0056b3; /* Color al pasar el mouse */
+}
+
+ /* Estilo para el panel de autos usados */
+ .used-cars-cards {
+  display: flex; /* Usar flexbox para alinear las tarjetas en fila */
+  flex-wrap: wrap; /* Permitir que las tarjetas se ajusten a la siguiente línea si es necesario */
+  justify-content: center; /* Centrar las tarjetas en el contenedor */
+  gap: 20px; /* Espacio entre tarjetas */
+}
+
+.card {
+  background-color: #fff; /* Color de fondo de la tarjeta */
+  border: 1px solid #ddd; /* Borde de la tarjeta */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 10px; /* Espaciado interno */
+  width: 250px; /* Ancho de la tarjeta */
+  text-align: center; /* Centrar el texto dentro de la tarjeta */
+}
+
+
+ /* Estilos para la vista detalles autos */
+ body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.detalles-auto {
+  padding: 20px;
+  text-align: center;
+}
+
+.carousel {
+  position: relative;
+  margin: 20px 0;
+}
+
+.carousel-inner img {
+  width: 100%;
+  height: auto;
+}
+
+.auto-details {
+  margin: 20px 0;
+}
+
+.contact-button {
+  margin: 20px 0;
+}
+
+.btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.modal {
+  display: none; /* Ocultar por defecto */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+
+

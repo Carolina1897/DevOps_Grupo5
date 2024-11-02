@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autos Nuevos - AutoConexion</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="./views/index.html">
+          <img src="./imagenes/LOGO.png" alt="Logo" />
+        </a>
+      </div>
+      <ul class="menu">
+        <li><a href="./AcercaDeNosotros.html">Acerca de Nosotros</a></li>
+        <li><a href="./ConoceDeAutos.html">Conoce de Autos</a></li>
+        <li><a href="./AutosUsados.html">Autos Usados</a></li>
+        <li><a href="./AutosNuevos.html">Autos Nuevos</a></li>
+        <li><a href="./views/index.html" class="auth-icon"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+      </ul>
+      <div class="auth-buttons">
+        <span id="welcomeMessage">¡Bienvenido!</span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Panel de autos nuevos -->
+  <section class="new-cars-panel">
+    <br>
+    <br>
+    
+    <h2 class="centered-title">Autos Nuevos Disponibles</h2>
+
+    <br>
+    <br>
+    <div class="new-cars-cards"> <!-- Contenedor para las tarjetas de autos nuevos -->
+      
+      <!-- Tarjeta de auto nuevo (esto se generará dinámicamente) -->
+      <div class="card" id="car-template" style="display: none;"> <!-- Plantilla oculta -->
+        <img src="" alt="Auto" class="car-image"> <!-- Imagen del auto -->
+        <h3 class="car-title"></h3> <!-- Marca y modelo -->
+        <p class="car-kilometers"></p> <!-- Kilometraje -->
+        <p class="car-price"></p> <!-- Precio -->
+        <button class="view-more" onclick="location.href='detallesAuto.html'">Ver más</button> <!-- Enlace a la vista detalle -->
+      </div>
+
+      <!-- Aquí se insertarán las tarjetas dinámicamente -->
+
+    </div>
+  </section>
+
+  <!-- Pie de página -->
+  <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-logo">
+            <a href="./views/index.html">
+              <br>
+                <img src="./imagenes/LOGO.png" alt="Logo">
+            </a>
+        </div>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="business-hours">
+            <p>Horarios de atención: Lunes a Viernes 9am - 6pm</p>
+        </div>
+    </div>
+</footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Aquí podrías hacer una llamada al backend para obtener los autos
+    const cars = [
+      { id: 1, title: "Marca Modelo 2024", kilometers: "0 km", price: "$40,000", image: "./imagenes/Electrico.png" },
+      { id: 2, title: "Marca Modelo 2024", kilometers: "0 km", price: "$80,000", image: "./imagenes/Deportivodelujo.png" },
+      { id: 3, title: "Marca Modelo 2024", kilometers: "0 km", price: "$50,000", image: "./imagenes/carrofamiliar.png" }
+    ];
+
+    const cardContainer = document.querySelector('.new-cars-cards');
+
+    cars.forEach(car => {
+      const carCard = document.getElementById('car-template').cloneNode(true);
+      carCard.style.display = 'block'; // Mostrar la tarjeta
+      carCard.querySelector('.car-title').textContent = car.title;
+      carCard.querySelector('.car-kilometers').textContent = `Kilometraje: ${car.kilometers}`;
+      carCard.querySelector('.car-price').textContent = `Precio: ${car.price}`;
+      carCard.querySelector('.car-image').src = car.image;
+      carCard.querySelector('.view-more').onclick = () => location.href = `detallesAuto.html?id=${car.id}`; // Redirigir con ID
+      cardContainer.appendChild(carCard);
+    });
+  </script>
+</body>
+</html>
+
+
