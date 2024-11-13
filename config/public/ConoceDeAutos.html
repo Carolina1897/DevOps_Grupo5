@@ -1,94 +1,133 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Metadatos de la página -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conoce de Autos - AutoConexion</title>
-    <!-- Enlace a la hoja de estilos CSS personalizada -->
     <link rel="stylesheet" href="./css/styles.css">
-    <!-- Enlace a Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+    />
 </head>
 <body>
-    <!-- Barra de navegación -->
     <header>
         <nav class="navbar">
+            <!-- Logo -->
             <div class="logo">
                 <a href="./views/index.html">
-                    <img src="./imagenes/LOGO.png" alt="Logo">
+                    <img src="./../imagenes/LOGO.png" alt="Logo" />
                 </a>
             </div>
+    
+            <!-- Menú de navegación -->
             <ul class="menu">
                 <li><a href="AcercaDeNosotros.html">Acerca de Nosotros</a></li>
                 <li><a href="ConoceDeAutos.html">Conoce de Autos</a></li>
-                <li><a href="AutosUsados.html">Autos Usados</a></li> <!-- Enlace a la página 'Autos Usados' -->
-                <li><a href="AutosNuevos.html">Autos Nuevos</a></li> <!-- Enlace a la página 'Autos Nuevos' -->
-                    </ul>
-                </li>
             </ul>
+    
+            <!-- Botón de autenticación -->
             <div class="auth-buttons">
-              <a href="InicioSesion.html" class="auth-icon"><i class="fas fa-user"></i> <!-- Ícono de usuario sin cuadro -->
+                <a href="InicioSesion.html" class="auth-icon"><i class="fas fa-user"></i></a>
+            </div>
+    
+            <!-- Botón hamburguesa para pantallas pequeñas -->
+            <div class="hamburger-menu">
+                <i class="fas fa-bars"></i>
             </div>
         </nav>
     </header>
-
-    <!-- Contenido Conoce de Autos -->
-    <section class="car-info">
-        <h1>Conoce de Autos</h1>
-        <div class="car-cards">
-            <!-- Primer auto -->
-            <div class="card">
-                <img src="./imagenes/SedanRojo.png" alt="Sedán">
-                <h3>Sedán</h3>
-                <p>Color: Rojo, Modelo: 2021, Marca: Toyota, Kilometraje: 20,000 km</p>
-                <p>Tip: Mantén tu auto alineado para prolongar la vida útil de las llantas.</p>
+    
+    <div class="title-section">
+        <h2>INFORMACION DE TU INTERES</h2>
+    </div>
+    <!-- Contenido Principal -->
+    <div class="container my-4">
+        <!-- Sección 1: Marcas y Modelos -->
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Marcas y Modelos: Lo Que Necesitas Saber</h3>
+                <p>Al comprar un auto, es crucial conocer las marcas y modelos más confiables y sus características distintivas.
+                Marcas como Toyota y Honda son reconocidas por su durabilidad, bajo costo de mantenimiento y alto valor de reventa,
+                mientras que marcas como BMW y Mercedes-Benz se destacan por su lujo y tecnología avanzada. Modelos como el Toyota Corolla y el Honda Civic,
+                por ejemplo, son populares por su economía de combustible y confiabilidad. Comparar estas características puede ayudarte a determinar si necesitas
+                un auto para uso diario, para largas distancias o uno que ofrezca un toque de lujo. </p>
             </div>
-            <!-- Segundo auto -->
-            <div class="card">
-                <img src="./imagenes/Suv Azul.png" alt="SUV">
-                <h3>SUV</h3>
-                <p>Color: Azul, Modelo: 2023, Marca: Honda, Kilometraje: 5,000 km</p>
-                <p>Tip: Cambia el filtro de aire cada 15,000 km para mejorar el rendimiento del motor.</p>
-            </div>
-            <!-- Tercer auto -->
-            <div class="card">
-                <img src="./imagenes/FerrariNegro.png" alt="Deportivo">
-                <h3>Deportivo</h3>
-                <p>Color: Negro, Modelo: 2020, Marca: Ferrari, Kilometraje: 10,000 km</p>
-                <p>Tip: Utiliza combustible premium para maximizar el rendimiento de tu auto deportivo.</p>
-            </div>
-            <!-- Cuarto auto -->
-            <div class="card">
-                <img src="./imagenes/FordGris.png" alt="Auto Familiar">
-                <h3>Auto Familiar</h3>
-                <p>Color: Gris, Modelo: 2022, Marca: Ford, Kilometraje: 15,000 km</p>
-                <p>Tip: Verifica los frenos regularmente, especialmente antes de viajes largos.</p>
+            <div class="col-md-6">
+                <img src="./imagenes/marcas.png" alt="Marcas y Modelos" class="img-fluid rounded" style="width: 100%; max-width: 90%;">
             </div>
         </div>
-    </section>
+        <hr>
 
+        <!-- Sección 2: Comparación de Precios y Calidad -->
+<div class="container mt-5">
+    <div class="text-center">
+        <h3>Comparación de Precios y Calidad: ¿En Qué Invertir?</h3>
+        <p class="text-left mx-auto" style="max-width: 700px;">
+            Al decidir entre distintos modelos y marcas, vale la pena considerar el equilibrio entre precio y calidad.
+            Los autos económicos, como los Hyundai o Kia, ofrecen buenas características a un precio accesible,
+            aunque pueden no tener los acabados o la tecnología avanzada de marcas premium. En contraste, marcas como Audi y Lexus ofrecen una
+            experiencia de conducción de alta calidad, pero a un precio más elevado. Si tu prioridad es la durabilidad y el bajo costo a largo plazo,
+            un auto de precio moderado con buenos índices de consumo de combustible y confiabilidad será una excelente opción.
+        </p>
+    </div>
+    <div class="text-center mt-3">
+        <img src="./imagenes/precios.png" alt="Comparación de Precios" class="img-fluid rounded" style="max-width: 80%;">
+    </div>
+</div>
+        <hr>
+
+        <!-- Sección 3: Tips para Elegir el Carro Correcto -->
+        <div class="row">
+            <!-- Columna de texto -->
+            <div class="col-md-6">
+                <h3>Tips para Elegir el Carro Correcto</h3>
+                <p>
+                    Antes de decidir qué auto comprar, define tus necesidades: ¿Buscas un auto pequeño y económico para la ciudad o un SUV para viajes familiares?
+                    Evalúa el espacio interior, el rendimiento de combustible y la potencia del motor. Si buscas eficiencia en carretera y menos consumo,
+                    los autos híbridos y eléctricos son una opción cada vez más atractiva. También, revisa los sistemas de seguridad,
+                    como airbags y sistemas de frenado, que son esenciales para una conducción segura.
+                </p>
+            </div>
+            <!-- Columna de imagen -->
+            <div class="col-md-6 d-flex align-items-center">
+                <img src="./imagenes/tips.png" alt="Tips para Elegir Carro" class="img-fluid rounded">
+            </div>
+    </div>
     <!-- Pie de página -->
     <footer class="footer">
+        <!-- Contenedor del pie de página -->
         <div class="footer-content">
-            <div class="footer-logo">
-                <a href="./views/index.html">
-                  <br>
-                    <img src="./imagenes/LOGO.png" alt="Logo">
-                </a>
-            </div>
-            <div class="social-media">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-            <div class="business-hours">
-                <p>Horarios de atención: Lunes a Viernes 9am - 6pm</p>
-            </div>
+        <!-- Contenedor del contenido del pie de página -->
+        <div class="footer-logo">
+            <!-- Contenedor del logo en el pie de página -->
+            <a href="./views/index.html">
+            <!-- Enlace que redirige al índice de la página -->
+            <br />
+            <img src="./../imagenes/LOGO.png" alt="Logo" />
+            <!-- Imagen del logo -->
+            </a>
+        </div>
+        <div class="social-media">
+            <!-- Contenedor de enlaces a redes sociales -->
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <!-- Enlace a Facebook con icono -->
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <!-- Enlace a Instagram con icono -->
+        </div>
+        <div class="business-hours">
+            <!-- Contenedor de horarios de atención -->
+            <p>Horarios de atención: Lunes a Viernes 9am - 6pm</p>
+            <!-- Texto de horarios -->
+        </div>
         </div>
     </footer>
-</body>
-</html>
-
-
-
-
+    <script>
+        document.querySelector('.hamburger-menu').addEventListener('click', function () {
+            document.querySelector('.navbar').classList.toggle('active');
+        });
+    </script>
+    

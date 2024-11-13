@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalles del Auto - AutoConexion</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      function currencyFormatter({ currency, value }) {
+        const formatter = new Intl.NumberFormat("en-US", {
+          style: "currency",
+          minimumFractionDigits: 2,
+          currency,
+        });
+        return formatter.format(value);
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Barra de navegación -->
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <a href="index.html">
+            <img src="imagenes/LOGO.png" alt="Logo" />
+          </a>
+        </div>
+        <ul class="menu">
+          <li><a href="AcercaDeNosotros.html">Acerca de Nosotros</a></li>
+          <li><a href="ConoceDeAutos.html">Conoce de Autos</a></li>
+          <li>
+            <a href="./views/index.html" class="auth-icon"
+              ><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a
+            >
+          </li>
+        </ul>
+        <div class="auth-buttons"></div>
+      </nav>
+    </header>
+
+    <!-- Sección de Detalles del Auto -->
+    <section class="detalles-auto">
+      <div class="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="" alt="Auto 1" class="d-block w-100" id="img" />
+          </div>
+          <!-- Aquí se pueden agregar más imágenes dinámicamente -->
+        </div>
+      </div>
+
+      <div class="auto-details">
+        <p><strong>Marca:</strong> <span id="car-marca"></span></p>
+        <p><strong>Modelo:</strong> <span id="car-modelo"></span></p>
+        <p><strong>Año:</strong> <span id="car-año"></span></p>
+        <p><strong>Precio:</strong> <span id="car-price"></span></p>
+        <p><strong>Kilometraje:</strong> <span id="car-kilometers"></span></p>
+        <p>
+          <strong>Descripción:</strong>
+          <span id="car-description"></span>
+        </p>
+        <p><strong>Placa:</strong> <span id="car-plate"></span></p>
+        <p><strong>Ciudad:</strong> <span id="car-city"></span></p>
+        <p><strong>Categoría:</strong> <span id="car-category"></span></p>
+        <p><strong>Tipo de Auto:</strong> <span id="car-type"></span></p>
+        <p><strong>Concesionario:</strong> <span id="car-dealer"></span></p>
+      </div>
+
+      <!-- Botón de contacto -->
+      <button class="btn btn-lg btn-danger" id="btn">Informacion vendedor</button>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="index.html">
+            <img src="imagenes/LOGO.png" alt="Logo" />
+          </a>
+        </div>
+        <div class="social-media">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="business-hours">
+          <p>Horarios de atención: Lunes a Viernes 9am - 6pm</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = urlParams.get("id");
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
+        fetch(`http://localhost:3000/vehiculo?id=${id}`)
+          .then((response) => response.json())
+          .then((vehiculos) => {
+            const img = document.getElementById("img");
+            img.src = `http://localhost:3000/imagenesautos/${vehiculos[0].strimagenes}`;
+            const marca = document.getElementById("car-marca");
+            marca.textContent = vehiculos[0].strMarca;
+            const Modelo = document.getElementById("car-modelo");
+            Modelo.textContent = vehiculos[0].strModelo;
+            const anio = document.getElementById("car-año");
+            anio.textContent = vehiculos[0].strAnio;
+            const precio = document.getElementById("car-price");
+            precio.textContent = currencyFormatter({
+              currency: "COP",
+              value: vehiculos[0].dcmPrecio,
+            });
+            const km = document.getElementById("car-kilometers");
+            km.textContent = vehiculos[0].dcmKilometraje;
+            const dsc = document.getElementById("car-description");
+            dsc.textContent = vehiculos[0].strDescripcion;
+            const placa = document.getElementById("car-plate");
+            placa.textContent = vehiculos[0].strPlaca;
+            const city = document.getElementById("car-city");
+            city.textContent = vehiculos[0].strCiudad;
+            const ctg = document.getElementById("car-category");
+            ctg.textContent = vehiculos[0].enumCategoriaAuto;
+            const tipo = document.getElementById("car-type");
+            tipo.textContent = vehiculos[0].enumTipoVehiculo;
+            const con = document.getElementById("car-dealer");
+            con.textContent = vehiculos[0].strNombreConcesionario;
+            const btn = document.getElementById("btn");
+            btn.onclick = () =>
+              Swal.fire({
+                icon: "info",
+                title: "Datos del vendedor",
+                html: `<p>Nombre: ${vehiculos[0].nombre_propietario}</p>
+                  <br>
+                        <p>Correo: ${vehiculos[0].strEmailUs}</p>
+                        <br>
+                        <p>telefono: ${vehiculos[0].strTelefonoUs}</p>`,
+              });
+          })
+          .catch((error) => console.error("Error al cargar vehiculos:", error));
+      });
+    </script>
+  </body>
+</html>

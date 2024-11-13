@@ -1,9 +1,9 @@
 {
   "name": "js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "server.js",
   "scripts": {
-    "start": "node config/server.js",
+    "start": "nodemon config/server.js",
     "test": "jest"
   },
   "keywords": [],
@@ -13,10 +13,20 @@
   "dependencies": {
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.21.0",
-    "mysql2": "^3.11.3"
+    "express-session": "^1.18.1",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.11.3",
+    "sessionstorage-for-nodejs": "^1.0.2"
   },
   "devDependencies": {
-    "jest": "^29.7.0"
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
+    "@testing-library/jest-dom": "^6.6.2",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "nodemon": "^3.1.7",
+    "supertest": "^7.0.0"
   }
 }
