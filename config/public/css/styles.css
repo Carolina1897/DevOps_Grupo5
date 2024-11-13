@@ -10,39 +10,7 @@ body {
     font-family: Arial, sans-serif; /* Establece la fuente para el cuerpo del documento */
 }
 
-<<<<<<< HEAD
 
-=======
-/* Estilos especificos para la barra de navegacion */
-.navbar {
-    display: flex; /* Usar flexbox para distribuir los elementos en la barra de navegaciÃ³n */
-    justify-content: space-between; /* Espacio entre elementos de la barra */
-    align-items: center; /* Alinear elementos verticalmente al centro */
-    background-color: #f1f1f1; /* Color de fondo de la barra de navegaciÃ³n */
-    padding: 10px 20px; /* Espaciado interno de la barra */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra en la barra */
-    overflow: visible; /* Evita que el contenido sobresalga */
-}
-
- /* Estilo de la barra de navegacion */
-
-
-.logo {
-    flex: 1; /* Permite que el logo ocupe el espacio necesario */
-    display: flex; /* Usar flexbox para alinear el logo */
-    justify-content: center; /* Centra el logo horizontalmente */
-    position: absolute; /* Asegura que el logo no afecte el centrado del menÃº */
-    left: 20px; /* PosiciÃ³n del logo a la izquierda */
-    margin-right: 20px;
-}
-
-.logo img {
-    height: 150px; /* Altura del logo */
-    object-fit: contain; /* Mantiene la proporciÃ³n del logo */
-    
-}
-
->>>>>>> 8e8d7cd7ddb6b437e8dcac08d3227abc2e67bfbc
 /* Estilos para el pie de pagina */
 .footer {
     
@@ -320,68 +288,6 @@ body {
     font-size: 2em; /* TamaÃ±o de la fuente para el tÃ­tulo */
     color: #333; /* Color del texto del tÃ­tulo */
 }
-<<<<<<< HEAD
-=======
-
-/* Contenedor para las tarjetas de autos */
-.car-cards {
-    display: flex; /* Utiliza flexbox para el diseÃ±o */
-    flex-wrap: wrap; /* Permite que las tarjetas se distribuyan en varias filas */
-    justify-content: space-around; /* Espacio entre las tarjetas */
-}
-
-
-
-/* Estilo para el titulo dentro de las tarjetas de autos */
-.card h3 {
-    margin: 15px 0; /* Margen superior e inferior */
-    color: #333; /* Color del texto del tÃ­tulo */
-}
-
-/* Estilo para los pÃ¡rrafos dentro de las tarjetas de autos */
-.card p {
-    color: #555; /* Color del texto de los pÃ¡rrafos */
-}
-
-/* Estilos para la secciÃ³n de Autos Usados */
-.autos-usados {
-    padding: 40px; /* Espacio interno alrededor del contenido */
-    max-width: 1200px; /* Ancho mÃ¡ximo del contenedor */
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
-}
-
-/* Contenedor para las tarjetas de autos usados */
-.autos-grid {
-    display: flex; /* Utiliza flexbox para el diseÃ±o */
-    justify-content: space-around; /* Espacio entre las tarjetas */
-    flex-wrap: wrap; /* Permite que las tarjetas se distribuyan en varias filas */
-}
-
-/* Estilo general para cada tarjeta de auto usado */
-.auto-card {
-    background-color: white; /* Color de fondo blanco */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor de la tarjeta */
-    width: 30%; /* Ancho de la tarjeta (30% del contenedor) */
-    margin-bottom: 20px; /* Margen inferior para separaciÃ³n */
-    padding: 15px; /* Espacio interno dentro de la tarjeta */
-    text-align: center; /* Centra el texto dentro de la tarjeta */
-}
-
-/* Estilo para las imÃ¡genes dentro de las tarjetas de autos usados */
-.auto-card img {
-    width: 100%; /* La imagen ocupa el 100% del ancho de la tarjeta */
-    height: auto; /* Mantiene la proporciÃ³n de la imagen */
-    border-radius: 5px; /* Bordes redondeados para la imagen */
-}
-
-/* Estilo para el tÃ­tulo dentro de las tarjetas de autos usados */
-.auto-card h3 {
-    margin: 10px 0; /* Margen superior e inferior */
-    color: #333; /* Color del texto del tÃ­tulo */
-}
-
->>>>>>> 8e8d7cd7ddb6b437e8dcac08d3227abc2e67bfbc
 /* Estilos para los detalles de un auto */
 .detalles-auto {
     max-width: 900px; /* Ancho mÃ¡ximo del contenedor de detalles */
@@ -583,15 +489,6 @@ body {
     padding: 40px;
     background-color: #f9f9f9;
   }
-<<<<<<< HEAD
-=======
-
-  /* Estilos para la sección de vender auto */
-.sell-car-section {
-    padding: 40px;
-    background-color: #f9f9f9;
-  }
->>>>>>> 8e8d7cd7ddb6b437e8dcac08d3227abc2e67bfbc
   
   .sell-car-section h2 {
     text-align: center;
@@ -772,7 +669,6 @@ input:invalid {
 .dropdown-menu a:hover {
   background-color: #ddd; /* Efecto hover */
 }
-<<<<<<< HEAD
 /* Contenedor concesionarios
 
 /* Título de la sección */
@@ -894,86 +790,10 @@ input:invalid {
   list-style: none;
   display: flex;
   gap: 20px;
-=======
-
- /* Estilo para el panel de autos nuevos */
-
- .centered-title {
-  text-align: center; /* Centrar el texto */
-  margin: 20px 0; /* Espaciado vertical */
-}
-
-.new-cars-cards {
-  display: flex; /* Hacer el contenedor flexible */
-  flex-wrap: wrap; /* Permitir que las tarjetas se ajusten a varias líneas */
-  gap: 20px; /* Espacio entre tarjetas */
-  justify-content: center; /* Centrar las tarjetas en el contenedor */
-}
-
-.card {
-  flex: 1 1 30%; /* Hacer que cada tarjeta ocupe un 30% del ancho */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
-  border-radius: 8px; /* Bordes redondeados */
-  overflow: hidden; /* Cortar el desbordamiento */
-  transition: transform 0.2s; /* Transición suave para el efecto hover */
-}
-
-.card:hover {
-  transform: scale(1.05); /* Efecto de hover */
-}
-
-
-.card img {
-  width: 100%; /* Imagen ocupa el ancho completo */
-  height: auto; /* Mantener la proporción de la imagen */
-}
-
-.card h3, .card p {
-  padding: 10px; /* Espaciado interno */
-  margin: 0; /* Sin margen */
-}
-
-.view-more {
-  background-color: #007bff; /* Color del botón */
-  color: white; /* Color del texto */
-  border: none; /* Sin borde */
-  padding: 10px; /* Espaciado interno */
-  width: 100%; /* Botón ocupa el ancho completo */
-  cursor: pointer; /* Cambiar cursor al pasar */
-  transition: background-color 0.2s; /* Transición para el efecto hover */
-}
-
-.view-more:hover {
-  background-color: #0056b3; /* Color al pasar el mouse */
-}
-
- /* Estilo para el panel de autos usados */
- .used-cars-cards {
-  display: flex; /* Usar flexbox para alinear las tarjetas en fila */
-  flex-wrap: wrap; /* Permitir que las tarjetas se ajusten a la siguiente línea si es necesario */
-  justify-content: center; /* Centrar las tarjetas en el contenedor */
-  gap: 20px; /* Espacio entre tarjetas */
-}
-
-.card {
-  background-color: #fff; /* Color de fondo de la tarjeta */
-  border: 1px solid #ddd; /* Borde de la tarjeta */
-  border-radius: 8px; /* Bordes redondeados */
-  padding: 10px; /* Espaciado interno */
-  width: 250px; /* Ancho de la tarjeta */
-  text-align: center; /* Centrar el texto dentro de la tarjeta */
-}
-
-
- /* Estilos para la vista detalles autos */
- body {
-  font-family: Arial, sans-serif;
->>>>>>> 8e8d7cd7ddb6b437e8dcac08d3227abc2e67bfbc
   margin: 0;
   padding: 0;
 }
 
-<<<<<<< HEAD
 /* Botón de autenticación */
 .auth-buttons .auth-icon {
   font-size: 1.5em;
@@ -1017,69 +837,3 @@ input:invalid {
       display: flex;
   }
 }
-=======
-.menu li {
-  display: inline;
-  margin: 0 15px;
-}
-
-.menu a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.detalles-auto {
-  padding: 20px;
-  text-align: center;
-}
-
-.carousel {
-  position: relative;
-  margin: 20px 0;
-}
-
-.carousel-inner img {
-  width: 100%;
-  height: auto;
-}
-
-.auto-details {
-  margin: 20px 0;
-}
-
-.contact-button {
-  margin: 20px 0;
-}
-
-.btn {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.modal {
-  display: none; /* Ocultar por defecto */
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-
-
->>>>>>> 8e8d7cd7ddb6b437e8dcac08d3227abc2e67bfbc

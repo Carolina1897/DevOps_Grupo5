@@ -227,10 +227,10 @@ crossorigin="anonymous"
           <option value="">Selecciona una ciudad</option>
       </select>
     </div>
-    <button type="button" class="submit-button" onclick="registrarUsuario()">Registrar</button>
+    <button type="button" class="btn btn-outline-success" style="width: 400px;" onclick="registrarUsuario()">Registrar</button>
   </form>
   <p><a href="./views/index.html" class="back-link">Volver a la página principal</a></p>
-  <p>¿Ya tienes una cuenta? <a href="InicioSesion.html" class="login-link">Inicia sesión</a></p>
+  <p>¿Ya tienes una cuenta? <a href="InicioSesion.html" class="back-link">Inicia sesión</a></p>
   
   <!-- Mensaje de error -->
   <div id="error-message" class="error-modal" style="display: none;">
@@ -238,9 +238,9 @@ crossorigin="anonymous"
     <button type="button">Cerrar</button>
   </div>
   <!--Mensaje de exito-->
-  <div id="error-message" class="error-modal" style="display: none;">
+  <div id="success-message" class="error-modal" style="display: none;">
     <p>Usuario registrado con éxito, ya puedes iniciar sesion.</p>
-    <button type="button">Cerrar</button>
+    <button type="button" >Cerrar</button>
 </div>
 </section>
 
@@ -277,7 +277,7 @@ crossorigin="anonymous"
     };
 
    // Realizar la solicitud POST al servidor para registrar el usuario
-   fetch('http://localhost:3000/usuarios', {
+  fetch('http://localhost:3000/usuarios', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -287,10 +287,18 @@ crossorigin="anonymous"
     .then(response => {
         if (response.ok) {
             // Si la respuesta es exitosa, mostrar el mensaje de éxito
-            mostrarMensajeExito();
+            Swal.fire({
+            icon:'success',
+            text:'Usuario registrado con éxito, ya puedes iniciar sesión.'
+            }).then(()=>{
+              window.location.href =  'InicioSesion.html';
+            })
         } else {
             // Si hay un error, mostrar el mensaje de error en el modal
-            mostrarMensajeError();
+            Swal.fire({
+              icon:'error',
+            text:'No se pudo crear la cuenta. Verifica tus datos e inténtalo de nuevo.'
+            })
         }
     })
     .catch(error => {
@@ -299,25 +307,6 @@ crossorigin="anonymous"
     });
 }
 
-  function mostrarMensajeError() {
-    const errorMessage = document.getElementById('error-message');
-    errorMessage.style.display = 'block'; // Muestra el mensaje de error
-}
-
-function mostrarMensajeExito() {
-    const successMessage = document.getElementById('success-message');
-    successMessage.style.display = 'block'; // Muestra el mensaje de éxito
-}
-
-// Cerrar el modal de error
-document.getElementById('error-message').querySelector('button').addEventListener('click', () => {
-    document.getElementById('error-message').style.display = 'none'; // Cierra el mensaje de error
-});
-
-// Cerrar el modal de éxito
-document.getElementById('success-message').querySelector('button').addEventListener('click', () => {
-    document.getElementById('success-message').style.display = 'none'; // Cierra el mensaje de éxito
-});
 // Cargar las ciudades cuando se cargue la página
 document.addEventListener('DOMContentLoaded', () => {
     fetch('http://localhost:3000/ciudades')

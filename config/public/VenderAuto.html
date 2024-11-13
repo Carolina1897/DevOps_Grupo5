@@ -6,6 +6,28 @@
   <title>Vender Auto - AutoConexion</title>
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous"
+/>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  crossorigin="anonymous"
+></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -36,6 +58,13 @@
     <h2>Publicar Auto en Venta</h2>
     <form class="sell-car-form" id="sellCarForm" enctype="multipart/form-data">
 
+      <div class="form-group">
+        <label for="carImages">Subir imagen del auto:</label>
+        <input type="file" id="carImages" name="carImages" accept="image/*" onchange="previewImage(event)" required><br>
+        <div class="text-center">
+          <img id="imagePreview" class="rounded" alt="Vista previa de la imagen" style="max-width: 300px; display: none;">
+        </div>
+      </div>
       <!-- Información básica del auto -->
       <div class="form-group">
         <label for="descripcion">Descripción del auto:</label>
@@ -111,14 +140,13 @@
           <option value="">Selecciona un concesionario</option>
         </select>
       </div>
-
-      <div class="form-group">
-        <label for="carImages">Subir imagen del auto:</label>
-        <input type="file" id="carImages" name="carImages" multiple required><br>
-      </div>
       <input type="hidden" id="idUsuario" name="idUsuario" value="">
       
       <button type="submit" class="modern-button submit-button">Publicar Auto</button>
+
+      <a>
+        <button  type="button" class="btn btn-secondary btn-lg btn-block" onclick="history.back()">Regresar</button>
+      </a>
     </form>
   </section>
   <!-- Pie de página -->
@@ -232,14 +260,39 @@
         })
         .then(response => {
             if (response.ok) {
-                alert('Vehículo publicado exitosamente.');
+              Swal.fire({
+                icon:'success',
+                text:'Vehículo publicado exitosamente.'
+              }).then(()=>{
                 this.reset(); // Reiniciar el formulario
+              })
+                
             } else {
-                alert('Error al publicar el vehículo.');
+              Swal.fire({
+                icon:'error',
+                text:'Error al publicar el vehículo.'
+              })
             }
         })
         .catch(error => console.error('Error al enviar el formulario:', error));
     });
+
+  function previewImage(event) {
+  const imagePreview = document.getElementById("imagePreview");
+  const file = event.target.files[0]; // Obtenemos el archivo seleccionado
+
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      imagePreview.src = e.target.result; // Asigna la imagen al src del elemento img
+      imagePreview.style.display = "block"; // Muestra la vista previa
+    };
+    reader.readAsDataURL(file); // Convierte el archivo a una URL de datos
+  } else {
+    imagePreview.style.display = "none"; // Oculta la vista previa si no hay archivo
+  }
+}
+
 
   </script>
 </body>

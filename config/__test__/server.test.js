@@ -148,8 +148,4 @@ describe('API Endpoints', () => {
         expect(response.status).toBe(200);
         expect(response.text).toBe('Vehículo agregado correctamente');
     });
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> 8e8d7cd7ddb6b437e8dcac08d3227abc2e67bfbc
