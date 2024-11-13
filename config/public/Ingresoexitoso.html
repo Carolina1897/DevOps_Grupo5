@@ -50,11 +50,20 @@
         </a>
       </div>
       <ul class="menu">
+<<<<<<< HEAD
         <!-- Lista de elementos del menú de navegación -->
         <li><a href="./AcercaDeNosotros.html">Acerca de Nosotros</a></li>
         <!-- Enlace a la página 'Acerca de Nosotros' -->
         <li><a href="./ConoceDeAutos.html">Conoce de Autos</a></li>
         <!-- Enlace a la página 'Autos Nuevos' -->
+=======
+        <li><a href="AcercaDeNosotros.html">Acerca de Nosotros</a></li>
+        <li><a href="ConoceDeAutos.html">Conoce de Autos</a></li>
+        <li><a href="AutosUsados.html">Autos Usados</a></li>
+        <li><a href="AutosNuevos.html">Autos Nuevos</a></li>
+        <li><a href="./views/index.html" class="auth-icon"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+        
+>>>>>>> 8e8d7cd7ddb6b437e8dcac08d3227abc2e67bfbc
       </ul>
       <div class="auth-buttons">
         <a href="#" class="auth-icon" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -71,10 +80,18 @@
 
   <!-- Mensaje de bienvenida -->
   <section class="welcome-section">
+<<<<<<< HEAD
     <div class="d-flex justify-content-center">
     <h2>Bienvenido a AutoConexion</h2>
     
   </div>
+=======
+    <br>
+    <br>
+    <h2>Bienvenido a AutoConexion</h2>
+    <br>
+    <p>Nos alegra tenerte de vuelta. Explora los últimos autos disponibles.</p>
+>>>>>>> 8e8d7cd7ddb6b437e8dcac08d3227abc2e67bfbc
   </section>
   <div style="text-align: center;">
     <p>¿Tienes un auto a la venta?<p>
@@ -89,6 +106,7 @@
     <h2>Últimas Publicaciones de Autos</h2>
     <div class="news-buttons">
       <div class="button-container">
+<<<<<<< HEAD
         <label for="tipoVehiculo">Tipo de vehiculo:</label>
         <select id="tipoVehiculo" name="tipoVehiculo" class="custom-select" required>
           <option value="">Selecciona un tipo</option>
@@ -105,6 +123,13 @@
         <select id="idMarca" name="idMarca" class="custom-select" required>
             <option value="">Elige una marca</option>
         </select>
+=======
+        <a href="./AutosNuevos.html">
+        <button class="modern-button">Comprar</button>
+        <a href="./VenderAuto.html">
+          <button class="modern-button">Vender</button>
+        </a>
+>>>>>>> 8e8d7cd7ddb6b437e8dcac08d3227abc2e67bfbc
       </div>
     </div>
     <div class="news-cards" id="news-cards">
@@ -132,6 +157,7 @@
   </footer>
 
   <script>
+<<<<<<< HEAD
 
 document.addEventListener("DOMContentLoaded", () => {
         fetch("http://localhost:3000/vehiculos")
@@ -184,6 +210,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     
 
+=======
+>>>>>>> 8e8d7cd7ddb6b437e8dcac08d3227abc2e67bfbc
 // Seleccionamos el ícono y el menú desplegable
 const userIcon = document.getElementById('dropdownMenuButton1');
 const dropdownMenu = document.querySelector('.dropdown-menu');
@@ -201,6 +229,7 @@ window.addEventListener('click', function (e) {
     }
 });
 
+<<<<<<< HEAD
 document.addEventListener('DOMContentLoaded', () => {
         fetch('http://localhost:3000/marcas')
             .then(response => response.json())
@@ -414,6 +443,9 @@ document.addEventListener('DOMContentLoaded', () => {
         
       });
    
+=======
+
+>>>>>>> 8e8d7cd7ddb6b437e8dcac08d3227abc2e67bfbc
   </script>
 </body>
 </html>

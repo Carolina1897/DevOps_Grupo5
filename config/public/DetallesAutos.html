@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+<<<<<<< HEAD
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -169,3 +170,122 @@
     </script>
   </body>
 </html>
+=======
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalles del Auto - AutoConexion</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="imagenes/LOGO.png" alt="Logo" />
+        </a>
+      </div>
+      <ul class="menu">
+        <li><a href="AcercaDeNosotros.html">Acerca de Nosotros</a></li>
+        <li><a href="ConoceDeAutos.html">Conoce de Autos</a></li>
+        <li><a href="AutosUsados.html">Autos Usados</a></li>
+        <li><a href="AutosNuevos.html">Autos Nuevos</a></li>
+        <li><a href="./views/index.html" class="auth-icon"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+      </ul>
+      <div class="auth-buttons">
+      </div>
+    </nav>
+  </header>
+
+  <!-- Sección de Detalles del Auto -->
+  <section class="detalles-auto">
+   
+    <div class="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./imagenes/FordGris.png" alt="Auto 1" class="d-block w-100">
+        </div>
+        <!-- Aquí se pueden agregar más imágenes dinámicamente -->
+      </div>
+      <a class="carousel-control-prev" href="#" role="button" onclick="prevSlide()">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#" role="button" onclick="nextSlide()">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+
+    <div class="auto-details">
+      <p><strong>Marca:</strong> <span id="car-marca">Marca</span></p>
+      <p><strong>Modelo:</strong> <span id="car-modelo">Modelo</span></p>
+      <p><strong>Año:</strong> <span id="car-año">Año</span></p>
+      <p><strong>Precio:</strong> <span id="car-price">$0</span></p>
+      <p><strong>Kilometraje:</strong> <span id="car-kilometers">0 km</span></p>
+      <p><strong>Color:</strong> <span id="car-color">Color</span></p>
+      <p><strong>Descripción:</strong> <span id="car-description">Descripción del auto.</span></p>
+      <p><strong>Placa:</strong> <span id="car-plate">Placa</span></p>
+      <p><strong>Ciudad:</strong> <span id="car-city">Ciudad</span></p>
+      <p><strong>Categoría:</strong> <span id="car-category">Categoría</span></p>
+      <p><strong>Tipo de Auto:</strong> <span id="car-type">Tipo</span></p>
+      <p><strong>Concesionario:</strong> <span id="car-dealer">Sí/No</span></p>
+    </div>
+    
+    <!-- Botón de contacto -->
+    <div class="contact-button">
+      <button type="button" class="btn" data-toggle="modal" data-target="#contactModal">
+        <i class="fas fa-phone"></i> Contactar Vendedor
+      </button>
+    </div>
+  </section>
+
+  <!-- Ventana Modal -->
+  <div class="modal" id="contactModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Datos del Vendedor</h5>
+        <button type="button" class="close" onclick="closeModal()">&times;</button>
+      </div>
+      <div class="modal-body" id="seller-info">
+        <p><strong>Nombre:</strong> <span id="seller-name">Nombre</span></p>
+        <p><strong>Apellido:</strong> <span id="seller-lastname">Apellido</span></p>
+        <p><strong>Email:</strong> <span id="seller-email">email@example.com</span></p>
+        <p><strong>Teléfono:</strong> <span id="seller-phone">123-456-7890</span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeModal()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pie de página -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <a href="index.html">
+          <img src="imagenes/LOGO.png" alt="Logo" />
+        </a>
+      </div>
+      <div class="social-media">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="business-hours">
+        <p>Horarios de atención: Lunes a Viernes 9am - 6pm</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+
+    function closeModal() {
+      document.getElementById('contactModal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
+
+>>>>>>> 8e8d7cd7ddb6b437e8dcac08d3227abc2e67bfbc

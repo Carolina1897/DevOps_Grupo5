@@ -18,6 +18,10 @@
     "express-session": "^1.18.1",
     "multer": "^1.4.5-lts.1",
     "mysql2": "^3.11.3",
+<<<<<<< HEAD
+=======
+    "nodemon": "^3.1.7",
+>>>>>>> 8e8d7cd7ddb6b437e8dcac08d3227abc2e67bfbc
     "sessionstorage-for-nodejs": "^1.0.2"
   },
   "devDependencies": {
@@ -26,7 +30,10 @@
     "@testing-library/jest-dom": "^6.6.2",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+<<<<<<< HEAD
     "nodemon": "^3.1.7",
+=======
+>>>>>>> 8e8d7cd7ddb6b437e8dcac08d3227abc2e67bfbc
     "supertest": "^7.0.0"
   }
 }
