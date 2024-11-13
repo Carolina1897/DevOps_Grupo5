@@ -6,31 +6,6 @@
   <title>Vender Auto - AutoConexion</title>
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<<<<<<< HEAD
-  <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-  crossorigin="anonymous"
-/>
-<script
-  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-  crossorigin="anonymous"
-></script>
-<script
-  src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-  crossorigin="anonymous"
-></script>
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-  crossorigin="anonymous"
-></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-=======
->>>>>>> 8e8d7cd7ddb6b437e8dcac08d3227abc2e67bfbc
 </head>
 <body>
 
@@ -43,19 +18,11 @@
         </a>
       </div>
       <ul class="menu">
-<<<<<<< HEAD
         <!-- Lista de elementos del menú de navegación -->
         <li><a href="./AcercaDeNosotros.html">Acerca de Nosotros</a></li>
         <!-- Enlace a la página 'Acerca de Nosotros' -->
         <li><a href="./ConoceDeAutos.html">Conoce de Autos</a></li>
         <!-- Enlace a la página 'Autos Nuevos' -->
-=======
-        <li><a href="AcercaDeNosotros.html">Acerca de Nosotros</a></li>
-        <li><a href="ConoceDeAutos.html">Conoce de Autos</a></li>
-        <li><a href="AutosUsados.html">Autos Usados</a></li>
-        <li><a href="AutosNuevos.html">Autos Nuevos</a></li>
-        <li><a href="./views/index.html" class="auth-icon"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
->>>>>>> 8e8d7cd7ddb6b437e8dcac08d3227abc2e67bfbc
       </ul>
       <div class="auth-buttons">
         <a href="InicioSesion.html" class="auth-icon" id="loginIcon"><i class="fas fa-user"></i></a>
@@ -69,16 +36,6 @@
     <h2>Publicar Auto en Venta</h2>
     <form class="sell-car-form" id="sellCarForm" enctype="multipart/form-data">
 
-<<<<<<< HEAD
-      <div class="form-group">
-        <label for="carImages">Subir imagen del auto:</label>
-        <input type="file" id="carImages" name="carImages" accept="image/*" onchange="previewImage(event)" required><br>
-        <div class="text-center">
-          <img id="imagePreview" class="rounded" alt="Vista previa de la imagen" style="max-width: 300px; display: none;">
-        </div>
-      </div>
-=======
->>>>>>> 8e8d7cd7ddb6b437e8dcac08d3227abc2e67bfbc
       <!-- Información básica del auto -->
       <div class="form-group">
         <label for="descripcion">Descripción del auto:</label>
@@ -154,15 +111,6 @@
           <option value="">Selecciona un concesionario</option>
         </select>
       </div>
-<<<<<<< HEAD
-      <input type="hidden" id="idUsuario" name="idUsuario" value="">
-      
-      <button type="submit" class="modern-button submit-button">Publicar Auto</button>
-
-      <a>
-        <button  type="button" class="btn btn-secondary btn-lg btn-block" onclick="history.back()">Regresar</button>
-      </a>
-=======
 
       <div class="form-group">
         <label for="carImages">Subir imagen del auto:</label>
@@ -171,7 +119,6 @@
       <input type="hidden" id="idUsuario" name="idUsuario" value="">
       
       <button type="submit" class="modern-button submit-button">Publicar Auto</button>
->>>>>>> 8e8d7cd7ddb6b437e8dcac08d3227abc2e67bfbc
     </form>
   </section>
   <!-- Pie de página -->
@@ -285,50 +232,15 @@
         })
         .then(response => {
             if (response.ok) {
-<<<<<<< HEAD
-              Swal.fire({
-                icon:'success',
-                text:'Vehículo publicado exitosamente.'
-              }).then(()=>{
-                this.reset(); // Reiniciar el formulario
-              })
-                
-            } else {
-              Swal.fire({
-                icon:'error',
-                text:'Error al publicar el vehículo.'
-              })
-=======
                 alert('Vehículo publicado exitosamente.');
                 this.reset(); // Reiniciar el formulario
             } else {
                 alert('Error al publicar el vehículo.');
->>>>>>> 8e8d7cd7ddb6b437e8dcac08d3227abc2e67bfbc
             }
         })
         .catch(error => console.error('Error al enviar el formulario:', error));
     });
 
-<<<<<<< HEAD
-  function previewImage(event) {
-  const imagePreview = document.getElementById("imagePreview");
-  const file = event.target.files[0]; // Obtenemos el archivo seleccionado
-
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      imagePreview.src = e.target.result; // Asigna la imagen al src del elemento img
-      imagePreview.style.display = "block"; // Muestra la vista previa
-    };
-    reader.readAsDataURL(file); // Convierte el archivo a una URL de datos
-  } else {
-    imagePreview.style.display = "none"; // Oculta la vista previa si no hay archivo
-  }
-}
-
-
-=======
->>>>>>> 8e8d7cd7ddb6b437e8dcac08d3227abc2e67bfbc
   </script>
 </body>
 </html>
