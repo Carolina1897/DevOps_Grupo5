@@ -6,6 +6,38 @@
   <title>AutoConexion</title>
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous"
+/>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  crossorigin="anonymous"
+></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  function currencyFormatter({ currency, value }) {
+      const formatter = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        minimumFractionDigits: 2,
+        currency,
+      });
+      return formatter.format(value);
+    }
+</script>
 </head>
 <body>
 
@@ -46,10 +78,17 @@
     <br>
     <p>Nos alegra tenerte de vuelta. Explora los últimos autos disponibles.</p>
   </section>
-
+  <div style="text-align: center;">
+    <p>¿Tienes un auto a la venta?<p>
+    <a href="./VenderAuto.html">
+        <button type="button" class="btn btn-outline-success">
+            Publicar Auto
+        </button>
+        </a>
+      </div>
   <!-- Panel de noticias sobre autos -->
   <section class="news-panel">
-    <h2>Últimas Noticias de Autos</h2>
+    <h2>Últimas Publicaciones de Autos</h2>
     <div class="news-buttons">
       <div class="button-container">
         <a href="./AutosNuevos.html">
@@ -59,27 +98,8 @@
         </a>
       </div>
     </div>
-    <div class="news-cards">
-      <div class="card">
-        <img src="./imagenes/Electrico.png" alt="Auto 1">
-        <h3>Nuevo Modelo Eléctrico 2024</h3>
-        <p>El último modelo eléctrico promete una autonomía de 500km con una sola carga.</p>
-        <button>Leer más</button>
-      </div>
-
-      <div class="card">
-        <img src="./imagenes/Deportivodelujo.png" alt="Auto 2">
-        <h3>Superdeportivo de Lujo</h3>
-        <p>Con un diseño impresionante y un motor de 600 caballos, este auto redefine el lujo.</p>
-        <button>Leer más</button>
-      </div>
-
-      <div class="card">
-        <img src="./imagenes/carrofamiliar.png" alt="Auto 3">
-        <h3>SUV Familiar 2024</h3>
-        <p>La SUV más espaciosa y segura del mercado, diseñada para la familia moderna.</p>
-        <button>Leer más</button>
-      </div>
+    <div class="news-cards" id="news-cards">
+      
     </div>
   </section>
 
@@ -119,7 +139,6 @@ window.addEventListener('click', function (e) {
         dropdownMenu.style.display = 'none';
     }
 });
-
 
   </script>
 </body>

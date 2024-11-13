@@ -10,6 +10,9 @@ body {
     font-family: Arial, sans-serif; /* Establece la fuente para el cuerpo del documento */
 }
 
+<<<<<<< HEAD
+
+=======
 /* Estilos especificos para la barra de navegacion */
 .navbar {
     display: flex; /* Usar flexbox para distribuir los elementos en la barra de navegaciÃ³n */
@@ -39,6 +42,7 @@ body {
     
 }
 
+>>>>>>> 8e8d7cd7ddb6b437e8dcac08d3227abc2e67bfbc
 /* Estilos para el pie de pagina */
 .footer {
     
@@ -140,7 +144,7 @@ body {
     flex-direction: column; /* Colocar elementos en columna */
     align-items: center; /* Alinear elementos al centro */
 }
-
+ 
 .about-us-grid {
     display: flex; /* Usar flexbox para distribuir tarjetas */
     justify-content: space-around; /* Espacio entre tarjetas */
@@ -316,6 +320,8 @@ body {
     font-size: 2em; /* TamaÃ±o de la fuente para el tÃ­tulo */
     color: #333; /* Color del texto del tÃ­tulo */
 }
+<<<<<<< HEAD
+=======
 
 /* Contenedor para las tarjetas de autos */
 .car-cards {
@@ -375,6 +381,7 @@ body {
     color: #333; /* Color del texto del tÃ­tulo */
 }
 
+>>>>>>> 8e8d7cd7ddb6b437e8dcac08d3227abc2e67bfbc
 /* Estilos para los detalles de un auto */
 .detalles-auto {
     max-width: 900px; /* Ancho mÃ¡ximo del contenedor de detalles */
@@ -396,63 +403,6 @@ body {
 .auto-details p {
     font-size: 18px; /* TamaÃ±o de la fuente para los pÃ¡rrafos */
     margin-bottom: 10px; /* Margen inferior para separaciÃ³n */
-}
-
-/* Estilo para el botÃ³n de contacto */
-.contact-button a {
-    display: inline-block; /* Hace que el enlace sea un bloque en lÃ­nea */
-    padding: 10px 20px; /* Espacio interno del botÃ³n */
-    background-color: #007bff; /* Color de fondo azul */
-    color: white; /* Color del texto blanco */
-    border-radius: 5px; /* Bordes redondeados */
-    text-decoration: none; /* Sin subrayado en el texto */
-    font-size: 18px; /* TamaÃ±o de la fuente del texto */
-}
-
-/* Estilo para el estado hover del botÃ³n de contacto */
-.contact-button a:hover {
-    background-color: #0056b3; /* Cambia el color de fondo al pasar el mouse */
-}
-
-/* Estilos para la tarjeta de contacto del vendedor */
-.contacto-vendedor {
-    text-align: center; /* Centra el texto en la tarjeta */
-    padding: 40px; /* Espacio interno alrededor del contenido */
-}
-
-/* Estilo general para cada tarjeta de contacto del vendedor */
-.contact-card {
-    background-color: #fff; /* Color de fondo blanco */
-    border-radius: 15px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor de la tarjeta */
-    display: inline-block; /* Hace que la tarjeta se comporte como un bloque en lÃ­nea */
-    padding: 20px; /* Espacio interno dentro de la tarjeta */
-    width: 300px; /* Ancho fijo de la tarjeta */
-    text-align: left; /* Alinea el texto a la izquierda */
-}
-
-/* Estilos para los elementos de contacto dentro de la tarjeta */
-.contact-item {
-    display: flex; /* Utiliza flexbox para el diseÃ±o */
-    align-items: center; /* Alinea elementos verticalmente al centro */
-    margin: 15px 0; /* Margen superior e inferior */
-}
-
-/* Estilo para los Ã­conos dentro de los elementos de contacto */
-.contact-item i {
-    font-size: 24px; /* TamaÃ±o del Ã­cono */
-    color: #007bff; /* Color azul para el Ã­cono */
-    margin-right: 10px; /* Margen a la derecha del Ã­cono */
-}
-
-/* Estilo para los pÃ¡rrafos dentro de los elementos de contacto */
-.contact-item p {
-    font-size: 16px; /* TamaÃ±o de la fuente para los pÃ¡rrafos */
-}
-
-/* Estilo para el texto en negrita dentro de los elementos de contacto */
-.contact-item strong {
-    color: #333; /* Color del texto en negrita */
 }
 
 /* Estilos para el enlace de retroceso */
@@ -613,25 +563,35 @@ body {
     background-color: #0056b3; /* Color mÃ¡s oscuro al pasar el mouse */
   }
   
-  .back-link,
-  .register-link {
-    display: inline-block; /* Para que se comporten como un bloque */
-    margin-top: 10px; /* Espaciado superior */
-    color: #007bff; /* Color de texto */
-    text-decoration: none; /* Sin subrayado */
-    transition: color 0.3s; /* TransiciÃ³n para el color */
-  }
-  
   .back-link:hover,
   .register-link:hover {
+    color: #0056b3; /* Color más oscuro al pasar el mouse */
     text-decoration: underline; /* Subrayado al pasar el mouse */
-  }
+}
+  
+  .back-link,
+.register-link {
+    display: inline-block; /* Para que se comporten como un bloque */
+    margin-top: 10px; /* Espaciado superior */
+    color: #0d0e0f; /* Color de texto */
+    text-decoration: none; /* Sin subrayado */
+    transition: color 0.3s; /* Transición para el color */
+}
 
   /* Estilos para la sección de vender auto */
 .sell-car-section {
     padding: 40px;
     background-color: #f9f9f9;
   }
+<<<<<<< HEAD
+=======
+
+  /* Estilos para la sección de vender auto */
+.sell-car-section {
+    padding: 40px;
+    background-color: #f9f9f9;
+  }
+>>>>>>> 8e8d7cd7ddb6b437e8dcac08d3227abc2e67bfbc
   
   .sell-car-section h2 {
     text-align: center;
@@ -812,6 +772,129 @@ input:invalid {
 .dropdown-menu a:hover {
   background-color: #ddd; /* Efecto hover */
 }
+<<<<<<< HEAD
+/* Contenedor concesionarios
+
+/* Título de la sección */
+.concesionarios-aliados h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+.concesionarios-texto {
+  font-size: 1.4rem; /* Aumenta el tamaño de la fuente */
+  text-align: center; /* Alinea el texto a la derecha */
+  max-width: 850px; /* Máximo ancho del párrafo */
+  margin: 0 auto; /* Centra el párrafo en el contenedor */
+  line-height: 1.6; /* Espaciado entre líneas */
+}
+
+/* Estilo de la galería de concesionarios */
+.concesionarios-galeria {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* Estilo para cada concesionario */
+.concesionario {
+  text-align: center;
+  max-width: 160px;
+}
+
+.concesionario img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.concesionario p {
+  font-size: 1rem;
+  color: #333;
+}
+
+.carousel-inner img {
+  max-width: 75%; /* Ajusta el ancho de la imagen al 75% del contenedor del carrusel */
+  height: auto;
+  max-height: 600px; /* Ajusta la altura máxima de la imagen */
+  margin: auto; /* Centra la imagen en el carrusel */
+}
+.carousel-custom {
+  max-width: 1000px; /* Aumenta el ancho máximo del carrusel */
+  margin: auto; /* Centra el carrusel en la página */
+}
+.carousel-background {
+  background-color: #a8412f; /* Cambia el color según lo desees */
+  padding: 20px;
+  border-radius: 8px;
+}
+.title-section {
+  text-align: center;
+  font-size: 5em; /* Ajusta el tamaño del título */
+  font-weight: bold;
+  color: #080808; /* Cambia el color del título si lo deseas */
+  margin-bottom: 20px; /* Espacio entre el título y la línea */
+}
+
+.title-separator {
+  width: 70%; /* Ajusta el ancho de la línea */
+  height: 3px;
+  background-color: #292c2a; /* Cambia el color de la línea si lo deseas */
+  margin: 0 auto 20px auto; /* Centra la línea y agrega espacio debajo */
+  border-radius: 4px; /* Redondea las esquinas de la línea */
+}
+.title-section {
+  text-align: center; /* Centra el título */
+  font-size: 5em;
+  font-weight: bold;
+  color: #080808;
+  margin-bottom: 20px;
+}
+
+.news-buttons {
+  display: flex;
+  flex-direction: column; /* Los coloca en columna (uno debajo del otro) */
+  align-items: center; /* Centra los botones */
+}
+
+.button-container {
+  display: flex; /* Para que los botones estén en fila */
+  gap: 10px; /* Espacio entre los botones */
+}
+
+.button-container .btn {
+  font-size: 1.3rem;
+  padding: 10px 20px;
+}
+/*estilos nueva barra*/
+/* Estilos específicos para la barra de navegación */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #c5d6d4;
+  padding: 1px 5px; /* Reducido a 5px en la parte superior e inferior */
+  box-shadow: 0px 2px 3px rgba(7, 7, 7, 0.1);
+  position: relative;
+}
+
+
+.logo img {
+  height: 90px; /* Aumenta la altura del logo */
+  object-fit: contain;
+  margin: -5px 0;
+}
+
+/* Estilo para el menú */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+=======
 
  /* Estilo para el panel de autos nuevos */
 
@@ -885,10 +968,56 @@ input:invalid {
  /* Estilos para la vista detalles autos */
  body {
   font-family: Arial, sans-serif;
+>>>>>>> 8e8d7cd7ddb6b437e8dcac08d3227abc2e67bfbc
   margin: 0;
   padding: 0;
 }
 
+<<<<<<< HEAD
+/* Botón de autenticación */
+.auth-buttons .auth-icon {
+  font-size: 1.5em;
+  color: #000;
+  text-decoration: none;
+}
+
+/* Estilos de icono de menú hamburguesa */
+.hamburger-menu {
+  display: none;
+  font-size: 1.8em;
+  cursor: pointer;
+  color: #000;
+}
+
+/* Responsivo: ajustes en pantallas pequeñas */
+@media (max-width: 768px) {
+  .logo img {
+      height: 50px; /* Reduce el tamaño del logo en pantallas pequeñas */
+  }
+
+  .menu {
+      display: none; /* Oculta el menú en pantallas pequeñas */
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      background-color: #f1f1f1;
+      padding: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+  }
+
+  /* Mostrar el ícono de menú hamburguesa */
+  .hamburger-menu {
+      display: block;
+  }
+
+  /* Estilo de menú desplegable al hacer clic en el icono hamburguesa */
+  .navbar.active .menu {
+      display: flex;
+  }
+}
+=======
 .menu li {
   display: inline;
   margin: 0 15px;
@@ -953,3 +1082,4 @@ input:invalid {
 
 
 
+>>>>>>> 8e8d7cd7ddb6b437e8dcac08d3227abc2e67bfbc

@@ -11,26 +11,31 @@
 
   <!-- Barra de navegación -->
   <header>
-    <nav class="navbar"> <!-- Crea la barra de navegación con la clase "navbar" -->
-      <div class="logo"> <!-- Contenedor para el logo -->
-        <a href="./views/index.html"> <!-- Enlace al index.html -->
-          <img src="./imagenes/LOGO.png" alt="Logo" /> <!-- Imagen del logo -->
-        </a>
-      </div>
-      <ul class="menu"> <!-- Lista no ordenada para los elementos del menú -->
-        <li><a href="AcercaDeNosotros.html">Acerca de Nosotros</a></li> <!-- Enlace a la página "Acerca de Nosotros" -->
-        <li><a href="ConoceDeAutos.html">Conoce de Autos</a></li> <!-- Enlace a la página "Conoce de Autos" -->
-        <li><a href="AutosUsados.html">Autos Usados</a></li> <!-- Enlace a la página 'Autos Usados' -->
-        <li><a href="AutosNuevos.html">Autos Nuevos</a></li> <!-- Enlace a la página 'Autos Nuevos' -->
-          </ul>
-        </li>
-      </ul>
-      <div class="auth-buttons"> <!-- Contenedor para los botones de autenticación -->
-        <a href="InicioSesion.html" class="auth-icon"><i class="fas fa-user"></i> <!-- Ícono de usuario sin cuadro -->
-        
-      </div>
+    <nav class="navbar">
+        <!-- Logo -->
+        <div class="logo">
+            <a href="./views/index.html">
+                <img src="./../imagenes/LOGO.png" alt="Logo" />
+            </a>
+        </div>
+
+        <!-- Menú de navegación -->
+        <ul class="menu">
+            <li><a href="AcercaDeNosotros.html">Acerca de Nosotros</a></li>
+            <li><a href="ConoceDeAutos.html">Conoce de Autos</a></li>
+        </ul>
+
+        <!-- Botón de autenticación -->
+        <div class="auth-buttons">
+            <a href="InicioSesion.html" class="auth-icon"><i class="fas fa-user"></i></a>
+        </div>
+
+        <!-- Botón hamburguesa para pantallas pequeñas -->
+        <div class="hamburger-menu">
+            <i class="fas fa-bars"></i>
+        </div>
     </nav>
-  </header>
+</header>
 
   <!-- Contenido Acerca de Nosotros -->
   <section class="about-us"> <!-- Sección que contiene la información "Acerca de Nosotros" -->
@@ -82,4 +87,9 @@
 
 </body>
 </html>
+<script>
+  document.querySelector('.hamburger-menu').addEventListener('click', function () {
+      document.querySelector('.navbar').classList.toggle('active');
+  });
+</script>
 
