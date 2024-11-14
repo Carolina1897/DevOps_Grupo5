@@ -98,8 +98,8 @@ conexion
           idCiudad,
         };
 
-        await usuarios.agregarUsuario(nuevoUsuario);
-        res.status(200).send("Usuario registrado");
+        const result = await usuarios.agregarUsuario(nuevoUsuario);
+        res.status(200).send(result);
       } catch (err) {
         console.error("Error al registrar usuario:", err);
         res.status(500).send("Error al registrar usuario");
