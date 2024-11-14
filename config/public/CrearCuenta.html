@@ -263,6 +263,7 @@ crossorigin="anonymous"
   </div>
 </footer>
 
+<script src="javascript/env.js"></script>
 <script>
   function registrarUsuario() {
     const usuario = {
@@ -276,8 +277,9 @@ crossorigin="anonymous"
       idCiudad: document.getElementById('idCiudad').value
     };
 
+    
    // Realizar la solicitud POST al servidor para registrar el usuario
-  fetch('http://localhost:3000/usuarios', {
+  fetch(`${url}/usuarios`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -309,7 +311,7 @@ crossorigin="anonymous"
 
 // Cargar las ciudades cuando se cargue la página
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('http://localhost:3000/ciudades')
+    fetch(`${url}/ciudades`)
         .then(response => response.json())
         .then(ciudades => {
             const selectCiudad = document.getElementById('idCiudad');

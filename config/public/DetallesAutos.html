@@ -115,6 +115,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="javascript/env.js"></script>
     <script>
       const urlParams = new URLSearchParams(window.location.search);
       const id = urlParams.get("id");
@@ -122,11 +123,11 @@
       document.addEventListener("DOMContentLoaded", () => {
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get("id");
-        fetch(`http://localhost:3000/vehiculo?id=${id}`)
+        fetch(`${url}/vehiculo?id=${id}`)
           .then((response) => response.json())
           .then((vehiculos) => {
             const img = document.getElementById("img");
-            img.src = `http://localhost:3000/imagenesautos/${vehiculos[0].strimagenes}`;
+            img.src = `${url}/imagenesautos/${vehiculos[0].strimagenes}`;
             const marca = document.getElementById("car-marca");
             marca.textContent = vehiculos[0].strMarca;
             const Modelo = document.getElementById("car-modelo");
