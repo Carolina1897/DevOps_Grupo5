@@ -185,7 +185,7 @@ a {
   <p>¿No tienes cuenta? <a href="CrearCuenta.html" class="register-link">Regístrate</a></p>
 </section>
 
-
+<script src="javascript/env.js"></script>
   <script>
     function ingresarUsuario() {
       const credenciales  = {
@@ -194,7 +194,7 @@ a {
       };
   
       // Realizar la solicitud POST al servidor para registrar el usuario
-      fetch('http://localhost:3000/ingresar', {
+      fetch(`${url}/ingresar`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
