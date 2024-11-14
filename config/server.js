@@ -204,7 +204,7 @@ conexion
         const result =
           vehiculos.length > 0
             ? vehiculos
-            : "No se encontraron vehiculos";
+            : "No se encontraron publicaciones";
         res.status(200).json(result);
       } catch (error) {
         console.error("Error al obtener vehiculos:", error);
