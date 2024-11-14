@@ -161,6 +161,7 @@ conexion
     });
 
     app.get("/vehiculos", async (req, res) => {
+      console.log("Entra")
       try {
         let sql = "";
         const categoria =
