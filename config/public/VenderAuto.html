@@ -166,6 +166,7 @@
       </div>
     </div>
   </footer>
+  <script src="javascript/env.js"></script>
   <script>
     
      // Almacenar el ID del usuario en el campo oculto al cargar la página
@@ -189,7 +190,7 @@
 
     // Cargar los concesionarios
     function loadDealerships() {
-        fetch('http://localhost:3000/concesionarios')
+      fetch(`${url}/concesionarios`)
             .then(response => response.json())
             .then(concesionarios => {
                 const dealershipSelect = document.getElementById('dealershipSelect');
@@ -219,7 +220,7 @@
 
     // Cargar las ciudades cuando se cargue la página
     document.addEventListener('DOMContentLoaded', () => {
-        fetch('http://localhost:3000/ciudades')
+        fetch(`${url}/ciudades`)
             .then(response => response.json())
             .then(ciudades => {
                 const selectCiudad = document.getElementById('idCiudad');
@@ -235,7 +236,7 @@
 
     // Cargar las marcas cuando se cargue la página
     document.addEventListener('DOMContentLoaded', () => {
-        fetch('http://localhost:3000/marcas')
+        fetch(`${url}/marcas`)
             .then(response => response.json())
             .then(marcas => {
                 const selectMarca = document.getElementById('idMarca');
@@ -254,7 +255,7 @@
 
         const formData = new FormData(this); // Crear un objeto FormData
 
-        fetch('http://localhost:3000/vehiculos', {
+        fetch(`${url}/vehiculos`, {
             method: 'POST',
             body: formData
         })
