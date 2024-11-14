@@ -213,9 +213,10 @@
       </div>
     </footer>
 
+    <script src="javascript/env.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        fetch("http://localhost:3000/vehiculos")
+        fetch(`${url}/vehiculos`)
           .then((response) => response.json())
           .then((vehiculos) => {
             const selectCiudad = document.getElementById("news-cards");
@@ -247,7 +248,7 @@
               marca.textContent = vehiculos[index].strMarca;
               h3.textContent = vehiculos[index].strDescripcion;
               img.src =
-                "http://localhost:3000/imagenesautos/" +
+                `${url}/imagenesautos/` +
                 vehiculos[index].strimagenes;
               p.textContent = vehiculos[index].strModelo;
               const dollar = currencyFormatter({
