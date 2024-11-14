@@ -131,10 +131,11 @@
     </div>
   </footer>
 
+  <script src="javascript/env.js"></script>
   <script>
 
 document.addEventListener("DOMContentLoaded", () => {
-        fetch("http://localhost:3000/vehiculos")
+        fetch(`${url}/vehiculos`)
           .then((response) => response.json())
           .then((vehiculos) => {
             const selectCiudad = document.getElementById("news-cards");
@@ -158,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
               categoria.textContent = element.enumCategoriaAuto
               h3.textContent = element.strDescripcion;
               img.src =
-                "http://localhost:3000/imagenesautos/" +
+              `${url}/imagenesautos`+
                 element.strimagenes;
               p.textContent = element.strModelo;
               const dollar = currencyFormatter({
@@ -202,7 +203,7 @@ window.addEventListener('click', function (e) {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-        fetch('http://localhost:3000/marcas')
+        fetch(`${url}/marcas`)
             .then(response => response.json())
             .then(marcas => {
                 const selectMarca = document.getElementById('idMarca');
@@ -225,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
       while(cards.firstChild){
         cards.removeChild(cards.firstChild)
       }
-      fetch(`http://localhost:3000/vehiculos?tipo=${slctipo.value}&marcas=${slcmarcas.value}&categoria=${slccategoria.value}`)
+      fetch(`${url}/vehiculos?tipo=${slctipo.value}&marcas=${slcmarcas.value}&categoria=${slccategoria.value}`)
           .then((response) => response.json())
           .then((vehiculos) => {
             const selectCiudad = document.getElementById("news-cards");
@@ -255,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
               categoria.textContent = element.enumCategoriaAuto
               h3.textContent = element.strDescripcion;
               img.src =
-                "http://localhost:3000/imagenesautos/" +
+              `${url}/imagenesautos` +
                 element.strimagenes;
               p.textContent = element.strModelo;
               const dollar = currencyFormatter({
@@ -289,7 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
       while(cards.firstChild){
         cards.removeChild(cards.firstChild)
       }
-        fetch(`http://localhost:3000/vehiculos?tipo=${slctipo.value}&marcas=${slcmarcas.value}&categoria=${slccategoria.value}`)
+        fetch(`${url}/vehiculos?tipo=${slctipo.value}&marcas=${slcmarcas.value}&categoria=${slccategoria.value}`)
           .then((response) => response.json())
           .then((vehiculos) => {
             const selectCiudad = document.getElementById("news-cards");
@@ -319,7 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
               categoria.textContent = element.enumCategoriaAuto
               h3.textContent = element.strDescripcion;
               img.src =
-                "http://localhost:3000/imagenesautos/" +
+              `${url}/imagenesautos` +
                 element.strimagenes;
               p.textContent = element.strModelo;
               const dollar = currencyFormatter({
@@ -353,7 +354,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cards.removeChild(cards.firstChild)
       }
       
-        fetch(`http://localhost:3000/vehiculos?tipo=${slctipo.value}&marcas=${slcmarcas.value}&categoria=${slccategoria.value}`)
+        fetch(`${url}/vehiculos?tipo=${slctipo.value}&marcas=${slcmarcas.value}&categoria=${slccategoria.value}`)
           .then((response) => response.json())
           .then((vehiculos) => {
             console.log(vehiculos)
@@ -385,7 +386,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 categoria.textContent = element.enumCategoriaAuto
                 h3.textContent = element.strDescripcion;
                 img.src =
-                  "http://localhost:3000/imagenesautos/" +
+                `${url}/imagenesautos` +
                   element.strimagenes;
                 p.textContent = element.strModelo;
                 const dollar = currencyFormatter({
