@@ -9,11 +9,10 @@ class Usuarios {
     async agregarUsuario(usuario) {
         try {
 
-            let sql = `select count(*) from tblusuario where bigintIdentificacionUs=${usuario.identificacion} and  strEmailUs='${usuario.email}'`
+            let sql = `select count(*) as cuenta from tblusuario where bigintIdentificacionUs=${usuario.identificacion} and  strEmailUs='${usuario.email}'`
 
             const result = await this.conexion.query(sql);
-            
-            if (result=>1) {
+            if ( result[0].cuenta >= 1 ) {
                 return {exist:false,text:"Ya existe un usuario con estos datos"}
             }else{
                 sql = `
