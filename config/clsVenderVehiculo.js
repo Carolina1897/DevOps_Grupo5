@@ -2,7 +2,6 @@ class Vehiculos {
     constructor(conexion) {
         this.conexion = conexion;
     }
-
     async agregarVehiculo(vehiculo) {
         // Validación simple de datos
         if (!vehiculo.descripcion || !vehiculo.placa) {
