@@ -44,30 +44,30 @@
   <!-- Barra de navegación -->
   <header>
     <nav class="navbar">
-      <div class="logo">
-        <a href="./views/index.html">
-          <img src="./imagenes/LOGO.png" alt="Logo" />
-        </a>
-      </div>
-      <ul class="menu">
-        <!-- Lista de elementos del menú de navegación -->
-        <li><a href="./AcercaDeNosotros.html">Acerca de Nosotros</a></li>
-        <!-- Enlace a la página 'Acerca de Nosotros' -->
-        <li><a href="./ConoceDeAutos.html">Conoce de Autos</a></li>
-        <!-- Enlace a la página 'Autos Nuevos' -->
-      </ul>
-      <div class="auth-buttons">
-        <a href="#" class="auth-icon" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fas fa-user"></i>
-        </a>
-    
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="./views/index.html" id="logout">Cerrar sesión</a></li>
+        <!-- Logo -->
+        <div class="logo">
+            <a href="https://devops-grupo5.onrender.com">
+                <img src="./../imagenes/LOGO.png" alt="Logo" />
+            </a>
+        </div>
+
+        <!-- Menú de navegación -->
+        <ul class="menu">
+            <li><a href="AcercaDeNosotros.html">Acerca de Nosotros</a></li>
+            <li><a href="ConoceDeAutos.html">Conoce de Autos</a></li>
         </ul>
-    </div>
-    </div>
+
+        <!-- Botón de autenticación -->
+        <div class="auth-buttons">
+            <a href="InicioSesion.html" class="auth-icon"><i class="fas fa-user"></i></a>
+        </div>
+
+        <!-- Botón hamburguesa para pantallas pequeñas -->
+        <div class="hamburger-menu">
+            <i class="fas fa-bars"></i>
+        </div>
     </nav>
-  </header>
+</header>
 
   <!-- Mensaje de bienvenida -->
   <section class="welcome-section">
@@ -116,7 +116,7 @@
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-logo">
-        <a href="./views/index.html">
+        <a href="https://devops-grupo5.onrender.com">
           <br>
           <img src="./imagenes/LOGO.png" alt="Logo" />
         </a>
@@ -416,10 +416,11 @@ document.addEventListener('DOMContentLoaded', () => {
           })
         
           .catch((error) => console.error("Error al cargar vehiculos:", error));
-       
         
       });
-   
+      document.querySelector('.hamburger-menu').addEventListener('click', function () {
+            document.querySelector('.navbar').classList.toggle('active');
+        });
   </script>
 </body>
 </html>
