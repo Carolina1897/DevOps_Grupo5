@@ -13,7 +13,7 @@ class Conexion {
       this.connection = mysql.createConnection(this.config);
       this.connection.connect((err) => {
         if (err) {
-          console.error('Error de conexión: ' + err.stack);
+          /*console.error('Error de conexión: ' + err.stack);*/
           reject(err);
         } else {
           console.log('Conectado a la base de datos como id ' + this.connection.threadId);

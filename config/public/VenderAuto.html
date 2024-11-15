@@ -6,35 +6,71 @@
   <title>Vender Auto - AutoConexion</title>
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous"
+/>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  crossorigin="anonymous"
+></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
   <!-- Barra de navegación -->
   <header>
     <nav class="navbar">
-      <div class="logo">
-        <a href="./views/index.html">
-          <img src="./imagenes/LOGO.png" alt="Logo" />
-        </a>
-      </div>
-      <ul class="menu">
-        <li><a href="AcercaDeNosotros.html">Acerca de Nosotros</a></li>
-        <li><a href="ConoceDeAutos.html">Conoce de Autos</a></li>
-        <li><a href="AutosUsados.html">Autos Usados</a></li>
-        <li><a href="AutosNuevos.html">Autos Nuevos</a></li>
-      </ul>
-      <div class="auth-buttons">
-        <a href="InicioSesion.html" class="auth-icon" id="loginIcon"><i class="fas fa-user"></i></a>
-        <span id="welcomeMessage" style="display:none;"></span>
-      </div>
+        <!-- Logo -->
+        <div class="logo">
+            <a href="https://devops-grupo5.onrender.com">
+                <img src="./../imagenes/LOGO.png" alt="Logo" />
+            </a>
+        </div>
+
+        <!-- Menú de navegación -->
+        <ul class="menu">
+            <li><a href="AcercaDeNosotros.html">Acerca de Nosotros</a></li>
+            <li><a href="ConoceDeAutos.html">Conoce de Autos</a></li>
+        </ul>
+
+        <!-- Botón de autenticación -->
+        <div class="auth-buttons">
+            <a href="InicioSesion.html" class="auth-icon"><i class="fas fa-user"></i></a>
+        </div>
+
+        <!-- Botón hamburguesa para pantallas pequeñas -->
+        <div class="hamburger-menu">
+            <i class="fas fa-bars"></i>
+        </div>
     </nav>
-  </header>
+</header>
 
   <!-- Contenido de la página -->
   <section class="sell-car-section">
     <h2>Publicar Auto en Venta</h2>
     <form class="sell-car-form" id="sellCarForm" enctype="multipart/form-data">
 
+      <div class="form-group">
+        <label for="carImages">Subir imagen del auto:</label>
+        <input type="file" id="carImages" name="carImages" accept="image/*" onchange="previewImage(event)" required><br>
+        <div class="text-center">
+          <img id="imagePreview" class="rounded" alt="Vista previa de la imagen" style="max-width: 300px; display: none;">
+        </div>
+      </div>
       <!-- Información básica del auto -->
       <div class="form-group">
         <label for="descripcion">Descripción del auto:</label>
@@ -110,21 +146,20 @@
           <option value="">Selecciona un concesionario</option>
         </select>
       </div>
-
-      <div class="form-group">
-        <label for="carImages">Subir imagen del auto:</label>
-        <input type="file" id="carImages" name="carImages" multiple required><br>
-      </div>
       <input type="hidden" id="idUsuario" name="idUsuario" value="">
       
       <button type="submit" class="modern-button submit-button">Publicar Auto</button>
+
+      <a>
+        <button  type="button" class="btn btn-secondary btn-lg btn-block" onclick="history.back()">Regresar</button>
+      </a>
     </form>
   </section>
   <!-- Pie de página -->
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-logo">
-        <a href="index.html">
+        <a href="https://devops-grupo5.onrender.com">
           <img src="./imagenes/LOGO.png" alt="Logo" />
         </a>
       </div>
@@ -137,6 +172,7 @@
       </div>
     </div>
   </footer>
+  <script src="javascript/env.js"></script>
   <script>
     
      // Almacenar el ID del usuario en el campo oculto al cargar la página
@@ -160,7 +196,7 @@
 
     // Cargar los concesionarios
     function loadDealerships() {
-        fetch('http://localhost:3000/concesionarios')
+      fetch(`${url}/concesionarios`)
             .then(response => response.json())
             .then(concesionarios => {
                 const dealershipSelect = document.getElementById('dealershipSelect');
@@ -190,7 +226,7 @@
 
     // Cargar las ciudades cuando se cargue la página
     document.addEventListener('DOMContentLoaded', () => {
-        fetch('http://localhost:3000/ciudades')
+        fetch(`${url}/ciudades`)
             .then(response => response.json())
             .then(ciudades => {
                 const selectCiudad = document.getElementById('idCiudad');
@@ -206,7 +242,7 @@
 
     // Cargar las marcas cuando se cargue la página
     document.addEventListener('DOMContentLoaded', () => {
-        fetch('http://localhost:3000/marcas')
+        fetch(`${url}/marcas`)
             .then(response => response.json())
             .then(marcas => {
                 const selectMarca = document.getElementById('idMarca');
@@ -225,20 +261,47 @@
 
         const formData = new FormData(this); // Crear un objeto FormData
 
-        fetch('http://localhost:3000/vehiculos', {
+        fetch(`${url}/vehiculos`, {
             method: 'POST',
             body: formData
         })
         .then(response => {
             if (response.ok) {
-                alert('Vehículo publicado exitosamente.');
+              Swal.fire({
+                icon:'success',
+                text:'Vehículo publicado exitosamente.'
+              }).then(()=>{
                 this.reset(); // Reiniciar el formulario
+              })
+                
             } else {
-                alert('Error al publicar el vehículo.');
+              Swal.fire({
+                icon:'error',
+                text:'Error al publicar el vehículo.'
+              })
             }
         })
         .catch(error => console.error('Error al enviar el formulario:', error));
     });
+
+  function previewImage(event) {
+  const imagePreview = document.getElementById("imagePreview");
+  const file = event.target.files[0]; // Obtenemos el archivo seleccionado
+
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      imagePreview.src = e.target.result; // Asigna la imagen al src del elemento img
+      imagePreview.style.display = "block"; // Muestra la vista previa
+    };
+    reader.readAsDataURL(file); // Convierte el archivo a una URL de datos
+  } else {
+    imagePreview.style.display = "none"; // Oculta la vista previa si no hay archivo
+  }
+}
+document.querySelector('.hamburger-menu').addEventListener('click', function () {
+            document.querySelector('.navbar').classList.toggle('active');
+        });
 
   </script>
 </body>

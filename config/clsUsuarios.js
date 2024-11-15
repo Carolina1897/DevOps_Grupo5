@@ -8,7 +8,15 @@ class Usuarios {
     // Método para agregar un nuevo usuario
     async agregarUsuario(usuario) {
         try {
-            const sql = `
+
+            let sql = `select count(*) from tblusuario where bigintIdentificacionUs=${usuario.identificacion} and  strEmailUs='${usuario.email}'`
+
+            const result = await this.conexion.query(sql);
+            
+            if (result=>1) {
+                return {exist:false,text:"Ya existe un usuario con estos datos"}
+            }else{
+                sql = `
                 INSERT INTO tblusuario
                 (bigintIdentificacionUs, strNombreUs, strApellidoUs, strEmailUs, strContrasenaUs, strTelefonoUs, strDireccionUs, intIdCiudad)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
@@ -22,13 +30,16 @@ class Usuarios {
                 usuario.direccion,
                 usuario.idCiudad,
             ];
-            const resultado = await this.conexion.query(sql, params);
+            await this.conexion.query(sql, params);
+            }
+
+             
 
             // Verifica si se ha insertado un nuevo registro
-            return resultado.affectedRows > 0; // Retorna true si se insertó correctamente
+            return {exist:true}; // Retorna true si se insertó correctamente
         } catch (error) {
             console.error('Error al agregar usuario:', error.message);
-            return false; // Retorna false si hubo un error
+            return {exist:false}; // Retorna false si hubo un error
         }
     }
 
