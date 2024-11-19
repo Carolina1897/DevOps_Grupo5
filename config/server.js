@@ -98,8 +98,8 @@ conexion
           idCiudad,
         };
 
-        const result = await usuarios.agregarUsuario(nuevoUsuario);
-        res.status(200).send(result);
+        await usuarios.agregarUsuario(nuevoUsuario);
+        res.status(200).send("Usuario registrado");
       } catch (err) {
         console.error("Error al registrar usuario:", err);
         res.status(500).send("Error al registrar usuario");
@@ -176,27 +176,27 @@ conexion
             ? null
             : req.query.tipo;
 
-        if (marcas == null && categoria == null && tipo==null) {
+        if (marcas == null && categoria == null && tipo == null) {
           sql =
             "SELECT intCodigoVehiculo,enumTipoVehiculo,strDescripcion,strModelo,strMarca,strimagenes,dcmPrecio,enumCategoriaAuto FROM tblvehiculos v inner join tblmarca m on m.intIdMarca=v.intIdMarca";
-          
+
         } else if (marcas == null && tipo == null) {
           sql = `SELECT intCodigoVehiculo,enumTipoVehiculo,strDescripcion,strModelo,strMarca,strimagenes,dcmPrecio,enumCategoriaAuto FROM tblvehiculos v inner join tblmarca m on m.intIdMarca=v.intIdMarca  where v.enumCategoriaAuto='${categoria}' `;
         } else if (tipo == null && categoria == null) {
           sql = `SELECT intCodigoVehiculo,enumTipoVehiculo,strDescripcion,strModelo,strMarca,strimagenes,dcmPrecio,enumCategoriaAuto FROM tblvehiculos v inner join tblmarca m on m.intIdMarca=v.intIdMarca where v.intIdMarca='${marcas}'`;
-        } else if(marcas==null && categoria==null){
+        } else if (marcas == null && categoria == null) {
           sql = `SELECT intCodigoVehiculo,enumTipoVehiculo,strDescripcion,strModelo,strMarca,strimagenes,dcmPrecio,enumCategoriaAuto FROM tblvehiculos v inner join tblmarca m on m.intIdMarca=v.intIdMarca where enumTipoVehiculo='${tipo}'`;
-        }else if(marcas==null){
+        } else if (marcas == null) {
           sql = `SELECT intCodigoVehiculo,enumTipoVehiculo,strDescripcion,strModelo,strMarca,strimagenes,dcmPrecio,enumCategoriaAuto FROM tblvehiculos v inner join tblmarca m on m.intIdMarca=v.intIdMarca where enumTipoVehiculo='${tipo}' and v.enumCategoriaAuto='${categoria}'`;
-        }else if(tipo==null){
+        } else if (tipo == null) {
           sql = `SELECT intCodigoVehiculo,enumTipoVehiculo,strDescripcion,strModelo,strMarca,strimagenes,dcmPrecio,enumCategoriaAuto FROM tblvehiculos v inner join tblmarca m on m.intIdMarca=v.intIdMarca where v.intIdMarca='${marcas}' and v.enumCategoriaAuto='${categoria}'`;
-        }else if(categoria==null){
+        } else if (categoria == null) {
           sql = `SELECT intCodigoVehiculo,enumTipoVehiculo,strDescripcion,strModelo,strMarca,strimagenes,dcmPrecio,enumCategoriaAuto FROM tblvehiculos v inner join tblmarca m on m.intIdMarca=v.intIdMarca where v.intIdMarca='${marcas}' and enumTipoVehiculo='${tipo}'`;
-        }else{
-          
+        } else {
+
           sql = `SELECT intCodigoVehiculo,enumTipoVehiculo,strDescripcion,strModelo,strMarca,strimagenes,dcmPrecio,enumCategoriaAuto FROM tblvehiculos v inner join tblmarca m on m.intIdMarca=v.intIdMarca where v.intIdMarca=${marcas} and enumTipoVehiculo='${tipo}' and v.enumCategoriaAuto='${categoria}'`;
 
-          
+
         }
 
         const vehiculos = await conexion.query(sql);
@@ -224,6 +224,120 @@ conexion
         res.status(500).send("Error al obtener vehiculos");
       }
     });
+
+    // Ruta para obtener todos los vehículos con marcas
+    app.get("/misvehiculos", async (req, res) => {
+      try {
+        const { idUsuario } = req.query; // Obtenemos el ID desde el query string
+
+        if (!idUsuario) {
+          return res.status(400).send("Falta el ID del usuario.");
+        }
+
+        // Consulta con LEFT JOIN para obtener la marca del vehículo
+        const sql = `
+          SELECT v.*, m.strMarca
+          FROM tblvehiculos v
+          LEFT JOIN tblmarca m ON v.intIdMarca = m.intIdMarca
+          WHERE v.bigintIdentificacionUs = ?
+      `;
+        const vehiculos = await conexion.query(sql, [idUsuario]);
+
+        if (vehiculos.length === 0) {
+          return res.status(200).json("No se encontraron vehículos");
+        }
+
+        res.status(200).json(vehiculos); // Enviar los vehículos con marcas
+      } catch (error) {
+        console.error("Error al obtener vehículos:", error);
+        res.status(500).send("Error al obtener vehículos");
+      }
+    });
+
+
+    app.put("/editarvehiculo", async (req, res) => {
+      try {
+        const { id, descripcion, modelo, anio, kilometraje, categoria, precio } = req.body;
+
+        // Validar que los datos requeridos estén presentes
+        if (!id || !descripcion || !modelo || !anio || !kilometraje || !categoria || !precio) {
+          return res.status(400).json({ mensaje: "Faltan datos necesarios para editar el vehículo." });
+        }
+
+        // Consulta para actualizar el vehículo en la base de datos
+        const query = `
+          UPDATE tblvehiculos
+          SET strDescripcion = ?, 
+              strModelo = ?, 
+              strAnio = ?, 
+              dcmKilometraje = ?, 
+              enumCategoriaAuto = ?, 
+              dcmPrecio = ?
+          WHERE intCodigoVehiculo = ?
+      `;
+
+        const resultado = await conexion.query(query, [descripcion, modelo, anio, kilometraje, categoria, precio, id]);
+
+        if (resultado.affectedRows === 0) {
+          return res.status(404).json({ mensaje: "Vehículo no encontrado." });
+        }
+
+        res.status(200).json({ mensaje: "Vehículo editado correctamente." });
+      } catch (error) {
+        console.error("Error al editar vehículo:", error);
+        res.status(500).send("Error al editar vehículo.");
+      }
+    });
+
+
+
+    //ruta eliminar vehiculo
+    app.delete("/Eliminarvehiculo", async (req, res) => {
+      try {
+        const id = req.query.id; // ID del vehículo a eliminar
+
+        // Consulta para eliminar el vehículo
+        const query = `
+          DELETE FROM tblvehiculos
+          WHERE intCodigoVehiculo = ?
+      `;
+
+        const resultado = await conexion.query(query, [id]);
+
+        if (resultado.affectedRows === 0) {
+          return res.status(404).json({ mensaje: "Vehículo no encontrado." });
+        }
+
+        res.status(200).json({ mensaje: "Vehículo eliminado correctamente." });
+      } catch (error) {
+        console.error("Error al eliminar vehículo:", error);
+        res.status(500).send("Error al eliminar vehículo.");
+      }
+    });
+
+
+
+    app.get("/miperfil", async (req, res) => {
+      try {
+        const id = req.query.id
+        const sql = `select * from tblusuario where bigintidentificacionus=${id}`
+        const result = await conexion.query(sql)
+        res.status(200).json(result)
+      } catch (error) {
+        res.status(500).json(error)
+      }
+    })
+
+    app.put("/miperfil", async (req, res) => {
+      try {
+        const datos = req.body
+        const sql = `update tblusuario set strNombreUs='${datos.nombre}',strApellidoUs='${datos.apellido}',strEmailUs='${datos.email}',strContrasenaUs='${datos.contraseña}',strTelefonoUs='${datos.telefono}',strDireccionUs='${datos.direccion}' where bigintIdentificacionUs=${datos.id}`
+        const result = await conexion.query(sql)
+        res.status(200).json(result)
+      } catch (error) {
+        res.status(500).json(error)
+      }
+    })
 
     // Ruta para subir un vehículo
     app.post("/vehiculos", upload.array("carImages"), async (req, res) => {

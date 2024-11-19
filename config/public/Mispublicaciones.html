@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoConexion</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function currencyFormatter({ currency, value }) {
+            const formatter = new Intl.NumberFormat("en-US", {
+                style: "currency",
+                minimumFractionDigits: 2,
+                currency,
+            });
+            return formatter.format(value);
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Barra de navegación -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="./views/index.html">
+                    <img src="./imagenes/LOGO.png" alt="Logo" />
+                </a>
+            </div>
+
+            <div class="dropdown">
+                <!-- Icono como botón del dropdown -->
+                <a href="#" class="auth-icon dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <i class="fas fa-user"></i>
+                </a>
+                <!-- Menú desplegable -->
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item btn btn-outline-info" href="#">Mi Perfil</a></li>
+                    <li><a class="dropdown-item btn btn-outline-info" href="#">Mis Publicaciones</a></li>
+                    <li><a class="dropdown-item btn btn-outline-info" href="#" id="logout">Cerrar Sesión</a></li>
+                    <li><a class="dropdown-item btn btn-outline-info" href="./Ingresoexitoso.html">Todas las
+                            publicaciones</a></li>
+                </ul>
+            </div>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mensaje de bienvenida -->
+    <section class="welcome-section text-center mt-4">
+        <h2>MIS PUBLICACIONES</h2>
+    </section>
+
+    <!-- Contenedor de vehículos -->
+    <div class="container mt-4">
+        <div id="news-cards" class="d-flex flex-wrap justify-content-center"></div>
+    </div>
+    <!-- Modal Editar -->
+    <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="modalEditarLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalEditarLabel">Editar Vehículo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Aquí se inserta dinámicamente el formulario -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
+                    <button type="button" id="guardarCambios" class="btn btn-info">Guardar Cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="modalEliminar" tabindex="-1" aria-labelledby="modalEliminarLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalEliminarLabel">Eliminar Vehículo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estás seguro de que deseas eliminar este vehículo?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" id="confirmarEliminar" class="btn btn-danger">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="./views/index.html">
+                    <br>
+                    <img src="./imagenes/LOGO.png" alt="Logo" />
+                </a>
+            </div>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="business-hours">
+                <p>Compra y vende tu auto de forma segura</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="javascript/env.js"></script>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // Obtener el ID del usuario autenticado desde localStorage
+            const idUsuario = localStorage.getItem("usuario"); // Usa la clave 'usuario'
+
+            if (!idUsuario) {
+                Swal.fire({ icon: 'error', text: "Debes iniciar sesión para ver tus vehículos." });
+                window.location.href = 'index.html'; // Redirige al login si no hay sesión
+                return;
+            }
+
+            // Hacer fetch a la ruta con el idUsuario
+            fetch(`${url}/misvehiculos?idUsuario=${idUsuario}`)
+                .then((response) => response.json())
+                .then((vehiculos) => {
+                    const selectCiudad = document.getElementById("news-cards");
+                    if (vehiculos === "No se encontraron vehículos") {
+                        selectCiudad.innerHTML = "<p>No tienes vehículos registrados.</p>";
+                        return;
+                    }
+
+                    vehiculos.forEach((element) => {
+                        const card = document.createElement("div");
+                        const img = document.createElement("img");
+                        const h3 = document.createElement("h3");
+                        const p = document.createElement("p");
+                        const marca = document.createElement("p");
+                        const tipo = document.createElement("p");
+                        const categoria = document.createElement("p");
+                        const precio = document.createElement("p");
+
+                        // Crear botones Editar y Eliminar
+                        const editButton = document.createElement("button");
+                        const deleteButton = document.createElement("button");
+
+                        // Configurar botón Editar
+                        editButton.className = "btn btn-outline-primary";
+                        editButton.textContent = "Editar";
+                        editButton.onclick = () => abrirModalEditar(element);
+
+                        // Configurar botón Eliminar
+                        deleteButton.className = "btn btn-outline-danger";
+                        deleteButton.textContent = "Eliminar";
+                        deleteButton.onclick = () => abrirModalEliminar(element.intCodigoVehiculo);
+
+                        // Configurar tarjeta
+                        card.className = "card p-3 m-2 border shadow-sm";
+                        marca.textContent = "Marca: " + (element.strMarca || "Desconocida");
+                        tipo.textContent = "Tipo: " + element.enumTipoVehiculo;
+                        categoria.textContent = "Categoría: " + element.enumCategoriaAuto;
+                        h3.textContent = element.strDescripcion;
+                        img.src = `${url}/imagenesautos/` + element.strimagenes;
+                        img.alt = "Imagen del vehículo";
+                        img.className = "card-img-top";
+                        p.textContent = "Modelo: " + element.strModelo;
+
+                        const dollar = currencyFormatter({
+                            currency: "COP",
+                            value: element.dcmPrecio,
+                        });
+                        precio.textContent = "Precio: " + dollar;
+
+                        // Agregar elementos a la tarjeta
+                        card.appendChild(img);
+                        card.appendChild(h3);
+                        card.appendChild(marca);
+                        card.appendChild(tipo);
+                        card.appendChild(p);
+                        card.appendChild(categoria);
+                        card.appendChild(precio);
+                        card.appendChild(editButton);
+                        card.appendChild(deleteButton);
+                        selectCiudad.appendChild(card);
+                    });
+                })
+                .catch((error) => console.error("Error al cargar vehículos:", error));
+
+        })
+        // Función para abrir el modal de editar
+        function abrirModalEditar(element) {
+            const modalEditar = document.getElementById("modalEditar");
+            const modalBody = modalEditar.querySelector(".modal-body");
+
+            modalBody.innerHTML = `
+    <form id="formEditar">
+        <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripción</label>
+            <input type="text" class="form-control" id="descripcion" value="${element.strDescripcion}">
+        </div>
+        <div class="mb-3">
+            <label for="modelo" class="form-label">Modelo</label>
+            <input type="text" class="form-control" id="modelo" value="${element.strModelo}">
+        </div>
+        <div class="mb-3">
+            <label for="anio" class="form-label">Año</label>
+            <input type="text" class="form-control" id="anio" value="${element.strAnio}">
+        </div>
+        <div class="mb-3">
+            <label for="kilometraje" class="form-label">Kilometraje</label>
+            <input type="number" class="form-control" id="kilometraje" value="${element.dcmKilometraje}">
+        </div>
+        <div class="mb-3">
+            <label for="categoria" class="form-label">Categoría</label>
+            <select class="form-control" id="categoria">
+                <option value="AUTOMATICO" ${element.enumCategoriaAuto === "AUTOMATICO" ? "selected" : ""}>AUTOMÁTICO</option>
+                <option value="MECANICO" ${element.enumCategoriaAuto === "MECANICO" ? "selected" : ""}>MECÁNICO</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="precio" class="form-label">Precio</label>
+            <input type="number" class="form-control" id="precio" value="${element.dcmPrecio}">
+        </div>
+    </form>
+`;
+
+
+            const guardarCambiosButton = modalEditar.querySelector("#guardarCambios");
+
+            guardarCambiosButton.onclick = () => {
+                const nuevaDescripcion = document.getElementById("descripcion").value;
+                const nuevoModelo = document.getElementById("modelo").value;
+                const nuevoAnio = document.getElementById("anio").value;
+                const nuevoKilometraje = document.getElementById("kilometraje").value;
+                const nuevaCategoria = document.getElementById("categoria").value;
+                const nuevoPrecio = document.getElementById("precio").value;
+
+                // Llamar a la API para editar el vehículo
+                fetch(`${url}/editarvehiculo`, {
+                    method: "PUT",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        id: element.intCodigoVehiculo,
+                        descripcion: nuevaDescripcion,
+                        modelo: nuevoModelo,
+                        anio: nuevoAnio,
+                        kilometraje: nuevoKilometraje,
+                        categoria: nuevaCategoria,
+                        precio: nuevoPrecio,
+                    }),
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        Swal.fire({
+                            icon: 'success',
+                            title: '¡Éxito!',
+                            text: data.mensaje || 'Vehículo editado correctamente.',
+                        }).then(() => {
+                            location.reload(); // Recargar para reflejar los cambios
+                        });
+                    })
+                    .catch((error) => {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'Hubo un error al editar el vehículo. Por favor, intenta de nuevo.',
+                        });
+                        console.error("Error al editar vehículo:", error);
+                    });
+            };
+
+            // Abrir el modal en Bootstrap 4
+            $('#modalEditar').modal('show');
+        }
+
+
+        // Función para abrir el modal de eliminar
+        function abrirModalEliminar(idVehiculo) {
+            const modalEliminar = document.getElementById("modalEliminar");
+            const eliminarButton = modalEliminar.querySelector("#confirmarEliminar");
+
+            eliminarButton.onclick = () => {
+                fetch(`${url}/Eliminarvehiculo?id=${idVehiculo}`, {
+                    method: "DELETE",
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        // Mostrar mensaje de éxito
+                        Swal.fire({
+                            icon: 'success',
+                            title: '¡Éxito!',
+                            text: data.mensaje || "Vehículo eliminado correctamente."
+                        }).then(() => {
+                            location.reload(); // Recargar para reflejar cambios
+                        });
+                    })
+                    .catch((error) => {
+                        // Mostrar mensaje de error
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'Hubo un error al eliminar el vehículo. Por favor, intenta de nuevo.'
+                        });
+                        console.error("Error al eliminar vehículo:", error); // Registrar el error en la consola
+                    });
+            };
+
+            // Mostrar el modal de eliminación
+            new bootstrap.Modal(modalEliminar).show();
+        }
+
+
+        // Seleccionamos el ícono y el menú desplegable
+        const userIcon = document.getElementById('dropdownMenuButton1');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+
+        // Agregamos un evento para desplegar el menú al hacer clic en el ícono
+        userIcon.addEventListener('click', function (e) {
+            e.preventDefault();
+            dropdownMenu.style.display = (dropdownMenu.style.display === 'block') ? 'none' : 'block';
+        });
+
+        // Cerramos el menú si se hace clic fuera de él
+        window.addEventListener('click', function (e) {
+            if (!userIcon.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                dropdownMenu.style.display = 'none';
+            }
+        });
+
+        // Selecciona el botón de cerrar sesión
+        const logoutButton = document.getElementById('logout');
+
+        // Añade un evento al botón de cerrar sesión
+        logoutButton.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Eliminar el ID o token almacenado en localStorage
+            localStorage.removeItem('usuario'); // Cambia 'userId' por la clave real que usas
+
+            // Redirigir al usuario al archivo index.html
+            window.location.href = './views/index.html';
+        });
+    </script>
+</body>
+
+</html>

@@ -35,11 +35,30 @@
 
   <!-- Barra de navegación -->
   <header>
-    <nav class="navbar"> <!-- Logo -->
-      <div class="logo"> <a href="./views/index.html"> <img src="./../imagenes/LOGO.png" alt="Logo" /> </a> </div>
-      <!-- Botón de autenticación -->
-      <div class="auth-buttons"> <a href="InicioSesion.html" class="auth-icon"><i class="fas fa-user"></i></a> <span
-          id="welcomeMessage" style="display:none;"></span> </div>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="./views/index.html">
+          <img src="./imagenes/LOGO.png" alt="Logo" />
+        </a>
+      </div>
+
+      <div class="dropdown">
+        <!-- Icono como botón del dropdown -->
+        <a href="#" class="auth-icon dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <i class="fas fa-user"></i>
+        </a>
+        <!-- Menú desplegable -->
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item btn btn-outline-info" onclick="editar()">Mi Perfil</a></li>
+          <li><a class="dropdown-item btn btn-outline-info" href="Mispublicaciones.html">Mis Publicaciones</a></li>
+          <li><a class="dropdown-item btn btn-outline-info" href="#" id="logout">Cerrar Sesión</a></li>
+        </ul>
+      </div>
+
+
+      </div>
+      </div>
     </nav>
   </header>
 
@@ -51,40 +70,57 @@
     </div>
   </section>
   <div style="text-align: center;">
-    <p>¿Tienes un auto a la venta?
-    <p>
-      <a href="./VenderAuto.html">
-        <button type="button" class="btn btn-outline-success">
-          Publicar Auto
-        </button>
-      </a>
+    <h2>¿Tienes un auto a la venta?<h2>
+        <a href="./VenderAuto.html">
+          <button type="button" class="btn btn-outline-success">
+            Publicar Auto
+          </button>
+        </a>
   </div>
-  <!-- Panel de noticias sobre autos -->
-  <section class="news-panel">
-    <h2>Últimas Publicaciones de Autos</h2>
-    <div class="news-buttons">
-      <div class="button-container">
-        <label for="tipoVehiculo">Tipo de vehiculo:</label>
-        <select id="tipoVehiculo" name="tipoVehiculo" class="custom-select" required>
-          <option value="">Selecciona un tipo</option>
-          <option value="NUEVO">Nuevo</option>
-          <option value="USADO">Usado</option>
-        </select>
-        <label for="categoriaAuto">Categoría de auto:</label>
-        <select id="categoriaAuto" name="categoriaAuto" class="custom-select" required>
-          <option value="">Selecciona una categoría</option>
-          <option value="AUTOMATICO">Automático</option>
-          <option value="MECANICO">Mecánico</option>
-        </select>
-        <label for="idMarca">Marca:</label>
-        <select id="idMarca" name="idMarca" class="custom-select" required>
-          <option value="">Elige una marca</option>
-        </select>
-      </div>
-    </div>
-    <div class="news-cards" id="news-cards">
+  <div class="container">
+    <section class="news-panel">
+      <!-- Contenedor de los filtros dentro de una tarjeta -->
+      <div class="filters-card">
+        <div class="filters-container">
+          <h2>Buscar por:</h2>
+          <div class="filter-item">
+            <label for="tipoVehiculo">Tipo de vehículo:</label>
+            <select id="tipoVehiculo" name="tipoVehiculo" class="custom-select" required>
+              <option value="">Selecciona un tipo</option>
+              <option value="NUEVO">Nuevo</option>
+              <option value="USADO">Usado</option>
+            </select>
+          </div>
 
-    </div>
+          <div class="filter-item">
+            <label for="categoriaAuto">Categoría de auto:</label>
+            <select id="categoriaAuto" name="categoriaAuto" class="custom-select" required>
+              <option value="">Selecciona una categoría</option>
+              <option value="AUTOMATICO">Automático</option>
+              <option value="MECANICO">Mecánico</option>
+            </select>
+          </div>
+
+          <div class="filter-item">
+            <label for="idMarca">Marca:</label>
+            <select id="idMarca" name="idMarca" class="custom-select" required>
+              <option value="">Elige una marca</option>
+            </select>
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+  <!-- Aquí irían las publicaciones -->
+  </section>
+  </div>
+  </div>
+  <h2 class="h2 text-center">Últimas Publicaciones de Autos</h2>
+  <div class="news-cards" id="news-cards">
+  </div>
+
+
+  </div>
   </section>
 
   <!-- Pie de página -->
@@ -101,67 +137,160 @@
         <a href="#"><i class="fab fa-instagram"></i></a>
       </div>
       <div class="business-hours">
-        <p>Publicaciones seguras y clientes activos todos los dias</p>
+        <p>Horarios de atención: Lunes a Viernes 9am - 6pm</p>
       </div>
     </div>
   </footer>
-
   <script src="javascript/env.js"></script>
   <script>
+    let id = localStorage.getItem('usuario')
+    editar = () => {
+
+      let userperfil = {}
+
+      fetch(`${url}/miperfil?id=${id}`)
+        .then((response) => response.json())
+        .then((user) => {
+          userperfil = user[0]
+          Swal.fire({
+            showDenyButton: true,
+            confirmButtonText: 'Editar',
+            denyButtonText: 'Cancelar',
+            html: `
+            <span class="input-group-text" >Correo: </span>
+        <input type="text" class="form-control" id="Email" value='${userperfil.strEmailUs}'> 
+        <br>
+        <span class="input-group-text" >Telefono: </span>
+        <input type="number" class="form-control" id="Telefono" value='${userperfil.strTelefonoUs}'>
+        <br>
+        <span class="input-group-text" >Nombre: </span>
+        <input type="text" class="form-control" id="nombre" value='${userperfil.strNombreUs}'>
+        <br>
+        <span class="input-group-text" >Apellido: </span>
+        <input type="text" class="form-control" id="apellido" value='${userperfil.strApellidoUs}'>
+        <br>
+        <span class="input-group-text" >Direccion: </span>
+        <input type="text" class="form-control" id="direccion" value='${userperfil.strDireccionUs}'>
+        <br>
+        <span class="input-group-text" >Contraseña: </span>
+        <input type="text" class="form-control" id="contrasena" value=${userperfil.strContrasenaUs}>
+        `
+          }).then((result) => {
+
+            if (result.isConfirmed) {
+              const popup = Swal.getPopup()
+              let email = popup.querySelector('#Email').value
+              let telefono = popup.querySelector('#Telefono').value
+              let nombre = popup.querySelector('#nombre').value
+              let apellido = popup.querySelector('#apellido').value
+              let direccion = popup.querySelector('#direccion').value
+              let contraseña = popup.querySelector('#contrasena').value
+
+              fetch(`${url}/miperfil`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  id,
+                  email,
+                  telefono,
+                  nombre,
+                  apellido,
+                  direccion,
+                  contraseña,
+                })
+              }).then((response) => response.json()).then((user) => {
+                Swal.fire('Se ha guardado con exito', '', 'success')
+              })
+
+            } else if (result.isDenied) {
+              Swal.fire('No se realizaran cambios', '', 'info')
+            }
+          })
+        })
+
+
+    }
 
     document.addEventListener("DOMContentLoaded", () => {
       fetch(`${url}/vehiculos`)
         .then((response) => response.json())
         .then((vehiculos) => {
           const selectCiudad = document.getElementById("news-cards");
-          if (vehiculos === "No se encontraron publicaciones") {
+          vehiculos.forEach(element => {
+            const card = document.createElement("div");
+            const img = document.createElement("img");
+            const h3 = document.createElement("h3");
             const p = document.createElement("p");
-            p.textContent = vehiculos
-            selectCiudad.appendChild(p)
-          } else {
-            vehiculos.forEach(element => {
-              const card = document.createElement("div");
-              const img = document.createElement("img");
-              const h3 = document.createElement("h3");
-              const p = document.createElement("p");
-              const marca = document.createElement("p");
-              const tipo = document.createElement("p");
-              const categoria = document.createElement("p");
-              const precio = document.createElement("p");
-              const button = document.createElement("button");
-              button.className = "btn btn-danger";
-              button.textContent = "Detalles";
-              button.onclick = () =>
-                window.location.href = 'DetallesAutos.html?id=' + element.intCodigoVehiculo;
-              card.className = "card";
-              marca.textContent = element.strMarca;
-              tipo.textContent = element.enumTipoVehiculo
-              categoria.textContent = element.enumCategoriaAuto
-              h3.textContent = element.strDescripcion;
-              img.src =
-                `${url}/imagenesautos/` +
-                element.strimagenes;
-              p.textContent = element.strModelo;
-              const dollar = currencyFormatter({
-                currency: "COP",
-                value: element.dcmPrecio,
-              });
-              precio.textContent = dollar;
-
-              card.appendChild(img);
-              card.appendChild(h3);
-              card.appendChild(marca);
-              card.appendChild(tipo)
-              card.appendChild(p);
-              card.appendChild(categoria)
-              card.appendChild(precio);
-              card.appendChild(button);
-              selectCiudad.appendChild(card);
+            const marca = document.createElement("p");
+            const tipo = document.createElement("p");
+            const categoria = document.createElement("p");
+            const precio = document.createElement("p");
+            const button = document.createElement("button");
+            button.className = "btn btn-danger";
+            button.textContent = "Detalles";
+            button.onclick = () =>
+              window.location.href = 'DetallesAutos.html?id=' + element.intCodigoVehiculo;
+            card.className = "card";
+            marca.textContent = element.strMarca;
+            tipo.textContent = element.enumTipoVehiculo
+            categoria.textContent = element.enumCategoriaAuto
+            h3.textContent = element.strDescripcion;
+            img.src =
+              `${url}/imagenesautos/` +
+              element.strimagenes;
+            p.textContent = element.strModelo;
+            const dollar = currencyFormatter({
+              currency: "COP",
+              value: element.dcmPrecio,
             });
-          }
+            precio.textContent = dollar;
+
+            card.appendChild(img);
+            card.appendChild(h3);
+            card.appendChild(marca);
+            card.appendChild(tipo)
+            card.appendChild(p);
+            card.appendChild(categoria)
+            card.appendChild(precio);
+            card.appendChild(button);
+            selectCiudad.appendChild(card);
+          });
+
 
         })
         .catch((error) => console.error("Error al cargar vehiculos:", error));
+    });
+
+
+    // Seleccionamos el ícono y el menú desplegable
+    const userIcon = document.getElementById('dropdownMenuButton1');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    // Agregamos un evento para desplegar el menú al hacer clic en el ícono
+    userIcon.addEventListener('click', function (e) {
+      e.preventDefault();
+      dropdownMenu.style.display = (dropdownMenu.style.display === 'block') ? 'none' : 'block';
+    });
+
+    // Cerramos el menú si se hace clic fuera de él
+    window.addEventListener('click', function (e) {
+      if (!userIcon.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        dropdownMenu.style.display = 'none';
+      }
+    });
+
+    // Selecciona el botón de cerrar sesión
+    const logoutButton = document.getElementById('logout');
+
+    // Añade un evento al botón de cerrar sesión
+    logoutButton.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      // Eliminar el ID o token almacenado en localStorage
+      localStorage.removeItem('userId'); // Cambia 'userId' por la clave real que usas
+
+      // Redirigir al usuario al archivo index.html
+      window.location.href = url;
     });
 
 
@@ -375,9 +504,6 @@
 
         .catch((error) => console.error("Error al cargar vehiculos:", error));
 
-    });
-    document.querySelector('.hamburger-menu').addEventListener('click', function () {
-      document.querySelector('.navbar').classList.toggle('active');
     });
   </script>
 </body>
